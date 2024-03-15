@@ -40,6 +40,105 @@
 					}
 				}
 			}
+		},
+		"aster-cms-demo": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/aster-cms-demo",
+			"sourceRoot": "projects/aster-cms-demo/src",
+			"prefix": "acd",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:application",
+					"options": {
+						"outputPath": "dist/aster-cms-demo",
+						"index": "projects/aster-cms-demo/src/index.html",
+						"browser": "projects/aster-cms-demo/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/aster-cms-demo/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/aster-cms-demo/src/favicon.ico",
+							"projects/aster-cms-demo/src/assets"
+						],
+						"styles": [
+							"projects/aster-cms-demo/src/styles.scss"
+						],
+						"scripts": [],
+						"server": "projects/aster-cms-demo/src/main.server.ts",
+						"prerender": true,
+						"ssr": {
+							"entry": "projects/aster-cms-demo/server.ts"
+						}
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all"
+						},
+						"development": {
+							"optimization": false,
+							"extractLicenses": false,
+							"sourceMap": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"configurations": {
+						"production": {
+							"buildTarget": "aster-cms-demo:build:production"
+						},
+						"development": {
+							"buildTarget": "aster-cms-demo:build:development"
+						}
+					},
+					"defaultConfiguration": "development"
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"buildTarget": "aster-cms-demo:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/aster-cms-demo/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/aster-cms-demo/src/favicon.ico",
+							"projects/aster-cms-demo/src/assets"
+						],
+						"styles": [
+							"projects/aster-cms-demo/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
 		}
 	}
 }
