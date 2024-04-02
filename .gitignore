@@ -2,6 +2,7 @@
 
 # Compiled output
 /dist
+/projects/ngx-aster-cms/assets/dist/**
 /tmp
 /out-tsc
 /bazel-out
