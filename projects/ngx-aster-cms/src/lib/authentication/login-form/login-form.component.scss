@@ -1,0 +1,80 @@
+.aster-login-card {
+	background-image: radial-gradient(circle, #f0fdfa, #eef8f9, #edf2f5, #ecedf0, #e9e9e9);
+	width: 100%;
+	border-radius: 0.5rem;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+
+	.aster-login-welcome-text {
+		font-size: 1.25rem;
+		font-weight: 700;
+		line-height: 1.25;
+		letter-spacing: -0.025em;
+		color: rgb(17 24 39);
+	}
+
+	.aster-card-label {
+		display: block;
+		margin-bottom: 0.5rem;
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+		font-weight: 500;
+	}
+
+	.aster-card-input {
+		display: block;
+		width: 100%;
+		padding: 0.625rem;
+		border-width: 1px;
+		border-radius: 0.5rem;
+	}
+
+	.aster-login-btn {
+		padding: 0.625rem 1.25rem;
+		border-radius: 0.5rem;
+		width: 100%;
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+		font-weight: 500;
+		color: white;
+		background: #0d9488;
+
+		&:hover {
+			background: #0f766e;
+		}
+	}
+
+	.aster-social-btn {
+		width: 1.75rem;
+		height: 1.75rem;
+		cursor: pointer;
+	}
+}
+
+@media (min-width: 640px) {
+	.aster-login-card {
+		max-width: 28rem;
+
+		.aster-card-input {
+			font-size: 0.875rem;
+			line-height: 1.25rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.aster-login-card {
+		margin-top: 0;
+		max-width: 28rem;
+
+		.aster-login-welcome-text {
+			font-size: 1.5rem;
+			line-height: 2rem;
+		}
+	}
+}
+
+@media (min-width: 1280px) {
+	.aster-login-card {
+		padding: 0;
+	}
+}

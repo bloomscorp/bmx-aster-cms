@@ -1,1 +1,52 @@
-<p>login-form works!</p>
+<div class="aster-login-card">
+	<div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+		<div class="w-full flex justify-between">
+			<h1 class="aster-login-welcome-text">Welcome back !</h1>
+
+			<a href="#" class="flex items-center text-2xl font-semibold text-gray-900">
+				<img class="w-8 h-8 mr-2"
+					 src="https://www.bloomscorp.com/assets/images/logo.png" alt="logo">
+			</a>
+		</div>
+
+		<form class="space-y-4 md:space-y-6" action="#">
+			<div>
+				<label class="aster-card-label">Your email</label>
+				<input type="email"
+					   placeholder="name@company.com"
+					   class="aster-card-input"
+					   [required]="true">
+			</div>
+
+			<div>
+				<label class="aster-card-label">Password</label>
+				<input type="password"
+					   placeholder="••••••••"
+					   class="aster-card-input"
+					   [required]="true">
+			</div>
+
+			<div class="flex items-center justify-between">
+				<div class="flex items-start">
+					<div class="flex items-center h-10">
+						<img class="aster-social-btn"
+							 src="https://img.icons8.com/color/512/google-logo.png"
+							 height="512"
+							 width="512"
+							 alt="">
+						<img class="aster-social-btn ml-3"
+							 src="https://img.icons8.com/color/512/facebook-new.png"
+							 height="512"
+							 width="512"
+							 alt="">
+					</div>
+				</div>
+				<a href="#"
+				   class="text-sm font-medium text-[#0d9488] hover:underline">
+					Forgot password?
+				</a>
+			</div>
+			<button type="submit" class="aster-login-btn">Sign in</button>
+		</form>
+	</div>
+</div>
