@@ -1,9 +1,9 @@
-<div class="aster-login-card">
+<div class="aster-login-card w-full rounded-lg shadow-lg md:mt-0 sm:max-w-md xl:p-0">
 	<div class="p-6 space-y-4 md:space-y-6 sm:p-8">
 		<div class="w-full flex justify-between">
-			<h1 class="aster-login-welcome-text">Welcome back !</h1>
+			<h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">Welcome back !</h1>
 
-			<a href="#" class="flex items-center text-2xl font-semibold text-gray-900">
+			<a href="#" class="flex items-center">
 				<img class="mr-2"
 					 ngSrc="https://www.bloomscorp.com/assets/images/logo.png"
 					 alt="logo"
@@ -14,30 +14,30 @@
 
 		<form class="space-y-4 md:space-y-6" action="#">
 			<div>
-				<label class="aster-card-label">Your email</label>
+				<label class="block mb-2 text-sm font-medium">Your email</label>
 				<input type="email"
 					   placeholder="name@company.com"
-					   class="aster-card-input"
+					   class="border sm:text-sm rounded-lg block w-full p-2.5"
 					   [required]="true">
 			</div>
 
 			<div>
-				<label class="aster-card-label">Password</label>
+				<label class="block mb-2 text-sm font-medium">Password</label>
 				<input type="password"
 					   placeholder="••••••••"
-					   class="aster-card-input"
+					   class="border sm:text-sm rounded-lg block w-full p-2.5"
 					   [required]="true">
 			</div>
 
 			<div class="flex items-center justify-between">
 				<div class="flex items-start">
 					<div class="flex items-center h-10">
-						<img class="aster-social-btn"
+						<img class="w-7 h-7 cursor-pointer"
 							 ngSrc="https://img.icons8.com/color/512/google-logo.png"
 							 height="512"
 							 width="512"
 							 alt="google">
-						<img class="aster-social-btn ml-3"
+						<img class="w-7 h-7 cursor-pointer ml-3"
 							 ngSrc="https://img.icons8.com/color/512/facebook-new.png"
 							 height="512"
 							 width="512"
@@ -45,11 +45,14 @@
 					</div>
 				</div>
 				<a href="#"
-				   class="text-sm font-medium text-[#3D52A0] hover:underline">
+				   class="text-sm font-medium text-primary-500 hover:underline">
 					Forgot password?
 				</a>
 			</div>
-			<button type="submit" routerLink="/dashboard" class="aster-login-btn">Sign in</button>
+			<button type="submit" routerLink="/dashboard"
+					class="w-full text-[white] bg-primary-400 hover:bg-primary-500 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+				Sign in
+			</button>
 		</form>
 	</div>
 </div>

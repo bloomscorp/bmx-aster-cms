@@ -23,7 +23,7 @@ export class NavigationComponent {
 
 	public onItemClick(selectedMenu: NavigationItem): void {
 		this.selectedMenu = selectedMenu;
-		this.showSubMen = true;
+		if (this.selectedMenu.subItems.length > 0) this.showSubMen = true;
 	}
 
 	public onItemClose(): void {

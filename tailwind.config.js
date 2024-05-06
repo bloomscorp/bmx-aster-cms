@@ -6,8 +6,17 @@ module.exports = {
 		"./src/**/*.{html,ts}",
 	],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				primary: {
+					100: "#EDE8F5",
+					200: "#ADBBDA",
+					300: "#8697C4",
+					400: "#7091E6",
+					500: "#3D52A0",
+				},
+			},
+		},
 	},
 	plugins: [],
 }
-
