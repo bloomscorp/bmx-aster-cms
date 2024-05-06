@@ -4,8 +4,7 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
-		"build:tailwind": "postcss projects/ngx-aster-cms/src/lib/**/*.component.scss --dir projects/ngx-aster-cms/assets/dist",
-		"build:lib": "npm run build:tailwind && ng build ngx-aster-cms",
+		"build:lib": "ng build ngx-aster-cms",
 		"build": "npm run build:lib",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
