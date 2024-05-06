@@ -1,5 +1,5 @@
 .aster-login-card {
-	background-image: radial-gradient(circle, #f0fdfa, #eef8f9, #edf2f5, #ecedf0, #e9e9e9);
+	background-image: radial-gradient(circle, #EDE8F5, #EDE8F5, #edf2f5, #ecedf0, #EDE8F5);
 
 	@apply w-full rounded-lg shadow-lg md:mt-0 sm:max-w-md xl:p-0;
 
@@ -16,7 +16,7 @@
 	}
 
 	.aster-login-btn {
-		@apply w-full text-[white] bg-[#0d9488] hover:bg-[#0f766e] focus:ring-4 focus:outline-none focus:ring-[#5eead4] font-medium rounded-lg text-sm px-5 py-2.5 text-center;
+		@apply w-full text-[white] bg-[#7091E6] hover:bg-[#3D52A0] focus:ring-4 focus:outline-none focus:ring-[#5eead4] font-medium rounded-lg text-sm px-5 py-2.5 text-center;
 	}
 
 	.aster-social-btn {
