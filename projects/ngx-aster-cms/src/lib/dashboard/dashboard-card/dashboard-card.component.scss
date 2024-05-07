@@ -1,0 +1,69 @@
+.aster-dashboard-card {
+	width: 250px;
+	height: 80px;
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 15px;
+	text-align: center;
+	letter-spacing: 1px;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	font-weight: 600;
+}
+
+.aster-dashboard-card::before {
+	width: 100%;
+	height: 100%;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	clip-path: circle(20% at 94% 9%);
+}
+
+.aster-dashboard-card::after {
+	width: 100%;
+	height: 100%;
+	background-color: #7091E6;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -2;
+	clip-path: circle(20% at 94% 9%);
+	transition: 0.2s;
+}
+
+.aster-dashboard-card .count {
+	position: absolute;
+	top: 3px;
+	right: 5px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+}
+
+.aster-dashboard-card:hover::after {
+	clip-path: circle(100%);
+}
+
+.aster-dashboard-card:hover h3,
+.aster-dashboard-card:hover .card-icon {
+	color: #fff;
+}
+
+.aster-dashboard-card:hover::before {
+	background-color: #fff;
+}
+
+.aster-dashboard-card:hover .count,
+.aster-dashboard-card:hover .redirect-icon {
+	color: #3D52A0;
+}

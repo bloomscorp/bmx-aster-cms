@@ -1,8 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import {NavigationItem} from "../interface/navigation-item";
 import {NavigationItems} from "../model/navigation-items";
 import {RouterLink, RouterLinkActive} from "@angular/router";
+import {MatIcon} from "@angular/material/icon";
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
 	selector: 'aster-cms-navigation',
@@ -10,7 +12,8 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 	imports: [
 		NgOptimizedImage,
 		RouterLinkActive,
-		RouterLink
+		RouterLink,
+		MatIconModule
 	],
 	templateUrl: './navigation.component.html',
 	styleUrl: './navigation.component.scss'
@@ -18,7 +21,7 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 export class NavigationComponent {
 
 	public showSubMen: boolean = false;
-	public navigationItemList: NavigationItem[] = NavigationItems.items;
+	@Input() public navigationItemList: NavigationItem[] = NavigationItems.items;
 	public selectedMenu: NavigationItem = {} as NavigationItem;
 
 	public onItemClick(selectedMenu: NavigationItem): void {

@@ -3,23 +3,36 @@ import {NavigationItem} from "../interface/navigation-item";
 export class NavigationItems {
 
 	private static readonly dashboardNavigation: NavigationItem = {
-		icon: 'https://img.icons8.com/ios-glyphs/90/noticeboard.png',
+		icon: 'dashboard',
 		name: 'manage dashboard',
 		url: '/dashboard',
 		subItems: [],
 	}
 
 	private static readonly tenantNavigation: NavigationItem = {
-		icon: 'https://img.icons8.com/material-rounded/60/guest-male.png',
+		icon: 'manage_accounts',
 		name: 'manage tenant',
 		url: '/tenant',
+		subItems: [],
+	}
+
+	private static readonly productNavigation: NavigationItem = {
+		icon: 'shopping_bag',
+		name: 'manage products',
+		url: '/manage-product',
 		subItems: [
-			// {
-			// 	icon: 'https://img.icons8.com/material-sharp/90/ffffff/guest-male.png',
-			// 	name: 'manage tenant',
-			// 	description: 'Manage your tenants',
-			// 	url: '/dashboard',
-			// }
+			{
+				icon: 'shopping_bag',
+				name: 'manage skincare',
+				description: 'Manage skincare products.',
+				url: '/product/skincare',
+			},
+			{
+				icon: 'shopping_bag',
+				name: 'manage makeup',
+				description: 'Manage makeup products.',
+				url: '/product/makeup',
+			}
 		],
 	}
 
@@ -27,6 +40,7 @@ export class NavigationItems {
 		return [
 			NavigationItems.dashboardNavigation,
 			NavigationItems.tenantNavigation,
+			NavigationItems.productNavigation
 		]
 	}
 }

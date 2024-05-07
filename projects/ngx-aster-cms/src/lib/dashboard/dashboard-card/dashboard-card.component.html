@@ -1,0 +1,16 @@
+<div class="aster-dashboard-card
+	bg-gradient-to-tr from-primary-100 from-0% to-primary-200 to-100%
+	after:bg-gradient-to-tr after:from-primary-300 after:from-0% after:to-primary-500 after:to-100%
+	hover:before:bg-gradient-to-tr hover:before:from-primary-100 hover:before:from-0% hover:before:to-primary-200 hover:before:to-100%">
+	<div class="flex justify-start items-center gap-2 text-primary-500">
+		<mat-icon class="card-icon scale-[1.4]">{{dashboardItem.icon}}</mat-icon>
+		<h3 class="capitalize">{{dashboardItem.name}}</h3>
+	</div>
+	<div class="count">
+		@if(dashboardItem.count === 0) {
+			<mat-icon class="redirect-icon scale-[0.9]">open_in_new</mat-icon>
+		} @else {
+			{{dashboardItem.count}}
+		}
+	</div>
+</div>

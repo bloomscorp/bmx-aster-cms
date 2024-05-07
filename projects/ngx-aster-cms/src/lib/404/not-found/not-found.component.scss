@@ -1,0 +1,48 @@
+.aster-flex-container {
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	height: 100vh;
+
+	.aster-text-center {
+		text-align: center;
+		h1,
+		h3 {
+			margin: 30px;
+			cursor: default;
+			font-weight: 600;
+
+			.fade-in {
+				animation: fadeIn 2s ease infinite;
+			}
+		}
+
+		h1 {
+			font-size: 8em;
+			transition: font-size 200ms ease-in-out;
+			border-bottom: 1px dashed black;
+
+			span#digit1 { animation-delay: 200ms; }
+			span#digit2 { animation-delay: 300ms; }
+			span#digit3 { animation-delay: 400ms; }
+		}
+
+		.aster-return-btn {
+			padding: 10px 20px;
+			font-size: 1.1rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			transition: background-color 100ms ease-in;
+			cursor: pointer;
+		}
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+100% {
+	   opacity: 1;
+   }
+}

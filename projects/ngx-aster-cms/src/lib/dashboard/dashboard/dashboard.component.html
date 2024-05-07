@@ -1,1 +1,8 @@
-<aster-cms-navigation></aster-cms-navigation>
+<aster-cms-header-section [section]="'Manage Dashboard'"
+						  [subSection]="'Start your website management journey'"></aster-cms-header-section>
+
+<div class="aster-dashboard-container gap-0">
+	@for (dashboardItem of dashboardItems; track dashboardItem) {
+		<aster-cms-dashboard-card [dashboardItem]="dashboardItem"></aster-cms-dashboard-card>
+	}
+</div>

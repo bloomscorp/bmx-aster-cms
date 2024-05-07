@@ -1,1 +1,6 @@
-<router-outlet />
+@if (showNavigation) {
+	<aster-cms-navigation></aster-cms-navigation>
+}
+<div [ngClass]="{'lilac-container': showNavigation}">
+	<router-outlet />
+</div>

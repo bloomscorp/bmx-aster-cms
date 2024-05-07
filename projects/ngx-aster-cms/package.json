@@ -1,12 +1,13 @@
 {
 	"name": "@bloomscorp/ngx-aster-cms",
-	"version": "0.0.26",
+	"version": "0.0.28",
 	"peerDependencies": {
 		"@angular/common": "^17.3.0",
-		"@angular/core": "^17.3.0"
+		"@angular/core": "^17.3.0",
+		"@angular/material": "^17.3.7"
 	},
 	"dependencies": {
 		"tslib": "^2.3.0"
 	},
-	"sideEffects": false
+	"sideEffects": true
 }
