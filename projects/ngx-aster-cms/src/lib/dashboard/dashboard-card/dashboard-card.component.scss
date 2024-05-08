@@ -1,7 +1,6 @@
 .aster-dashboard-card {
 	width: 250px;
 	height: 80px;
-	background-color: #fff;
 	border-radius: 5px;
 	padding: 20px;
 	margin: 15px;
@@ -31,7 +30,6 @@
 .aster-dashboard-card::after {
 	width: 100%;
 	height: 100%;
-	background-color: #7091E6;
 	content: '';
 	position: absolute;
 	top: 0;
@@ -57,13 +55,4 @@
 .aster-dashboard-card:hover h3,
 .aster-dashboard-card:hover .card-icon {
 	color: #fff;
-}
-
-.aster-dashboard-card:hover::before {
-	background-color: #fff;
-}
-
-.aster-dashboard-card:hover .count,
-.aster-dashboard-card:hover .redirect-icon {
-	color: #3D52A0;
 }
