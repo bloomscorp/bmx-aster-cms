@@ -1,6 +1,6 @@
-@if (showNavigation) {
+@if (!hideNavigation) {
 	<aster-cms-navigation></aster-cms-navigation>
 }
-<div [ngClass]="{'lilac-container': showNavigation}">
+<div [ngClass]="{'lilac-container': !hideNavigation}">
 	<router-outlet />
 </div>

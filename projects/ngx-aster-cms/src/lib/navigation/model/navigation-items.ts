@@ -11,7 +11,7 @@ export class NavigationItems {
 
 	private static readonly tenantNavigation: NavigationItem = {
 		icon: 'manage_accounts',
-		name: 'manage tenant',
+		name: 'manage users',
 		url: '/tenant',
 		subItems: [],
 	}
@@ -19,7 +19,7 @@ export class NavigationItems {
 	private static readonly productNavigation: NavigationItem = {
 		icon: 'shopping_bag',
 		name: 'manage products',
-		url: '/manage-product',
+		url: '/product',
 		subItems: [
 			{
 				icon: 'shopping_bag',

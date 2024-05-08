@@ -16,12 +16,12 @@ import {NgClass} from "@angular/common";
 })
 export class AppComponent {
 
-	public showNavigation: boolean = true;
+	public hideNavigation: boolean = true;
 
 	constructor(private _router: Router) {
 		this._router.events.subscribe((ev): void => {
 			if (ev instanceof NavigationEnd) {
-				this.showNavigation = ev.url !== '/login';
+				this.hideNavigation = ev.url === '/login' || ev.url === '/';
 			}
 		});
 	}

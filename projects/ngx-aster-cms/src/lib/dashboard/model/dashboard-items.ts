@@ -3,7 +3,7 @@ import {DashboardItem} from "../interface/dashboard-item";
 export class DashboardItems {
 
 	private static readonly item1: DashboardItem = {
-		name: 'manage user',
+		name: 'manage users',
 		icon: 'manage_accounts',
 		count: 0,
 		link: '/tenant'
