@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {NavigationEnd, NavigationError, NavigationStart, Router, RouterOutlet} from '@angular/router';
+import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {NavigationComponent} from 'ngx-aster-cms';
 import {NgClass} from "@angular/common";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
-import {AsterRequestMapper} from "../../../ngx-aster-cms/src/lib/route/model/aster-request-mapper";
+import {AsterNavigationItems, AsterNavigationMapperService} from "ngx-aster-cms";
 
 @Component({
 	selector: 'acd-root',
@@ -27,9 +27,15 @@ export class AppComponent implements OnInit {
 	public showToggleButton: boolean = true;
 	public smallScreen: boolean = false;
 
-	constructor(private _router: Router) {
+	constructor(
+		private _router: Router,
+		private _asterNavigationMapper: AsterNavigationMapperService
+	) {
+
+		this._asterNavigationMapper.navigationItemList = AsterNavigationItems.items;
+		this._asterNavigationMapper.companyName = 'Aster Demo';
+
 		this._router.events.subscribe((ev): void => {
-			// console.log((ev as NavigationEnd).url)
 			if (ev instanceof NavigationEnd) {
 				this.hideNavigation = ev.url === '/login' || ev.url === '/404' || ev.url === '/' || ev.urlAfterRedirects == '/404';
 				this.showToggleButton = ev.url === '/login' || ev.url === '/404' || ev.url === '/' || ev.urlAfterRedirects == '/404';

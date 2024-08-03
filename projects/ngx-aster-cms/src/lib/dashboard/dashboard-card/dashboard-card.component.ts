@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {DashboardItem} from "../interface/dashboard-item";
+import {AsterDashboardItem} from "../interface/aster-dashboard-item";
 import {MatIcon} from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
 
@@ -15,6 +15,6 @@ import {RouterLink} from "@angular/router";
 })
 export class DashboardCardComponent {
 
-	@Input() dashboardItem: DashboardItem = {} as DashboardItem;
+	@Input() dashboardItem: AsterDashboardItem = {} as AsterDashboardItem;
 
 }

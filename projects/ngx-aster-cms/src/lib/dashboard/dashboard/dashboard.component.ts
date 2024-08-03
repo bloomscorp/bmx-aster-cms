@@ -1,9 +1,9 @@
 import {Component, Input} from '@angular/core';
 import {NavigationComponent} from "../../navigation/navigation/navigation.component";
 import {DashboardCardComponent} from "../dashboard-card/dashboard-card.component";
-import {DashboardItems} from "../model/dashboard-items";
-import {DashboardItem} from "../interface/dashboard-item";
+import {AsterDashboardItem} from "../interface/aster-dashboard-item";
 import {HeaderSectionComponent} from "../../component-library/header-section/header-section.component";
+import {AsterDashboardMapperService} from "../service/aster-dashboard-mapper.service";
 
 @Component({
 	selector: 'aster-cms-dashboard',
@@ -18,8 +18,16 @@ import {HeaderSectionComponent} from "../../component-library/header-section/hea
 })
 export class DashboardComponent {
 
-	@Input() heading: string  = 'Manage Dashboard';
-	@Input() subHeading: string  = 'Start your website management journey';
-	@Input() dashboardItems: DashboardItem[] = DashboardItems.items;
+	@Input() heading: string  = '';
+	@Input() subHeading: string  = '';
+	@Input() dashboardItems: AsterDashboardItem[] = [];
+
+	constructor(
+		private _asterDashboardMapper: AsterDashboardMapperService
+	) {
+		this.dashboardItems = this._asterDashboardMapper.dashboardItems;
+		this.heading = this._asterDashboardMapper.heading;
+		this.subHeading= this._asterDashboardMapper.subHeading;
+	}
 
 }
