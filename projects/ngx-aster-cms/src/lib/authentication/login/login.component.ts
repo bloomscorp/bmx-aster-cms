@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {LoginFormComponent} from "../login-form/login-form.component";
 
 @Component({
@@ -11,5 +11,7 @@ import {LoginFormComponent} from "../login-form/login-form.component";
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+
+	@Input() companyLogo: string = 'https://www.bloomscorp.com/assets/images/logo.png';
 
 }

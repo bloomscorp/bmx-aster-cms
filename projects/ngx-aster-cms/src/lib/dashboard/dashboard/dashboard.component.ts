@@ -18,6 +18,8 @@ import {HeaderSectionComponent} from "../../component-library/header-section/hea
 })
 export class DashboardComponent {
 
+	@Input() heading: string  = 'Manage Dashboard';
+	@Input() subHeading: string  = 'Start your website management journey';
 	@Input() dashboardItems: DashboardItem[] = DashboardItems.items;
 
 }

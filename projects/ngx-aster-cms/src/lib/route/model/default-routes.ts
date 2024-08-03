@@ -22,15 +22,21 @@ export class DefaultRoutes {
 	};
 
 	public static readonly NOT_FOUND: Route = {
-		path: '**',
+		path: AsterRequestMapper.INVALID_URL,
 		loadComponent: () => import('../../404/not-found/not-found.component').then(m => m.NotFoundComponent),
 		pathMatch: 'full'
+	};
+
+	public static readonly ANY_URL: Route = {
+		path: '**',
+		redirectTo: AsterRequestMapper.INVALID_URL
 	};
 
 	public static readonly ROUTES: Routes = [
 		DefaultRoutes.BASE,
 		DefaultRoutes.LOGIN,
 		DefaultRoutes.DASHBOARD,
-		DefaultRoutes.NOT_FOUND
+		DefaultRoutes.NOT_FOUND,
+		DefaultRoutes.ANY_URL
 	];
 }

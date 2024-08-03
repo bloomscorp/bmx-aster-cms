@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import {NavigationItem} from "../interface/navigation-item";
 import {NavigationItems} from "../model/navigation-items";
@@ -20,17 +20,14 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class NavigationComponent {
 
-	public showSubMen: boolean = false;
+	@Input() public companyLogo: string = 'https://www.bloomscorp.com/assets/images/logo.png';
+	@Input() public companyName: string = 'Bloomscorp';
 	@Input() public navigationItemList: NavigationItem[] = NavigationItems.items;
-	public selectedMenu: NavigationItem = {} as NavigationItem;
 
-	public onItemClick(selectedMenu: NavigationItem): void {
-		this.selectedMenu = selectedMenu;
-		if (this.selectedMenu.subItems.length > 0) this.showSubMen = true;
-	}
+	@Output() navigationToggleEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-	public onItemClose(): void {
-		this.showSubMen = false;
+	public toggleSidebar(): void {
+		this.navigationToggleEvent.emit(false);
 	}
 
 }

@@ -1,6 +1,15 @@
 @if (!hideNavigation) {
-	<aster-cms-navigation></aster-cms-navigation>
+	<aster-cms-navigation (navigationToggleEvent)="hideNavigation=!$event"></aster-cms-navigation>
 }
-<div [ngClass]="{'lilac-container': !hideNavigation}">
-	<router-outlet />
+<div [ngClass]="{'lilac-container': !hideNavigation && !smallScreen}" class="abc-body-wrapper">
+	<div class="w-full flex flex-col md:flex-row">
+		@if (!showToggleButton) {
+			<div class="mt-6 mr-2 cursor-pointer" (click)="hideNavigation=!hideNavigation">
+				<mat-icon>menu</mat-icon>
+			</div>
+		}
+		<div class="w-full">
+			<router-outlet/>
+		</div>
+	</div>
 </div>

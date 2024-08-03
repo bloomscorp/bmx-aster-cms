@@ -1,13 +1,11 @@
-<div class="aster-dashboard-card bg-white after:bg-primary-500  border-[1px]">
-	<div class="flex justify-start items-center gap-2 text-primary-500">
-		<mat-icon class="card-icon scale-[1.4] drop-shadow-md">{{ dashboardItem.icon }}</mat-icon>
-		<h3 class="capitalize drop-shadow-md">{{ dashboardItem.name }}</h3>
+<a [routerLink]="dashboardItem.link" class="mr-5 my-3 flex items-center bg-gray-50 border rounded-sm overflow-hidden cursor-pointer group">
+	<div class="p-4 group-hover:bg-primary-400 bg-primary-300 px-5">
+		<mat-icon class="scale-[1.8] text-white">{{dashboardItem.icon}}</mat-icon>
 	</div>
-	<div class="count drop-shadow-md">
-		@if (dashboardItem.count === 0) {
-			<mat-icon class="redirect-icon scale-[0.9]">open_in_new</mat-icon>
-		} @else {
-			{{ dashboardItem.count }}
+	<div class="px-4 text-gray-700">
+		<h3 class="text-sm tracking-wider">{{dashboardItem.name}}</h3>
+		@if (dashboardItem.count) {
+			<p class="text-2xl">{{dashboardItem.count}}</p>
 		}
 	</div>
-</div>
+</a>

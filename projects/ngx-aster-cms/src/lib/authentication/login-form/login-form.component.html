@@ -5,7 +5,7 @@
 
 			<a href="#" class="flex items-center">
 				<img class="mr-2"
-					 ngSrc="https://www.bloomscorp.com/assets/images/logo.png"
+					 [ngSrc]="companyLogo"
 					 alt="logo"
 					 width="32"
 					 height="32">
@@ -50,7 +50,7 @@
 				</a>
 			</div>
 			<button type="submit" routerLink="/dashboard"
-					class="w-full text-[white] bg-primary-400 hover:bg-primary-500 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+					class="w-full text-[white] bg-primary-400 hover:bg-primary-300 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">
 				Sign in
 			</button>
 		</form>

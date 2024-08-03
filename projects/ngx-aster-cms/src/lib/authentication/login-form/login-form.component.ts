@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
 
@@ -13,5 +13,7 @@ import {RouterLink} from "@angular/router";
   styleUrl: './login-form.component.scss'
 })
 export class LoginFormComponent {
+
+	@Input() companyLogo: string = 'https://www.bloomscorp.com/assets/images/logo.png';
 
 }
