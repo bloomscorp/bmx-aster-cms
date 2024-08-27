@@ -1,4 +1,6 @@
+import {Route} from "@angular/router";
+
 export interface RouteReplace {
-	existingRoute: string;
-	newRoute: string;
+	existingRoute: Route;
+	newRoute: Route;
 }

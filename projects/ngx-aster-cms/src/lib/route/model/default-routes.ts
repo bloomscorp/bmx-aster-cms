@@ -43,6 +43,6 @@ export class DefaultRoutes {
 
 	// TODO: add method to replace default routes
 	public static replaceRoutes(routes: RouteReplace[]): void {
-		
+
 	}
 }
