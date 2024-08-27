@@ -1,5 +1,6 @@
 import {Route, Routes} from "@angular/router";
 import {AsterRequestMapper} from "./aster-request-mapper";
+import {RouteReplace} from "../interface/route-replace";
 
 export class DefaultRoutes {
 
@@ -41,4 +42,7 @@ export class DefaultRoutes {
 	];
 
 	// TODO: add method to replace default routes
+	public static replaceRoutes(routes: RouteReplace[]): void {
+		
+	}
 }
