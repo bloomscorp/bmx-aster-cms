@@ -16,5 +16,6 @@ export * from './lib/navigation/model/aster-navigation-items';
 export * from './lib/dashboard/dashboard/dashboard.component';
 export * from './lib/dashboard/dashboard-card/dashboard-card.component';
 export * from './lib/dashboard/service/aster-dashboard-mapper.service';
+export * from './lib/dashboard/service/dashboard.service';
 export * from './lib/dashboard/interface/aster-dashboard-item';
 export * from './lib/dashboard/model/aster-dashboard-items';
