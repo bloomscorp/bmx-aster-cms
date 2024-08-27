@@ -39,4 +39,6 @@ export class DefaultRoutes {
 		DefaultRoutes.NOT_FOUND,
 		DefaultRoutes.ANY_URL
 	];
+
+	// TODO: add method to replace default routes
 }
