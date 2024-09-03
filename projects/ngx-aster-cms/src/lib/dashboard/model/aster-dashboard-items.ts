@@ -1,4 +1,5 @@
 import {AsterDashboardItem} from "../interface/aster-dashboard-item";
+import {AsterRequestMapper} from "../../route/model/aster-request-mapper";
 
 export class AsterDashboardItems {
 
@@ -6,7 +7,7 @@ export class AsterDashboardItems {
 		name: 'manage users',
 		icon: 'manage_accounts',
 		count: 0,
-		link: '/tenant'
+		link: AsterRequestMapper.getAbsoluteUrl(AsterRequestMapper.MANAGE_USERS)
 	}
 
 	private static readonly item2: AsterDashboardItem = {

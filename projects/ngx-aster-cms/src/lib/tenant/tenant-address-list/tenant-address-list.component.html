@@ -2,10 +2,10 @@
 	<div class="mb-3 text-xl text-primary-500">
 		Address
 	</div>
-	<div class="text-sm bg-primary-300 py-3 border-gray-300 max-h-[400px] overflow-auto">
+	<div class="text-sm bg-gray-50 py-3 border-gray-300 max-h-[400px] overflow-auto">
 		@for ( item of [1, 2, 3]; track item; let index = $index) {
 			<div class="m-2">
-				<div class="bg-gray-400 text-white">
+				<div class="bg-primary-500 text-white">
 					<button
 						class="w-full text-left p-2 flex justify-between items-center focus:outline-none"
 						(click)="toggleAccordion(index)"
