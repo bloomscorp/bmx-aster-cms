@@ -1,1 +1,76 @@
-<p>tenant-details works!</p>
+<aster-cms-header-section
+	[section]="heading"
+	[subSection]="subHeading"></aster-cms-header-section>
+
+<div class="flex justify-between items-start gap-5">
+	<div class="w-full md:w-1/2">
+		<div class="mb-3 text-xl text-primary-500">
+			Overview
+		</div>
+		<div class="text-sm bg-gray-50 p-4 border-gray-300">
+			<div class="my-4 md:mx-4 flex justify-between items-center">
+				<div class="flex items-center">
+					<div class="flex-shrink-0 w-10 h-10">
+						<img class="w-full h-full rounded-full"
+							 src="https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-0.png" alt=""/>
+					</div>
+					<div class="ml-3">
+						<div class="text-gray-900 whitespace-no-wrap font-semibold">
+							Deep Dey
+							<div class="text-sm text-black font-normal">deepdey20998&#64;gmail.com</div>
+						</div>
+					</div>
+				</div>
+				<button
+					class="flex-shrink-0 bg-transparent hover:bg-primary-500 text-primary-500 hover:text-white py-1 px-4 border border-primary-500 b-2 hover:border-transparent rounded-full uppercase text-xs h-7">
+					edit
+				</button>
+			</div>
+			<div class="my-4 md:mx-4 p-4 rounded-lg border border-gray-300">
+				<div class="flex flex-col md:flex-row justify-around items-center border-b pb-3">
+					<div class="text-center text-[0.8rem]">
+						Last Order
+						<div class="inline md:block font-semibold text-black">&nbsp;(23 Sep 2022)&nbsp;</div>
+					</div>
+					<div class="text-center text-[0.8rem]">
+						Last Order Spent
+						<div class="inline md:block font-semibold text-green-700">&nbsp;(₹ 1159.00)&nbsp;</div>
+					</div>
+				</div>
+				<div class="text-center pb-2 pt-4">
+					Date of Joining <br/>20/09/2024 <span class="text-black">&#64; 03:20 PM</span>
+				</div>
+			</div>
+			<div class="mb-4 md:mx-4 flex flex-col sm:flex-row justify-center sm:justify-between items-center">
+				<div class="">
+					<div class="uppercase text-xs text-center sm:text-left">recent order</div>
+					<div class="text-center sm:text-left pt-3 sm:pt-0 text-xs font-semibold">
+						<span>#AS-12345</span>
+					</div>
+				</div>
+				<div class="whitespace-no-wrap font-semibold text-center sm:text-left py-3 sm:py-0 text-xs">
+                <span class="text-white bg-green-600 rounded-l-[20px] pl-3 p-1">
+                    PAID
+                </span>
+					<span class="p-1 text-red-600">
+                    NOT-FULFILLED
+                </span>
+				</div>
+			</div>
+			<div class="md:mx-4 border-b"></div>
+			<div class="mt-3 md:mx-4 flex flex-col sm:flex-row justify-center sm:justify-between items-center">
+				<div class="font-semibold">
+					<div class="font-semibold uppercase text-xs text-center sm:text-left">total spend</div>
+					<div class="text-base text-center sm:text-left pt-3 sm:pt-0">
+						<span class="font-semibold">₹ 1180</span>
+					</div>
+				</div>
+				<button
+					class="mt-2 sm:mt-0 flex-shrink-0 bg-transparent hover:bg-primary-500 text-primary-500 hover:text-white py-1 px-4 border border-primary-500 b-2 hover:border-transparent rounded-full uppercase text-xs h-8">
+					View orders
+				</button>
+			</div>
+		</div>
+	</div>
+	<aster-cms-tenant-address-list class="w-full md:w-1/2"></aster-cms-tenant-address-list>
+</div>

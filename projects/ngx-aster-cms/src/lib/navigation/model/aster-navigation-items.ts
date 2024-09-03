@@ -1,17 +1,18 @@
 import {AsterNavigationItem} from "../interface/aster-navigation-item";
+import {AsterRequestMapper} from "../../route/model/aster-request-mapper";
 
 export class AsterNavigationItems {
 
 	private static readonly dashboardNavigation: AsterNavigationItem = {
 		icon: 'donut_large',
 		name: 'dashboard',
-		url: '/dashboard',
+		url: AsterRequestMapper.getAbsoluteUrl(AsterRequestMapper.DASHBOARD),
 	}
 
 	private static readonly tenantNavigation: AsterNavigationItem = {
 		icon: 'manage_accounts',
 		name: 'users',
-		url: '/tenant',
+		url: AsterRequestMapper.getAbsoluteUrl(AsterRequestMapper.MANAGE_USERS),
 	}
 
 	private static readonly productNavigation: AsterNavigationItem = {

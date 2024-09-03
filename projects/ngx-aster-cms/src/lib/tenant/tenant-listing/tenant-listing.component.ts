@@ -1,12 +1,28 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {HeaderSectionComponent} from "../../component-library/header-section/header-section.component";
+import { TenantPreviewItemList } from '../model/tenant-preview-item-list';
+import { TenantPreview } from '../interface/tenant-preview';
+import {RouterLink} from "@angular/router";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
-  selector: 'aster-cms-tenant-listing',
-  standalone: true,
-  imports: [],
-  templateUrl: './tenant-listing.component.html',
-  styleUrl: './tenant-listing.component.scss'
+	selector: 'aster-cms-tenant-listing',
+	standalone: true,
+	imports: [
+		HeaderSectionComponent,
+		RouterLink,
+		MatIcon
+	],
+	templateUrl: './tenant-listing.component.html',
+	styleUrl: './tenant-listing.component.scss'
 })
 export class TenantListingComponent {
+
+	@Input() heading: string  = 'Manage Users';
+	@Input() subHeading: string  = 'View and manage your users here';
+
+    public tenantPreviewItems: TenantPreview[] = TenantPreviewItemList.tenantPreviewItems;
+
+    constructor() {}
 
 }

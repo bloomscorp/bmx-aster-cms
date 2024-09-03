@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
-import {NavigationComponent} from 'ngx-aster-cms';
+import {AsterNavigationItems, AsterNavigationMapperService, NavigationComponent} from 'ngx-aster-cms';
 import {NgClass} from "@angular/common";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
-import {AsterNavigationItems, AsterNavigationMapperService} from "ngx-aster-cms";
 
 @Component({
 	selector: 'acd-root',
@@ -44,9 +43,11 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		if (window.innerWidth < 768) {
-			this.hideNavigation = true;
-			this.smallScreen = true;
+		if (typeof window !== "undefined") {
+			if (window.innerWidth < 768) {
+				this.hideNavigation = true;
+				this.smallScreen = true;
+			}
 		}
 	}
 }

@@ -12,6 +12,8 @@ export const routes: Routes = [
 		pathMatch: 'full',
 		resolve: {resolve: dashboardResolver}
 	},
+    DefaultRoutes.MANAGE_USERS,
+	DefaultRoutes.USER_DETAILS,
 	DefaultRoutes.NOT_FOUND,
 	DefaultRoutes.ANY_URL
 ];
