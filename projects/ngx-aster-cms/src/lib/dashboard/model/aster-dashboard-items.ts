@@ -21,7 +21,7 @@ export class AsterDashboardItems {
 		name: 'manage orders',
 		icon: 'shopping_cart',
 		count: 213,
-		link: '/orders'
+		link: AsterRequestMapper.getAbsoluteUrl(AsterRequestMapper.MANAGE_ORDERS)
 	}
 
 	public static items: AsterDashboardItem[] = [

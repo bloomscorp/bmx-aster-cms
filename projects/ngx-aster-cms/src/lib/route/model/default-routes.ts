@@ -40,6 +40,18 @@ export class DefaultRoutes {
 		pathMatch: 'full'
 	}
 
+	public static readonly  MANAGE_ORDERS: Route = {
+		path: AsterRequestMapper.MANAGE_ORDERS,
+		loadComponent: () => import('../../order/order-listing/order-listing.component').then(m => m.OrderListingComponent),
+		pathMatch: 'full'
+	}
+
+	public static readonly  ORDER_DETAILS: Route = {
+		path: AsterRequestMapper.ORDER_DETAILS,
+		loadComponent: () => import('../../order/order-details/order-details.component').then(m => m.OrderDetailsComponent),
+		pathMatch: 'full'
+	}
+
 	public static readonly BASE: Route = {
 		path: AsterRequestMapper.BASE_RELATIVE_URL,
 		redirectTo: AsterRequestMapper.LOGIN,
@@ -65,6 +77,8 @@ export class DefaultRoutes {
 		DefaultRoutes.USER_DETAILS,
 		DefaultRoutes.MANAGE_PRODUCTS,
 		DefaultRoutes.PRODUCT_DETAILS,
+		DefaultRoutes.MANAGE_ORDERS,
+		DefaultRoutes.ORDER_DETAILS,
 		DefaultRoutes.NOT_FOUND,
 		DefaultRoutes.ANY_URL,
 	];

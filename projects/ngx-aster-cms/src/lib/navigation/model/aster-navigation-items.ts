@@ -24,7 +24,7 @@ export class AsterNavigationItems {
 	private static readonly orderNavigation: AsterNavigationItem = {
 		icon: 'inventory',
 		name: 'orders',
-		url: '/orders',
+		url: AsterRequestMapper.getAbsoluteUrl(AsterRequestMapper.MANAGE_ORDERS),
 	}
 
 	public static get items(): AsterNavigationItem[] {

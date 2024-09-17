@@ -1,0 +1,54 @@
+<aster-cms-header-section
+	[section]="heading"
+	[subSection]="subHeading"></aster-cms-header-section>
+
+<div class="relative overflow-x-auto mr-6">
+	<table class="w-full text-sm text-left rtl:text-right text-gray-500">
+		<thead class="text-xs text-white uppercase bg-primary-500">
+		<tr>
+			<th scope="col" class="px-6 py-3">
+				Order #
+			</th>
+			<th scope="col" class="px-6 py-3">
+				Purchase Date
+			</th>
+			<th scope="col" class="px-6 py-3">
+				Status
+			</th>
+			<th scope="col" class="px-6 py-3">
+				Amount
+			</th>
+			<th scope="col" class="px-6 py-3">
+				<span class="sr-only">Edit</span>
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+			@for (orderItem of orderItems; track orderItem) {
+				<tr class="bg-white border-b hover:bg-gray-50">
+					<th scope="row"
+						class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap">
+						<div class="font-semibold text-primary-500">#{{ orderItem.id }}</div>
+						<div class="text-xs text-primary-400">{{ orderItem.tenant.name }} ({{ orderItem.tenant.email }})</div>
+					</th>
+					<td class="px-6 py-2">
+						{{ orderItem.orderDate | date: 'medium' }}
+					</td>
+					<td class="px-6 py-2">
+						{{ orderItem.status }}
+					</td>
+					<td class="px-6 py-2">
+						{{ orderItem.amount }}
+					</td>
+					<td class="px-6 py-2 text-right">
+						<a routerLink="/order/{{orderItem.id}}"
+						   class="font-medium text-blue-600 hover:underline"
+						   target="_blank">
+							<mat-icon>open_in_new</mat-icon>
+						</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
