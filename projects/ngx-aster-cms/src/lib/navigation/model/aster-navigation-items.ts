@@ -18,7 +18,7 @@ export class AsterNavigationItems {
 	private static readonly productNavigation: AsterNavigationItem = {
 		icon: 'shopping_bag',
 		name: 'products',
-		url: '/product',
+		url: AsterRequestMapper.getAbsoluteUrl(AsterRequestMapper.MANAGE_PRODUCTS),
 	}
 
 	private static readonly orderNavigation: AsterNavigationItem = {

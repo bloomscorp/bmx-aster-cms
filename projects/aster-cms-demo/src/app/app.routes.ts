@@ -14,6 +14,8 @@ export const routes: Routes = [
 	},
     DefaultRoutes.MANAGE_USERS,
 	DefaultRoutes.USER_DETAILS,
+	DefaultRoutes.MANAGE_PRODUCTS,
+	DefaultRoutes.PRODUCT_DETAILS,
 	DefaultRoutes.NOT_FOUND,
 	DefaultRoutes.ANY_URL
 ];

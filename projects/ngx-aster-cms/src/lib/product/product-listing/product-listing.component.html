@@ -1,1 +1,55 @@
-<p>product-listing works!</p>
+<aster-cms-header-section
+	[section]="heading"
+	[subSection]="subHeading"></aster-cms-header-section>
+
+<div class="relative overflow-x-auto mr-6">
+	<table class="w-full text-sm text-left rtl:text-right text-gray-500">
+		<thead class="text-xs text-white uppercase bg-primary-500">
+		<tr>
+			<th scope="col" class="px-6 py-3">
+				SKU Code
+			</th>
+			<th scope="col" class="px-6 py-3">
+				Product Type
+			</th>
+			<th scope="col" class="px-6 py-3">
+				Price
+			</th>
+			<th scope="col" class="px-6 py-3">
+				Stock
+			</th>
+			<th scope="col" class="px-6 py-3">
+				<span class="sr-only">Edit</span>
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+			@for (productPreview of productPreviewItems; track productPreview) {
+				<tr class="bg-white border-b hover:bg-gray-50">
+					<th scope="row"
+						class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap flex items-center gap-2">
+						<img [src]="productPreview.heroImage" [alt]="productPreview.productName"
+							 class="w-10 h-10 rounded-full">
+						<div>{{ productPreview.model }}</div>
+					</th>
+					<td class="px-6 py-2">
+						{{ productPreview.productType }}
+					</td>
+					<td class="px-6 py-2">
+						{{ productPreview.price }}
+					</td>
+					<td class="px-6 py-2">
+						{{ productPreview.stock }}
+					</td>
+					<td class="px-6 py-2 text-right">
+						<a routerLink="/product/{{productPreview.productGroup}}/{{productPreview.model}}"
+						   class="font-medium text-blue-600 hover:underline"
+						   target="_blank">
+							<mat-icon>open_in_new</mat-icon>
+						</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

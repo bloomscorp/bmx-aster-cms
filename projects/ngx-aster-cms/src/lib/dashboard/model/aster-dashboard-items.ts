@@ -14,7 +14,7 @@ export class AsterDashboardItems {
 		name: 'manage products',
 		icon: 'shopping_bag',
 		count: 200,
-		link: '/product'
+		link: AsterRequestMapper.getAbsoluteUrl(AsterRequestMapper.MANAGE_PRODUCTS)
 	}
 
 	private static readonly item3: AsterDashboardItem = {

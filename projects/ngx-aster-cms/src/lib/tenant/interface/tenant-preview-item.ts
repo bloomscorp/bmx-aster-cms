@@ -1,4 +1,4 @@
-export interface TenantPreview {
+export interface TenantPreviewItem {
     id: number;
     name: string;
     email: string;

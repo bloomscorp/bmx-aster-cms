@@ -28,6 +28,18 @@ export class DefaultRoutes {
 		pathMatch: 'full'
 	};
 
+	public static readonly MANAGE_PRODUCTS: Route = {
+		path: AsterRequestMapper.MANAGE_PRODUCTS,
+		loadComponent: () => import('../../product/product-listing/product-listing.component').then(m => m.ProductListingComponent),
+		pathMatch: 'full'
+	};
+
+	public static readonly PRODUCT_DETAILS: Route = {
+		path: AsterRequestMapper.PRODUCT_DETAILS,
+		loadComponent: () => import('../../product/product-details/product-details.component').then(m => m.ProductDetailsComponent),
+		pathMatch: 'full'
+	}
+
 	public static readonly BASE: Route = {
 		path: AsterRequestMapper.BASE_RELATIVE_URL,
 		redirectTo: AsterRequestMapper.LOGIN,
@@ -50,6 +62,9 @@ export class DefaultRoutes {
 		DefaultRoutes.LOGIN,
 		DefaultRoutes.DASHBOARD,
 		DefaultRoutes.MANAGE_USERS,
+		DefaultRoutes.USER_DETAILS,
+		DefaultRoutes.MANAGE_PRODUCTS,
+		DefaultRoutes.PRODUCT_DETAILS,
 		DefaultRoutes.NOT_FOUND,
 		DefaultRoutes.ANY_URL,
 	];

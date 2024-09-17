@@ -1,1 +1,74 @@
-<p>product-details works!</p>
+<div class="container mx-auto py-10">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+		<!-- Product Images -->
+		<div class="flex flex-col space-y-4">
+			<img class="w-full rounded-lg" src="https://tailwindui.com/img/ecommerce-images/product-page-01-featured-product-shot.jpg" alt="Basic Tee">
+			<div class="grid grid-cols-3 gap-4">
+				<img class="w-full rounded-lg" src="https://tailwindui.com/img/ecommerce-images/product-page-01-product-shot-01.jpg" alt="Basic Tee">
+				<img class="w-full rounded-lg" src="https://tailwindui.com/img/ecommerce-images/product-page-01-featured-product-shot.jpg" alt="Basic Tee">
+				<img class="w-full rounded-lg" src="https://tailwindui.com/img/ecommerce-images/product-page-01-product-shot-02.jpg" alt="Basic Tee">
+			</div>
+		</div>
+
+		<!-- Product Details -->
+		<div class="space-y-6">
+			<!-- Product Title and Price -->
+			<div>
+				<h1 class="text-3xl font-bold text-gray-900">Basic Tee</h1>
+				<div class="mt-2 flex items-center">
+					<span class="text-xl font-semibold text-gray-900">₹ 1999</span>
+					<span class="ml-4 text-yellow-500">★★★☆☆</span>
+					<a href="#" class="ml-2 text-sm text-primary-400 hover:underline">(512 reviews)</a>
+				</div>
+			</div>
+
+			<!-- Color Selector -->
+			<div>
+				<h3 class="text-sm font-medium text-gray-900">Color</h3>
+				<div class="mt-2 flex items-center space-x-3">
+					<button class="h-8 w-8 bg-gray-900 rounded-full border border-gray-300"></button>
+					<button class="h-8 w-8 bg-white rounded-full border border-gray-300"></button>
+				</div>
+			</div>
+
+			<!-- Size Selector -->
+			<div>
+				<h3 class="text-sm font-medium text-gray-900">Size</h3>
+				<div class="mt-2 flex items-center justify-start gap-2">
+					<button class="h-10 w-10 flex items-center justify-center border border-gray-300 text-sm text-gray-700 rounded-md hover:bg-gray-100">XS</button>
+					<button class="h-10 w-10 flex items-center justify-center border border-gray-300 text-sm text-gray-700 rounded-md hover:bg-gray-100">S</button>
+					<button class="h-10 w-10 flex items-center justify-center border border-gray-300 text-sm text-gray-700 rounded-md bg-primary-400 text-white">M</button>
+					<button class="h-10 w-10 flex items-center justify-center border border-gray-300 text-sm text-gray-700 rounded-md hover:bg-gray-100">L</button>
+					<button class="h-10 w-10 flex items-center justify-center border border-gray-300 text-sm text-gray-700 rounded-md hover:bg-gray-100">XL</button>
+				</div>
+			</div>
+
+			<!-- Add to Cart Button -->
+			<div>
+				<button class="w-full bg-primary-400 text-white py-3 rounded-md font-semibold hover:bg-primary-300">Edit Product</button>
+			</div>
+
+			<!-- Product Description -->
+			<div>
+				<h3 class="text-lg font-medium text-gray-900">Description</h3>
+				<p class="mt-2 text-gray-600">
+					The Basic Tee is an honest new take on a classic. The tee uses super soft, pre-shrunk cotton for true comfort and dependability. Try this new look on your body, with a specific technique that gives each tee its own look.
+				</p>
+				<p class="mt-2 text-gray-600">
+					Looking to stock your closet? The Basic Tee also comes in a 3-pack or 5-pack at a bundle discount.
+				</p>
+			</div>
+
+			<!-- Fabric and Care -->
+			<div>
+				<h3 class="text-lg font-medium text-gray-900">Features</h3>
+				<ul class="list-disc list-inside text-gray-600">
+					<li>Only the best materials</li>
+					<li>Ethically and locally made</li>
+					<li>Pre-washed and pre-shrunk</li>
+					<li>Machine wash cold with similar colors</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
