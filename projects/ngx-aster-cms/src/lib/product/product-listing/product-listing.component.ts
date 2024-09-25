@@ -5,6 +5,8 @@ import {RouterLink} from "@angular/router";
 import {ProductPreviewItemList} from "../model/product-preview-item-list";
 import {ProductPreviewItem} from "../interface/product-preview-item";
 import {AsterProductService} from "../service/aster-product-service";
+import {AsterProductListingService} from "../service/aster-product-listing.service";
+import {ProductListingScreenData} from "../interface/screen/product-listing-screen-data";
 
 @Component({
 	selector: 'aster-cms-product-listing',
@@ -19,17 +21,14 @@ import {AsterProductService} from "../service/aster-product-service";
 })
 export class ProductListingComponent implements OnInit {
 
-	@Input() heading: string = 'Manage Products';
-	@Input() subHeading: string = 'View and manage your products here';
+	public screen: ProductListingScreenData = {} as ProductListingScreenData;
 
 	public productPreviewItems: ProductPreviewItem[] = ProductPreviewItemList.productPreviewItems;
 
-	constructor(private _productService: AsterProductService) {
+	constructor(private _: AsterProductListingService) {
 	}
 
 	public ngOnInit() {
-		this._productService.concreteTest();
-		this._productService.abstractTest();
-		this._productService.abstractTest2();
+		this.screen = this._.screen;
 	}
 }
