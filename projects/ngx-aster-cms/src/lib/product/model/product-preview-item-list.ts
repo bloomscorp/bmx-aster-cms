@@ -11,7 +11,7 @@ export class ProductPreviewItemList {
 		productName: 'Transparent White Rectangular Full Rim Eyeglasses',
 		productGroup: 'spectacle',
 		productType: 'spectacle',
-		model: 'SH-0022-CEO-EG-101-TPWT'
+		sku: 'SH-0022-CEO-EG-101-TPWT'
 	};
 
 	private static readonly item2: ProductPreviewItem = {
@@ -23,7 +23,7 @@ export class ProductPreviewItemList {
 		productName: 'Silver Rectanglular Full Rim Eyeglasses',
 		productGroup: 'spectacle',
 		productType: 'spectacle',
-		model: 'SH-0013-TS-EG-3076-SLVR'
+		sku: 'SH-0013-TS-EG-3076-SLVR'
 	};
 
 

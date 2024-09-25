@@ -8,5 +8,5 @@ export interface ProductPreviewItem {
 	productName: string;
 	productGroup: string;
 	productType: string;
-	model: string;
+	sku: string;
 }

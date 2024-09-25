@@ -30,7 +30,7 @@
 						class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap flex items-center gap-2">
 						<img [src]="productPreview.heroImage" [alt]="productPreview.productName"
 							 class="w-10 h-10 rounded-full">
-						<div>{{ productPreview.model }}</div>
+						<div>{{ productPreview.sku }}</div>
 					</th>
 					<td class="px-6 py-2">
 						{{ productPreview.productType }}
@@ -42,7 +42,7 @@
 						{{ productPreview.stock }}
 					</td>
 					<td class="px-6 py-2 text-right">
-						<a routerLink="/product/{{productPreview.productGroup}}/{{productPreview.model}}"
+						<a routerLink="/product/{{productPreview.productGroup}}/{{productPreview.sku}}"
 						   class="font-medium text-blue-600 hover:underline"
 						   target="_blank">
 							<mat-icon>open_in_new</mat-icon>
