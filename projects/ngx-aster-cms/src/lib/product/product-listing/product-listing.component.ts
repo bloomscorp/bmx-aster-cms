@@ -4,9 +4,8 @@ import {MatIcon} from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
 import {ProductPreviewItemList} from "../model/product-preview-item-list";
 import {ProductPreviewItem} from "../interface/product-preview-item";
-import {AsterProductService} from "../service/aster-product-service";
-import {AsterProductListingService} from "../service/aster-product-listing.service";
 import {ProductListingScreenData} from "../interface/screen/product-listing-screen-data";
+import {AsterProductListingService} from "../service/aster-product-listing-service";
 
 @Component({
 	selector: 'aster-cms-product-listing',

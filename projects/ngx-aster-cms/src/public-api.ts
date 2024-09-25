@@ -22,5 +22,5 @@ export * from './lib/dashboard/model/aster-dashboard-items';
 
 /* product */
 export * from './lib/product/service/aster-product-service';
-export * from './lib/product/service/aster-product-listing.service';
-export * from './lib/product/service/aster-product-details.service';
+export * from './lib/product/service/aster-product-listing-service';
+export * from './lib/product/service/aster-product-details-service';

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AsterProductDetailsService} from "../service/aster-product-details.service";
+import {AsterProductDetailsService} from "../service/aster-product-details-service";
 
 @Component({
 	selector: 'aster-cms-product-details',
