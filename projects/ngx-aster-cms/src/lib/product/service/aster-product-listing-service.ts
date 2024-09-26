@@ -1,6 +1,6 @@
 import {ProductListingScreenData} from "../interface/screen/product-listing-screen-data";
 
-export class AsterProductListingService  {
+export abstract class AsterProductListingService<P> {
 
 	public screen: ProductListingScreenData = {
 		header: {
@@ -8,4 +8,8 @@ export class AsterProductListingService  {
 			subtitle: 'View and manage your products here'
 		}
 	};
+
+	public productList: P[] = [];
+
+	public abstract fetchProductList(): void;
 }

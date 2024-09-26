@@ -18,16 +18,17 @@ import {AsterProductListingService} from "../service/aster-product-listing-servi
 	templateUrl: './product-listing.component.html',
 	styleUrl: './product-listing.component.scss'
 })
-export class ProductListingComponent implements OnInit {
+export class ProductListingComponent<P> implements OnInit {
 
 	public screen: ProductListingScreenData = {} as ProductListingScreenData;
 
 	public productPreviewItems: ProductPreviewItem[] = ProductPreviewItemList.productPreviewItems;
 
-	constructor(private _: AsterProductListingService) {
+	constructor(private _: AsterProductListingService<P>) {
 	}
 
 	public ngOnInit() {
 		this.screen = this._.screen;
+		this._.fetchProductList();
 	}
 }

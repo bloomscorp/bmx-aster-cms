@@ -1,4 +1,2 @@
-import {AbstractProductService} from "./abstract-product-service";
-
-export class AsterProductService extends AbstractProductService {
+export abstract class AsterProductService {
 }

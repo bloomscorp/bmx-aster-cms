@@ -1,2 +1,2 @@
-export class AsterProductDetailsService {
+export abstract class AsterProductDetailsService {
 }
