@@ -1,13 +1,12 @@
 import {Inject, Injectable} from '@angular/core';
-import {AsterConfigurationService} from "../configuration/aster-configuration.service";
 import {LocalStorageService} from "../../../../aster-cms-demo/src/app/local-storage.service";
-import {PasteboxService} from "../../../../aster-cms-demo/src/app/pastebox.service";
 import {JwtHelperService} from "@auth0/angular-jwt";
 import {ConstantService} from "../../../../aster-cms-demo/src/app/constant.service";
 import {ConfigurationService} from "../../../../aster-cms-demo/src/app/configuration.service";
 import {MessageService} from "../../../../aster-cms-demo/src/app/message.service";
 import {HttpHeaders} from "@angular/common/http";
 import {ASTER_CONFIG, AsterConfig} from "../configuration/aster-config";
+import {areStringsEqual, arrayLength, isEmptyString, valueExists} from "bmx-pastebox";
 
 @Injectable({
 	providedIn: 'root'
@@ -17,7 +16,6 @@ export class JWTService {
 	constructor(
 		@Inject(ASTER_CONFIG) private _config: AsterConfig,
 		private _localStore: LocalStorageService,
-		private _pastebox: PasteboxService
 	) {
 	}
 
@@ -47,7 +45,7 @@ export class JWTService {
 
 	private retrieveChunk(storeKey: string): string {
 		const chunk: string = this._localStore.retrieve(storeKey);
-		return this._pastebox.isEmptyString(chunk) ? '' : chunk;
+		return isEmptyString(chunk) ? '' : chunk;
 	}
 
 	private storeJWT(token: string): void {
@@ -78,11 +76,11 @@ export class JWTService {
 
 	private isDomainAllowed(url: string): boolean {
 
-		if (this._pastebox.isEmptyString(url)) return false;
+		if (isEmptyString(url)) return false;
 
 		const protocolSplitted: string[] = url.split('//');
 
-		if (!this._pastebox.arrayLength(protocolSplitted, 2)) return false;
+		if (!arrayLength(protocolSplitted, 2)) return false;
 
 		const hasPort: boolean = protocolSplitted[1].split(':').length > 1;
 		const domainSplitted: string[] = protocolSplitted[1].split(hasPort ? ':' : '/');
@@ -91,17 +89,17 @@ export class JWTService {
 		if (domainSplitted.length < 2) return false;
 		if (hasPort) portSplitted = domainSplitted[1].split('/');
 
-		if (!this._pastebox.areStringsEqual(
+		if (!areStringsEqual(
 			protocolSplitted[0],
 			ConfigurationService.PROTOCOL.substring(0, ConfigurationService.PROTOCOL.length - 2)
 		)) return false;
 
-		if (!this._pastebox.areStringsEqual(
+		if (!areStringsEqual(
 			domainSplitted[0],
 			ConfigurationService.DOMAIN
 		)) return false;
 
-		return hasPort ? this._pastebox.areStringsEqual(
+		return hasPort ? areStringsEqual(
 			portSplitted[0],
 			ConfigurationService.API_PORT.substring(1, ConfigurationService.API_PORT.length)
 		) : true;
@@ -138,7 +136,7 @@ export class JWTService {
 
 			const token: string = this.retrieveJWT();
 
-			if (this._pastebox.isEmptyString(token)) return false;
+			if (isEmptyString(token)) return false;
 			if (this._jwtHelper.isTokenExpired(token)) return false;
 
 			this._jwtToken = token;
@@ -175,7 +173,7 @@ export class JWTService {
 				JWTService.prepareSchemeToken(this.retrieveJWT());
 		}
 
-		if (!this._pastebox.valueExists(this._jwtToken))
+		if (!valueExists(this._jwtToken))
 			authorizationToken = ConstantService.NO_JWT_TOKEN;
 
 		if (contentJSON) {
