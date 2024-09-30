@@ -7,11 +7,11 @@ import {AsterConfigurationService} from "../../configuration/aster-configuration
 export class TransmissionHelperService {
 
 	constructor(
-		public config: AsterConfigurationService
+		private _config: AsterConfigurationService
 	) {
 	}
 
 	public prepareEndpoint(endpoint: string): string {
-		return `${this.config.serverEndpoint}/${endpoint}`;
+		return `${this._config.serverEndpoint}/${endpoint}`;
 	}
 }

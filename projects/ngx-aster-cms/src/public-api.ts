@@ -25,6 +25,9 @@ export * from './lib/product/service/aster-product-service';
 export * from './lib/product/service/aster-product-listing-service';
 export * from './lib/product/service/aster-product-details-service';
 
+/* security */
+export * from './lib/authentication/jwt.service';
+
 /* transmission */
 export * from './lib/raintree/transmission/crud-transmission-service';
 export * from './lib/raintree/transmission/transmission-helper.service';

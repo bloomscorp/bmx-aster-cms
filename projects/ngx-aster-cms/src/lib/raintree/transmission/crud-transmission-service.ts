@@ -1,7 +1,6 @@
 import {BmxTransmissionService} from "bmx-transmission";
-import {JWTService} from "../../../../../aster-cms-demo/src/app/authentication/jwt.service";
-import {Constant} from "../../support/constant";
 import {RaintreeResponse} from "bmx-transmission/lib/raintree/interface/raintree-response";
+import {JWTService} from "../../authentication/jwt.service";
 
 export abstract class CRUDTransmissionService<E> {
 

@@ -1,11 +1,11 @@
 import {Inject, Injectable} from '@angular/core';
 import {CRUDTransmissionService} from "../crud-transmission-service";
 import {BmxTransmissionService} from "bmx-transmission";
-import {JWTService} from "../../../../../../aster-cms-demo/src/app/authentication/jwt.service";
 import {RaintreePayload} from "../../interface/raintree-payload";
 import {Constant} from "../../../support/constant";
 import {TransmissionHelperService} from "../transmission-helper.service";
 import {AsterRequestMapper} from "../../../route/model/aster-request-mapper";
+import {JWTService} from "../../../authentication/jwt.service";
 
 @Injectable({
 	providedIn: 'root'

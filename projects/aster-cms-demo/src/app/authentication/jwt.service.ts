@@ -182,6 +182,5 @@ export class JWTService {
                 Authorization: authorizationToken
             });
         }
-
     }
 }
