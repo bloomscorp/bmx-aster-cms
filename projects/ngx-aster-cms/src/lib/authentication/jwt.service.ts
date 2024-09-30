@@ -1,12 +1,12 @@
 import {Inject, Injectable} from '@angular/core';
 import {JwtHelperService} from "@auth0/angular-jwt";
 import {ConfigurationService} from "../../../../aster-cms-demo/src/app/configuration.service";
-import {MessageService} from "../../../../aster-cms-demo/src/app/message.service";
 import {HttpHeaders} from "@angular/common/http";
 import {ASTER_CONFIG, AsterConfig} from "../configuration/aster-config";
 import {areStringsEqual, arrayLength, isEmptyString, valueExists} from "bmx-pastebox";
 import {LocalStorageService} from "../support/local-storage.service";
 import {Constant} from "../support/constant";
+import {Message} from "../support/message";
 
 @Injectable({
 	providedIn: 'root'
@@ -111,7 +111,7 @@ export class JWTService {
 		this._expirationDate = this._jwtHelper.getTokenExpirationDate(token);
 		this._isExpired = this._jwtHelper.isTokenExpired(token);
 
-		if (this._isExpired) throw new Error(MessageService.EXPIRED_TOKEN_RECEIVED);
+		if (this._isExpired) throw new Error(Message.EXPIRED_TOKEN_RECEIVED);
 		else this.storeJWT(token);
 	}
 
