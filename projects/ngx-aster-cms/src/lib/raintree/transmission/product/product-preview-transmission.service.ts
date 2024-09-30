@@ -2,9 +2,8 @@ import {Injectable} from '@angular/core';
 import {CRUDTransmissionService} from "../crud-transmission-service";
 import {BmxTransmissionService} from "bmx-transmission";
 import {JWTService} from "../../../../../../aster-cms-demo/src/app/authentication/jwt.service";
-import {ToastService} from "../../../../../../aster-cms-demo/src/app/toast.service";
-import {GenericDataValidatorService} from "../../../../../../aster-cms-demo/src/app/generic-data-validator.service";
 import {RaintreePayload} from "../../interface/raintree-payload";
+import {Constant} from "../../../support/constant";
 
 @Injectable({
 	providedIn: 'root'
@@ -33,7 +32,9 @@ export class ProductPreviewTransmissionService<P> extends CRUDTransmissionServic
 			onPostExecute,
 			onSuccess,
 			onFailure,
-			onComplete
+			onComplete,
+			'',
+			Constant.PRODUCT_PREVIEW_LIST
 		);
 	}
 

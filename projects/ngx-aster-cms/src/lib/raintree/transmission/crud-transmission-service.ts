@@ -16,17 +16,19 @@ export abstract class CRUDTransmissionService<E> {
 		onPostExecute: (response: E[]) => void,
 		onSuccess: (response: E[]) => void,
 		onFailure: (error: string) => void,
-		onComplete: () => void
+		onComplete: () => void,
+		url: string,
+		key: string
 	): void {
 		this._transmission.executeGetPayload<P, E[]>(
-			'',
-			this._jwt.injectToken(''),
+			url,
+			this._jwt.injectToken(url),
 			onPreExecute,
 			onPostExecute,
 			onSuccess,
 			onFailure,
 			onComplete,
-			`data.${Constant.PRODUCT_PREVIEW_LIST}`
+			`data.${key}`
 		);
 	}
 
