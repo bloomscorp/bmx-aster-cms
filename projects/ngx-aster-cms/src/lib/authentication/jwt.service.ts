@@ -1,12 +1,12 @@
 import {Inject, Injectable} from '@angular/core';
 import {JwtHelperService} from "@auth0/angular-jwt";
-import {ConstantService} from "../../../../aster-cms-demo/src/app/constant.service";
 import {ConfigurationService} from "../../../../aster-cms-demo/src/app/configuration.service";
 import {MessageService} from "../../../../aster-cms-demo/src/app/message.service";
 import {HttpHeaders} from "@angular/common/http";
 import {ASTER_CONFIG, AsterConfig} from "../configuration/aster-config";
 import {areStringsEqual, arrayLength, isEmptyString, valueExists} from "bmx-pastebox";
 import {LocalStorageService} from "../support/local-storage.service";
+import {Constant} from "../support/constant";
 
 @Injectable({
 	providedIn: 'root'
@@ -37,7 +37,7 @@ export class JWTService {
 	}
 
 	private static prepareSchemeToken(token: string): string {
-		return ConstantService.AUTHORIZATION_SCHEME + token;
+		return Constant.AUTHORIZATION_SCHEME + token;
 	}
 
 	private storeChunk(chunk: string, storeKey: string): void {
@@ -167,15 +167,15 @@ export class JWTService {
 
 		let authorizationToken: string;
 
-		if (!this.isDomainAllowed(url)) authorizationToken = ConstantService.DOMAIN_NOT_ALLOWED;
+		if (!this.isDomainAllowed(url)) authorizationToken = Constant.DOMAIN_NOT_ALLOWED;
 		else {
 			authorizationToken = !this.isJWTUnexpired(true) ?
-				ConstantService.EXPIRED_TOKEN :
+				Constant.EXPIRED_TOKEN :
 				JWTService.prepareSchemeToken(this.retrieveJWT());
 		}
 
 		if (!valueExists(this._jwtToken))
-			authorizationToken = ConstantService.NO_JWT_TOKEN;
+			authorizationToken = Constant.NO_JWT_TOKEN;
 
 		if (contentJSON) {
 			return new HttpHeaders({
