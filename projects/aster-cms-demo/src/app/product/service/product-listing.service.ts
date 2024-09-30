@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {AsterProductListingService} from "../../../../../ngx-aster-cms/src/lib/product/service/aster-product-listing-service";
 import {ProductListingScreenData} from "../../../../../ngx-aster-cms/src/lib/product/interface/screen/product-listing-screen-data";
 import {ProductPreview} from "../interface/product-preview";
-import {ProductPreviewTransmissionService} from '../../raintree/transmission/product-preview-transmission.service';
+import {ProductPreviewTransmissionService} from "../../raintree/transmission/product-preview-transmission.service";
 
 @Injectable({
     providedIn: 'root'
