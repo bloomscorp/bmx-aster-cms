@@ -19,6 +19,7 @@ export interface AsterConfig {
 			key3: string,
 			key4: string,
 			key5: string
-		}
+		},
+		successRoute: string
 	}
 }

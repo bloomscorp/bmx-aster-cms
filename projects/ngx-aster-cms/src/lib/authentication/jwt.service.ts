@@ -1,5 +1,4 @@
 import {Inject, Injectable} from '@angular/core';
-import {LocalStorageService} from "../../../../aster-cms-demo/src/app/local-storage.service";
 import {JwtHelperService} from "@auth0/angular-jwt";
 import {ConstantService} from "../../../../aster-cms-demo/src/app/constant.service";
 import {ConfigurationService} from "../../../../aster-cms-demo/src/app/configuration.service";
@@ -7,6 +6,7 @@ import {MessageService} from "../../../../aster-cms-demo/src/app/message.service
 import {HttpHeaders} from "@angular/common/http";
 import {ASTER_CONFIG, AsterConfig} from "../configuration/aster-config";
 import {areStringsEqual, arrayLength, isEmptyString, valueExists} from "bmx-pastebox";
+import {LocalStorageService} from "../support/local-storage.service";
 
 @Injectable({
 	providedIn: 'root'
@@ -15,6 +15,7 @@ export class JWTService {
 
 	constructor(
 		@Inject(ASTER_CONFIG) private _config: AsterConfig,
+		// TODO: localStorage needs to come from ngbase -> send config from library to library
 		private _localStore: LocalStorageService,
 	) {
 	}
