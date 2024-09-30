@@ -23,8 +23,8 @@ export class AsterConfigurationService {
 		return this.config.production ? this.config.domain.production : this.config.domain.dev;
 	}
 
-	public get port(): number {
-		return this.config.production ? this.config.port.production : this.config.port.dev;
+	public get port(): string {
+		return this.config.production ? String(this.config.port.production) : String(this.config.port.dev);
 	}
 
 	public get serverEndpoint(): string {

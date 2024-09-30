@@ -1,12 +1,12 @@
 import {Inject, Injectable} from '@angular/core';
 import {JwtHelperService} from "@auth0/angular-jwt";
-import {ConfigurationService} from "../../../../aster-cms-demo/src/app/configuration.service";
 import {HttpHeaders} from "@angular/common/http";
 import {ASTER_CONFIG, AsterConfig} from "../configuration/aster-config";
 import {areStringsEqual, arrayLength, isEmptyString, valueExists} from "bmx-pastebox";
 import {LocalStorageService} from "../support/local-storage.service";
 import {Constant} from "../support/constant";
 import {Message} from "../support/message";
+import {AsterConfigurationService} from "../configuration/aster-configuration.service";
 
 @Injectable({
 	providedIn: 'root'
@@ -15,6 +15,7 @@ export class JWTService {
 
 	constructor(
 		@Inject(ASTER_CONFIG) private _config: AsterConfig,
+		private _asterConfiguration: AsterConfigurationService,
 		// TODO: localStorage needs to come from ngbase -> send config from library to library
 		private _localStore: LocalStorageService,
 	) {
@@ -92,17 +93,17 @@ export class JWTService {
 
 		if (!areStringsEqual(
 			protocolSplitted[0],
-			ConfigurationService.PROTOCOL.substring(0, ConfigurationService.PROTOCOL.length - 2)
+			this._asterConfiguration.protocol.substring(0, this._asterConfiguration.protocol.length - 2)
 		)) return false;
 
 		if (!areStringsEqual(
 			domainSplitted[0],
-			ConfigurationService.DOMAIN
+			this._asterConfiguration.domain
 		)) return false;
 
 		return hasPort ? areStringsEqual(
 			portSplitted[0],
-			ConfigurationService.API_PORT.substring(1, ConfigurationService.API_PORT.length)
+			this._asterConfiguration.port.substring(1, this._asterConfiguration.port.length)
 		) : true;
 	}
 
