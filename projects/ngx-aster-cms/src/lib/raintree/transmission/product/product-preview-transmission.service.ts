@@ -1,9 +1,11 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {CRUDTransmissionService} from "../crud-transmission-service";
 import {BmxTransmissionService} from "bmx-transmission";
 import {JWTService} from "../../../../../../aster-cms-demo/src/app/authentication/jwt.service";
 import {RaintreePayload} from "../../interface/raintree-payload";
 import {Constant} from "../../../support/constant";
+import {TransmissionHelperService} from "../transmission-helper.service";
+import {AsterRequestMapper} from "../../../route/model/aster-request-mapper";
 
 @Injectable({
 	providedIn: 'root'
@@ -13,6 +15,7 @@ export class ProductPreviewTransmissionService<P> extends CRUDTransmissionServic
 	constructor(
 		public transmission: BmxTransmissionService,
 		public jwt: JWTService,
+		private _helper: TransmissionHelperService
 	) {
 		super(
 			transmission,
@@ -33,7 +36,7 @@ export class ProductPreviewTransmissionService<P> extends CRUDTransmissionServic
 			onSuccess,
 			onFailure,
 			onComplete,
-			'',
+			this._helper.prepareEndpoint(AsterRequestMapper.GET_PRODUCT_PREVIEW),
 			Constant.PRODUCT_PREVIEW_LIST
 		);
 	}

@@ -12,6 +12,10 @@ export class AsterRequestMapper {
 	public static readonly MANAGE_ORDERS: string = 'manage-orders';
 	public static readonly ORDER_DETAILS: string = 'order/:orderId';
 
+	/* API ENDPOINTS - PRODUCT */
+	public static readonly GET_PRODUCT_PREVIEW: string = 'get/product-preview-list';
+
+
 	private constructor() {
 	}
 
