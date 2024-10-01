@@ -1,4 +1,4 @@
-import { OrderItemList } from './order-item-list';
+import {OrderItemList} from './order-item-list';
 
 describe('OrderItemList', () => {
   it('should create an instance', () => {

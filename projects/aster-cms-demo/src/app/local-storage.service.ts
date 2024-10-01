@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { PasteboxService } from './pastebox.service';
+import {Injectable} from '@angular/core';
+import {PasteboxService} from './pastebox.service';
 import {RequestMapperService} from './request-mapper.service';
 
 @Injectable({

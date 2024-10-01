@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { AsterConfigurationService } from './aster-configuration.service';
+import {AsterConfigurationService} from './aster-configuration.service';
 
 describe('AsterConfigurationService', () => {
   let service: AsterConfigurationService;

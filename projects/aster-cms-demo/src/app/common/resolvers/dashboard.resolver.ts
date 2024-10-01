@@ -1,6 +1,6 @@
 import {ActivatedRouteSnapshot, ResolveFn, RouterStateSnapshot} from '@angular/router';
 import {inject} from "@angular/core";
-import {AsterDashboardMapperService, AsterDashboardItems} from 'ngx-aster-cms';
+import {AsterDashboardItems, AsterDashboardMapperService} from 'ngx-aster-cms';
 
 
 export const dashboardResolver: ResolveFn<boolean> = (

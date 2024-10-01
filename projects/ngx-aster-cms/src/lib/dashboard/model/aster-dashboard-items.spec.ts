@@ -1,4 +1,4 @@
-import { AsterDashboardItems } from './aster-dashboard-items';
+import {AsterDashboardItems} from './aster-dashboard-items';
 
 describe('AsterDashboardItems', () => {
   it('should create an instance', () => {

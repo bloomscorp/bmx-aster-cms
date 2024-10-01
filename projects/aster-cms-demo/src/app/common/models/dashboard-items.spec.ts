@@ -1,4 +1,4 @@
-import { DashboardItems } from './dashboard-items';
+import {DashboardItems} from './dashboard-items';
 
 describe('DashboardItems', () => {
   it('should create an instance', () => {

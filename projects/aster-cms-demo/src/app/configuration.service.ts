@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from '../environments/environment';
 
 @Injectable({
@@ -17,14 +17,14 @@ export class ConfigurationService {
 	public static readonly DOMAIN: string = ConfigurationService.PRODUCTION
 		? ConfigurationService.DOMAIN_PRODUCTION : ConfigurationService.DOMAIN_LOCALHOST;
 	public static readonly SERVER_PORT: string = ConfigurationService.PRODUCTION ? '' : ':8089';
-	
-    
+
+
 	public static readonly API_PORT: string = ConfigurationService.FAKE_API ? ':3004' : ConfigurationService.SERVER_PORT;
 	public static readonly FRONTEND_PORT: string = ':4200';
 	public static readonly SERVER_ENDPOINT: string = ConfigurationService.PROTOCOL +
 		ConfigurationService.DOMAIN +
 		ConfigurationService.SERVER_PORT;
-	
+
 	public static readonly API_ENDPOINT: string = ConfigurationService.PROTOCOL +
 		ConfigurationService.DOMAIN +
 		ConfigurationService.API_PORT;

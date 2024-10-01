@@ -1,4 +1,4 @@
-import { TenantPreviewItemList } from './tenant-preview-item-list';
+import {TenantPreviewItemList} from './tenant-preview-item-list';
 
 describe('TenantPreviewItemList', () => {
   it('should create an instance', () => {

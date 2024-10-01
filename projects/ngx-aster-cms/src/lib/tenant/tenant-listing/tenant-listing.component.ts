@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {HeaderSectionComponent} from "../../component-library/header/header-section/header-section.component";
-import { TenantPreviewItemList } from '../model/tenant-preview-item-list';
-import { TenantPreviewItem } from '../interface/tenant-preview-item';
+import {TenantPreviewItemList} from '../model/tenant-preview-item-list';
+import {TenantPreviewItem} from '../interface/tenant-preview-item';
 import {RouterLink} from "@angular/router";
 import {MatIcon} from "@angular/material/icon";
 

@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { AsterDashboardMapperService } from './aster-dashboard-mapper.service';
+import {AsterDashboardMapperService} from './aster-dashboard-mapper.service';
 
 describe('AsterDashboardMapperService', () => {
   let service: AsterDashboardMapperService;

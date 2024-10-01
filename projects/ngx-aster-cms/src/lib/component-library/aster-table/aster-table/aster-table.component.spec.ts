@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AsterTableComponent } from './aster-table.component';
+import {AsterTableComponent} from './aster-table.component';
 
 describe('AsterTableComponent', () => {
   let component: AsterTableComponent;

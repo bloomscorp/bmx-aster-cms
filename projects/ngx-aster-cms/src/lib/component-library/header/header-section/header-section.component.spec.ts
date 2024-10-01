@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HeaderSectionComponent } from './header-section.component';
+import {HeaderSectionComponent} from './header-section.component';
 
 describe('HeaderSectionComponent', () => {
   let component: HeaderSectionComponent;
@@ -11,7 +11,7 @@ describe('HeaderSectionComponent', () => {
       imports: [HeaderSectionComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(HeaderSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
