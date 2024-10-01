@@ -1,5 +1,4 @@
 import {Inject, Injectable} from '@angular/core';
-import {RequestMapperService} from "../../../../aster-cms-demo/src/app/request-mapper.service";
 import {ASTER_CONFIG, AsterConfig} from "../configuration/aster-config";
 import {isEmptyString} from "bmx-pastebox";
 
@@ -40,6 +39,6 @@ export class LocalStorageService {
 
 	public retrieveOnAuthSuccessRoute(): string {
 		const route: string = this.retrieve(this._KEY_AUTH_SUCCESS_ROUTE);
-		return isEmptyString(route) ? RequestMapperService.ROOT_URL : route;
+		return isEmptyString(route) ? '/' : route;
 	}
 }
