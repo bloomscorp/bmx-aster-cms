@@ -1,24 +1,25 @@
-import {Injectable} from '@angular/core';
-import {CRUDTransmissionService} from "../crud-transmission-service";
+import { Injectable } from '@angular/core';
+import { CRUDTransmissionService } from '../crud-transmission-service';
+import { BmxTransmissionService } from 'bmx-transmission';
+import { JWTService } from '../../../authentication/jwt.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
-export class ProductTransmissionService extends CRUDTransmissionService {
-
-	constructor() {
-		super();
+export class ProductTransmissionService<E> extends CRUDTransmissionService<E> {
+	
+    constructor(
+		private transmission: BmxTransmissionService,
+		private jwt: JWTService
+	) {
+		super(transmission, jwt);
 	}
 
-	create(): void {
-	}
+	create(): void {}
 
-	delete(): void {
-	}
+	delete(): void {}
 
-	read(): void {
-	}
+	read(): void {}
 
-	update(): void {
-	}
+	update(): void {}
 }
