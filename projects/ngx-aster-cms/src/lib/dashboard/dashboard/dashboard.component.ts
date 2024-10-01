@@ -34,6 +34,5 @@ export class DashboardComponent implements OnInit {
 	}
 
 	public ngOnInit(): void {
-		console.log(this._dashboard.test);
 	}
 }

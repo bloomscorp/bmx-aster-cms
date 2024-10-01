@@ -1,13 +1,13 @@
 {
 	"name": "@bloomscorp/ngx-aster-cms",
-	"version": "0.0.39",
+	"version": "0.0.40",
 	"peerDependencies": {
 		"@angular/common": "^18.2.1",
 		"@angular/core": "^18.2.1",
 		"@angular/material": "^18.2.1",
 		"@auth0/angular-jwt": "^5.2.0",
 		"bmx-pastebox": "^1.0.14",
-		"bmx-transmission": "^0.0.11",
+		"bmx-transmission": "^0.0.12"
 
 	},
 	"dependencies": {

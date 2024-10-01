@@ -28,7 +28,7 @@
 		"@bloomscorp/ngbase": "^0.0.6",
 		"bmx-pastebox": "^1.0.14",
 		"bmx-toast": "^2.0.10",
-		"bmx-transmission": "^0.0.11",
+		"bmx-transmission": "^0.0.12",
 		"express": "^4.18.2",
 		"rxjs": "~7.8.0",
 		"tslib": "^2.3.0",

@@ -1,5 +1,4 @@
 import {ProductListingScreenData} from "../interface/screen/product-listing-screen-data";
-import {TableColumnData} from "../../component-library/aster-table/interface/table-column-data";
 import {TableData} from "../../component-library/aster-table/interface/table-data";
 
 export abstract class AsterProductListingService<P> {
@@ -11,9 +10,33 @@ export abstract class AsterProductListingService<P> {
 		}
 	};
 
-	public isLoading: boolean = true;
-	public table: TableData<P> = {} as TableData<P>;
-	public productList: P[] = [];
+	private _loading: boolean = true;
+	private _table: TableData<P> = {} as TableData<P>;
+	private _productList: P[] = [];
+
+	public get isLoading(): boolean {
+		return this._loading;
+	}
+
+	public set isLoading(value: boolean) {
+		this._loading = value;
+	}
+
+	public get table(): TableData<P> {
+		return this._table;
+	}
+
+	public set table(value: TableData<P>) {
+		this._table = value;
+	}
+
+	public get productList(): P[] {
+		return this._productList;
+	}
+
+	public set productList(value: P[]) {
+		this._productList = value;
+	}
 
 	public abstract fetchProductList(): void;
 	public abstract prepareProductListTable(): TableData<P>;

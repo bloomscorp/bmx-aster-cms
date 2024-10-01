@@ -27,17 +27,8 @@ export class ProductListingComponent<P> implements OnInit {
 	public screen: ProductListingScreenData = {} as ProductListingScreenData;
 
 	// public products: ProductPreview[] = ProductPreviewItemList.productPreviewItems;
-	public products: P[] = this._.productList;
 
-	public get isLoading(): boolean {
-		return this._.isLoading;
-	}
-
-	public get table(): TableData<P> {
-		return this._.table;
-	}
-
-	constructor(private _: AsterProductListingService<P>) {
+	constructor(public _: AsterProductListingService<P>) {
 	}
 
 	public ngOnInit() {
