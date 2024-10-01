@@ -103,7 +103,7 @@ export class JWTService {
 
 		return hasPort ? areStringsEqual(
 			portSplitted[0],
-			this._asterConfiguration.port.substring(1, this._asterConfiguration.port.length)
+			this._asterConfiguration.port
 		) : true;
 	}
 
