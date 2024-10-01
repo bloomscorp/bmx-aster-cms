@@ -9,6 +9,10 @@ export * from './lib/authentication/login/login.component';
 /* security */
 export * from './lib/authentication/jwt.service';
 
+/* configuration */
+export * from './lib/configuration/aster-config';
+export * from './lib/configuration/aster-configuration.service';
+
 /* component library: aster table */
 export * from './lib/component-library/aster-table/aster-table/aster-table.component';
 export * from './lib/component-library/aster-table/interface/cell-action';
