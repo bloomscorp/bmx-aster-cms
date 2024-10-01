@@ -10,7 +10,7 @@ export class LocalStorageService {
 	constructor(@Inject(ASTER_CONFIG) private _config: AsterConfig) {
 	}
 
-	private readonly _KEY_AUTH_SUCCESS_ROUTE: string = this._config.auth.successRoute;
+	private readonly _KEY_AUTH_SUCCESS_ROUTE: string = this._config.auth.successRouteKey;
 
 	public store(key: string, value: string): void {
 		localStorage.setItem(key, value);
