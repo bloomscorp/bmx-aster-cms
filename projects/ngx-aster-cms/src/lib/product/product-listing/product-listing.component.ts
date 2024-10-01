@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {HeaderSectionComponent} from "../../component-library/header-section/header-section.component";
+import {HeaderSectionComponent} from "../../component-library/header/header-section/header-section.component";
 import {MatIcon} from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
 import {ProductPreviewItemList} from "../model/product-preview-item-list";

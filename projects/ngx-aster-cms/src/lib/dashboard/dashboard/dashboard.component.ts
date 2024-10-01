@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {NavigationComponent} from "../../navigation/navigation/navigation.component";
 import {DashboardCardComponent} from "../dashboard-card/dashboard-card.component";
 import {AsterDashboardItem} from "../interface/aster-dashboard-item";
-import {HeaderSectionComponent} from "../../component-library/header-section/header-section.component";
+import {HeaderSectionComponent} from "../../component-library/header/header-section/header-section.component";
 import {AsterDashboardMapperService} from "../service/aster-dashboard-mapper.service";
 import {DashboardService} from "../service/dashboard.service";
 
