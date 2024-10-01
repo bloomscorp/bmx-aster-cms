@@ -1,5 +1,5 @@
 import {TenantPreviewItem} from "../../tenant/interface/tenant-preview-item";
-import {ProductPreviewItem} from "../../product/interface/product-preview-item";
+import {ProductPreview} from "../../product/interface/product-preview";
 
 export interface OrderItem {
 	id: number;
@@ -9,5 +9,5 @@ export interface OrderItem {
 	amount: number;
 	orderDate: Date;
 	tenant: TenantPreviewItem;
-	productList: ProductPreviewItem[];
+	productList: ProductPreview[];
 }

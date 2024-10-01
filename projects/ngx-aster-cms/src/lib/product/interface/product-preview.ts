@@ -1,4 +1,4 @@
-export interface ProductPreviewItem {
+export interface ProductPreview {
 	[index: string]: any;
 	id: number;
 	heroImage: string;

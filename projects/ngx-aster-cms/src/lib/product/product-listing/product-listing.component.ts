@@ -3,7 +3,7 @@ import {HeaderSectionComponent} from "../../component-library/header-section/hea
 import {MatIcon} from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
 import {ProductPreviewItemList} from "../model/product-preview-item-list";
-import {ProductPreviewItem} from "../interface/product-preview-item";
+import {ProductPreview} from "../interface/product-preview";
 import {ProductListingScreenData} from "../interface/screen/product-listing-screen-data";
 import {AsterProductListingService} from "../service/aster-product-listing-service";
 
@@ -22,7 +22,8 @@ export class ProductListingComponent<P> implements OnInit {
 
 	public screen: ProductListingScreenData = {} as ProductListingScreenData;
 
-	public productPreviewItems: ProductPreviewItem[] = ProductPreviewItemList.productPreviewItems;
+	// public products: ProductPreview[] = ProductPreviewItemList.productPreviewItems;
+	public products: P[] = this._.productList;
 
 	constructor(private _: AsterProductListingService<P>) {
 	}
