@@ -1,43 +1,40 @@
-.fc-table {
+.ax-table {
 
 	background-color: #191919;
 	background-image: linear-gradient(62deg, #191919 0%, #3f3f3f 100%);
 	border-radius: 8px;
-	//max-width: 50%;
 	overflow-x: scroll;
 
-	.fc-table-headers {
+	.ax-table-headers {
 
-		.fc-table-header {
-
+		.ax-table-header {
 			font-weight: normal;
 			color: #a5a5a5;
 			border-bottom: 2px solid #4c4c4c;
-
-			@apply py-2 px-4;
+			padding: 2px 4px;
 		}
 
-		.fc-table-header-sm {
+		.ax-table-header-sm {
 			width: 80px;
 		}
 
-		.fc-table-header-md {
+		.ax-table-header-md {
 			width: 250px;
 		}
 	}
 
-	.fc-table-content {
+	.ax-table-content {
 
-		.fc-table-row {
+		.ax-table-row {
 
 			&:hover {
 
 				background-color: #9c64cf;
 				background-image: linear-gradient(62deg, #9c64cf 0%, #b58bdb 100%);
 
-				.fc-table-cell {
+				.ax-table-cell {
 
-					.fc-table-cell-action {
+					.ax-table-cell-action {
 						color: #f3ecf9;
 					}
 				}
@@ -49,35 +46,34 @@
 			}
 		}
 
-		.fc-table-cell-serial {
+		.ax-table-cell-serial {
 
 		}
 
-		.fc-table-cell {
+		.ax-table-cell {
 
 			font-weight: lighter;
 			color: #d7d7d7;
 			border-bottom: 2px solid #4c4c4c;
 			border-right: 1px dashed #3f3f3f;
+			padding: 2px 4px;
 
-			@apply py-2 px-4;
-
-			.fc-table-cell-text {
+			.ax-table-cell-text {
 				overflow: hidden;
 				white-space: nowrap;
 				text-overflow: ellipsis;
 			}
 
-			.fc-table-cell-action {
+			.ax-table-cell-action {
 				color: #b58bdb;
 			}
 		}
 
-		.fc-table-cell-sm {
+		.ax-table-cell-sm {
 			width: 80px;
 		}
 
-		.fc-table-cell-md {
+		.ax-table-cell-md {
 			width: 250px;
 		}
 	}

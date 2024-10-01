@@ -1,33 +1,33 @@
-<section class="fc-table fc-default-font fc-default-transition flex flex-col justify-start w-fit">
-	<div class="fc-table-headers flex flex-row justify-start">
-		<div *ngIf="data.columnData.numbered" class="fc-table-header fc-table-header-sm">
+<section class="ax-table ax-default-font ax-default-transition flex flex-col justify-start w-fit">
+	<div class="ax-table-headers flex flex-row justify-start">
+		<div *ngIf="data.columnData.numbered" class="ax-table-header ax-table-header-sm">
 			<span>Sl. No.</span>
 		</div>
 		<div *ngFor="let column of data.columnData.columns; index as i;"
-			 [ngClass]="column.sm ? 'fc-table-header-sm' : 'fc-table-header-md'"
-			 class="fc-table-header">
+			 [ngClass]="column.sm ? 'ax-table-header-sm' : 'ax-table-header-md'"
+			 class="ax-table-header">
 			<span>{{ column.header.title }}</span>
 		</div>
 		@if (data.columnData.actionsColumn && (data.columnData.actionsColumn.length > 0)) {
-			<span class="fc-table-header fc-table-header-sm">Action(s)</span>
+			<span class="ax-table-header ax-table-header-sm">Action(s)</span>
 		}
 	</div>
-	<div class="fc-table-content flex flex-col justify-start">
-		<div *ngFor="let row of data.content; index as i;" class="fc-table-row flex flex-row justify-start">
-			<div *ngIf="data.columnData.numbered" class="fc-table-cell fc-table-cell-sm flex flex-row justify-end">
+	<div class="ax-table-content flex flex-col justify-start">
+		<div *ngFor="let row of data.content; index as i;" class="ax-table-row flex flex-row justify-start">
+			<div *ngIf="data.columnData.numbered" class="ax-table-cell ax-table-cell-sm flex flex-row justify-end">
 				<span>{{ i + 1 }}</span>
 			</div>
 			<div *ngFor="let key of data.keys; index as j;"
-				 [ngClass]="data.columnData.columns[j].sm ? 'fc-table-cell-sm' : 'fc-table-cell-md'"
-				 class="fc-table-cell flex flex-row justify-between items-center">
-				<span class="fc-table-cell-text">{{ row[key] }}</span>
-				<div class="fc-table-cell-actions flex flex-row justify-end">
+				 [ngClass]="data.columnData.columns[j].sm ? 'ax-table-cell-sm' : 'ax-table-cell-md'"
+				 class="ax-table-cell flex flex-row justify-between items-center">
+				<span class="ax-table-cell-text">{{ row[key] }}</span>
+				<div class="ax-table-cell-actions flex flex-row justify-end">
 					<button *ngIf="data.columnData.columns[j].defaultActions?.copy"
 							mat-icon-button
 							[cdkCopyToClipboard]="row[key]"
 							[matTooltip]="'copy'"
 							[matTooltipPosition]="'above'"
-							class="fc-mat-icon-button-sm fc-table-cell-action"
+							class="ax-mat-icon-button-sm ax-table-cell-action"
 							aria-label="copy content">
 						<mat-icon>content_copy</mat-icon>
 					</button>
@@ -37,7 +37,7 @@
 								(click)="action.run(row[key], i, (data.columnData.numbered ? j + 1 : j))"
 								[matTooltip]="action.tooltip"
 								[matTooltipPosition]="'above'"
-								class="fc-mat-icon-button-sm mx-1 fc-table-cell-action"
+								class="ax-mat-icon-button-sm mx-1 ax-table-cell-action"
 								[attr.aria-label]="action.ariaLabel">
 							<mat-icon>{{ action.matIcon }}</mat-icon>
 						</button>
@@ -45,14 +45,14 @@
 				</div>
 			</div>
 			@if (data.columnData.actionsColumn && (data.columnData.actionsColumn.length > 0)) {
-				<div class="fc-table-cell fc-table-cell-sm flex flex-row justify-end">
+				<div class="ax-table-cell ax-table-cell-sm flex flex-row justify-end">
 					@for (action of data.columnData.actionsColumn; track action.id) {
 						@if (action.isRoute) {
 							<a [routerLink]="actionColumnRouteProvider(action, row, i)"
 							   (click)="actionColumnRouteClickAction(action, row, i)"
 							   [matTooltip]="action.tooltip"
 							   [matTooltipPosition]="'above'"
-							   class="fc-mat-icon-button-sm mx-1 fc-table-cell-action"
+							   class="ax-mat-icon-button-sm mx-1 ax-table-cell-action"
 							   [attr.aria-label]="action.ariaLabel">
 								<mat-icon>{{ action.matIcon }}</mat-icon>
 							</a>
@@ -61,7 +61,7 @@
 									(click)="actionColumnClickAction(action, row, i)"
 									[matTooltip]="action.tooltip"
 									[matTooltipPosition]="'above'"
-									class="fc-mat-icon-button-sm mx-1 fc-table-cell-action"
+									class="ax-mat-icon-button-sm mx-1 ax-table-cell-action"
 									[attr.aria-label]="action.ariaLabel">
 								<mat-icon>{{ action.matIcon }}</mat-icon>
 							</button>
