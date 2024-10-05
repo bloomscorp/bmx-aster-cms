@@ -1,0 +1,210 @@
+<!-- component -->
+<aster-cms-header-section [section]="'Add Product'"
+    [subSection]="'Add your product to showcase'"></aster-cms-header-section>
+
+<div class="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div class="container max-w-screen-lg mx-auto">
+        <div class=" bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+            <div class="main-body relative grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-6">
+                <div class="md:col-span-3">
+                    <label>Product Name</label>
+                    <input type="text" class="aster-add-product-input-field" />
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Product Brand</label>
+                    <input type="text" class="aster-add-product-input-field" />
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>SKU Code</label>
+                    <input type="text" class="aster-add-product-input-field" />
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Product Type</label>
+                    <input type="text" class="aster-add-product-input-field" />
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Category</label>
+                    <select class="aster-add-product-input-field">
+                        <option value="">Select Category</option>
+                        <option value="">Category 1</option>
+                        <option value="">Category 2</option>
+                        <option value="">Category 3</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Sub Category</label>
+                    <select class="aster-add-product-input-field">
+                        <option value="">Select Sub-Category</option>
+                        <option value="">Sub-Category 1</option>
+                        <option value="">Sub-Category 2</option>
+                        <option value="">Sub-Category 3</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Product Group</label>
+                    <select class="aster-add-product-input-field">
+                        <option value="">Select Product Group</option>
+                        <option value="">Group 1</option>
+                        <option value="">Group 2</option>
+                        <option value="">Group 3</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Tags</label>
+                    <ng-select [items]="[{ id: 1, name: 'Red' }, { id: 2, name: 'Green' }]" [multiple]="true"
+                        [clearable]="false" [placeholder]="''" appendTo=".main-body" bindLabel="name" bindValue="id"
+                        class="aster-add-product-input-field">
+                    </ng-select>
+                </div>
+
+                <div class="md:col-span-6">
+                    <label for="address">Description</label>
+                    @if (isBrowser) {
+                    <ckeditor [config]="editorConfig" [editor]="Editor" class="prose"></ckeditor>
+                    } @else {
+                    <textarea class="aster-add-product-input-field" placeholder="Description"></textarea>
+                    }
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Product Price</label>
+                    <input type="number" class="aster-add-product-input-field" />
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Product Stock</label>
+                    <input type="number" class="aster-add-product-input-field" />
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Related Products</label>
+                    <ng-select [items]="[{ id: 1, name: 'Product 1' }, { id: 2, name: 'Product 2' }]" [multiple]="true"
+                        [clearable]="false" [placeholder]="''" appendTo=".main-body" bindLabel="name" bindValue="id"
+                        class="aster-add-product-input-field">
+                    </ng-select>
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Recommended Products</label>
+                    <ng-select [items]="[{ id: 1, name: 'Product 1' }, { id: 2, name: 'Product 2' }]" [multiple]="true"
+                        [clearable]="false" [placeholder]="''" appendTo=".main-body" bindLabel="name" bindValue="id"
+                        class="aster-add-product-input-field">
+                    </ng-select>
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Variant Name</label>
+                    <input type="text" class="aster-add-product-input-field" />
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Variant Image Url</label>
+                    <input type="text" class="aster-add-product-input-field" />
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Other variants</label>
+                    <ng-select [items]="[{ id: 1, name: 'Product 1' }, { id: 2, name: 'Product 2' }]" [multiple]="true"
+                        [clearable]="false" [placeholder]="''" appendTo=".main-body" bindLabel="name" bindValue="id"
+                        class="aster-add-product-input-field">
+                    </ng-select>
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Hide Product</label>
+                    <select class="aster-add-product-input-field">
+                        <option value="yes" selected>Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-3">
+                    <div class="grid grid-cols-1 space-y-2">
+                        <label>Hero Image</label>
+                        <div class="flex items-center justify-center w-full">
+                            <label
+                                class="flex flex-col rounded-lg border-2 border-dashed w-full h-60 p-10 group text-center">
+                                <div class="h-full w-full text-center flex flex-col items-center justify-center">
+                                    <div class="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
+                                        <img class="has-mask h-36 object-center"
+                                            src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
+                                            alt="freepik image">
+                                    </div>
+                                    <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here</p>
+                                </div>
+                                <input type="file" class="hidden">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3">
+                    <div class="grid grid-cols-1 space-y-2">
+                        <label>Hover Image</label>
+                        <div class="flex items-center justify-center w-full">
+                            <label
+                                class="flex flex-col rounded-lg border-2 border-dashed w-full h-60 p-10 group text-center">
+                                <div class="h-full w-full text-center flex flex-col items-center justify-center">
+                                    <div class="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
+                                        <img class="has-mask h-36 object-center"
+                                            src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
+                                            alt="freepik image">
+                                    </div>
+                                    <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here</p>
+                                </div>
+                                <input type="file" class="hidden">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-6">
+                    <label>Gallery</label>
+                    <div id="file-dnd" class="mt-2 relative flex flex-col p-4 text-gray-400 border-2 border-dashed border-gray-200 rounded">
+                        <div id="dnd"
+                            class="relative flex flex-col text-gray-400 border border-gray-200 border-dashed rounded cursor-pointer">
+                            <input accept="*" type="file" multiple
+                                class="absolute inset-0 z-50 w-full h-full p-0 m-0 outline-none opacity-0 cursor-pointer" />
+                
+                            <div class="flex flex-col items-center justify-center py-2 text-center">
+                                <svg class="w-6 h-6 mr-1 text-current-50" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                <p class="m-0">Drag your files here or click in this area.</p>
+                            </div>
+                        </div>
+                
+                        <div id="file-preview-container" class="grid grid-cols-2 gap-4 mt-4 md:grid-cols-6"></div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Meta Title</label>
+                    <input type="text" class="aster-add-product-input-field" />
+                </div>
+
+                <div class="md:col-span-3">
+                    <label>Meta Description</label>
+                    <input type="text" class="aster-add-product-input-field" />
+                </div>
+
+                <div class="md:col-span-6 text-right">
+                    <div class="inline-flex items-end">
+                        <button
+                            class="bg-primary-400 hover:bg-primary-300 text-white font-bold py-2 px-4 rounded">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
