@@ -1,6 +1,14 @@
 import {TableData} from "../../component-library/aster-table/interface/table-data";
+import {OrderListingScreenData} from "../interface/screen/order-listing-screen-data";
 
 export abstract class AsterOrderListingService<O> {
+
+	public screen: OrderListingScreenData = {
+		header: {
+			title: 'Manage Orders',
+			subtitle: 'View and manage your orders here'
+		}
+	};
 
 	private _loading: boolean = true;
 	private _table: TableData<O> = {} as TableData<O>;
