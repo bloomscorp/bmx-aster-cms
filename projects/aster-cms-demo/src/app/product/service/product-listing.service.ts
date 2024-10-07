@@ -3,6 +3,7 @@ import {AsterProductListingService} from "../../../../../ngx-aster-cms/src/lib/p
 import {ProductListingScreenData} from "../../../../../ngx-aster-cms/src/lib/product/interface/screen/product-listing-screen-data";
 import {ProductPreview} from "../interface/product-preview";
 import {ProductPreviewTransmissionService} from "../../raintree/transmission/product-preview-transmission.service";
+import {TableData} from "../../../../../ngx-aster-cms/src/lib/component-library/aster-table/interface/table-data";
 
 @Injectable({
     providedIn: 'root'
@@ -33,4 +34,8 @@ export class ProductListingService extends AsterProductListingService<ProductPre
             () => { }
         )
     }
+
+	prepareProductListTable(): TableData<ProductPreview> {
+		return {} as TableData<ProductPreview>;
+	}
 }
