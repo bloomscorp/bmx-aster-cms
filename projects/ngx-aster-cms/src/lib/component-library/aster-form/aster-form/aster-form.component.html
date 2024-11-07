@@ -1,3 +1,5 @@
 <section class="ax-form">
-
+	<div *ngFor="let input of data.inputs; index as i;">
+		<p>{{ input.key }}</p>
+	</div>
 </section>

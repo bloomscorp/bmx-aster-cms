@@ -1,10 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AsterForm} from "../interface/aster-form";
+import {NgForOf} from "@angular/common";
 
 @Component({
 	selector: 'aster-form',
 	standalone: true,
-	imports: [],
+	imports: [
+		NgForOf
+	],
 	templateUrl: './aster-form.component.html',
 	styleUrl: './aster-form.component.scss'
 })
