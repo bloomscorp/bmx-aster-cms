@@ -7,18 +7,14 @@ import {AsterProductListingService} from "../../../ngx-aster-cms/src/lib/product
 import {ProductListingService} from "./product/service/product-listing.service";
 import {AsterOrderListingService} from "../../../ngx-aster-cms/src/lib/order/service/aster-order-listing-service";
 import {OrderListingService} from "./order/service/order-listing.service";
+import {provideHttpClient} from "@angular/common/http";
+import {asterServiceProviders} from "./aster-service-providers";
 
 export const appConfig: ApplicationConfig = {
 	providers: [
 		provideRouter(routes),
 		provideClientHydration(),
-		{
-			provide: AsterProductListingService,
-			useClass: ProductListingService
-		},
-		{
-			provide: AsterOrderListingService,
-			useClass: OrderListingService
-		}
+		provideHttpClient(),
+		...asterServiceProviders,
 	]
 };
