@@ -1,5 +1,16 @@
-<section class="ax-form">
-	<div *ngFor="let input of data.inputs; index as i;">
-		<p>{{ input.key }}</p>
+<section class="ax-form min-h-screen bg-gray-100 flex items-center justify-center">
+	<div class="container max-w-screen-lg mx-auto">
+		<div class=" bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+			<div class="main-body relative grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-6">
+				<ng-container *ngFor="let input of data.inputs; index as i;">
+					<ng-container [ngSwitch]="input.type">
+						<aster-form-input-text *ngSwitchCase="INPUT_TYPES.TEXT"
+											   [data]="input"
+											   class="md:col-span-3"></aster-form-input-text>
+						<!--					<div *ngSwitchCase="INPUT_TYPES.NUMBER">number</div>-->
+					</ng-container>
+				</ng-container>
+			</div>
+		</div>
 	</div>
 </section>

@@ -19,6 +19,7 @@ export class AsterFormData {
 	private static _sku: AsterFormInput<Product, string> = {
 		model: AsterFormData._product,
 		type: AsterFormInputType.TEXT,
+		label: 'SKU',
 		key: 'sku',
 		defaultValue: '',
 	}
@@ -26,6 +27,7 @@ export class AsterFormData {
 	private static _name: AsterFormInput<Product, string> = {
 		model: AsterFormData._product,
 		type: AsterFormInputType.TEXT,
+		label: 'Name',
 		key: 'name',
 		defaultValue: '',
 	}
@@ -33,6 +35,7 @@ export class AsterFormData {
 	private static _description: AsterFormInput<Product, string> = {
 		model: AsterFormData._product,
 		type: AsterFormInputType.TEXT,
+		label: 'Description',
 		key: 'description',
 		defaultValue: '',
 	}
