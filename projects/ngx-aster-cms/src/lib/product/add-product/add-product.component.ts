@@ -1,17 +1,8 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import {
-	ChangeDetectionStrategy,
-	Component,
-	Inject,
-	PLATFORM_ID,
-} from '@angular/core';
-import { HeaderSectionComponent } from '../../component-library/header/header-section/header-section.component';
-import {
-	NgLabelTemplateDirective,
-	NgOptionTemplateDirective,
-	NgSelectComponent,
-} from '@ng-select/ng-select';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import {CommonModule, isPlatformBrowser} from '@angular/common';
+import {ChangeDetectionStrategy, Component, Inject, PLATFORM_ID,} from '@angular/core';
+import {HeaderSectionComponent} from '../../component-library/header/header-section/header-section.component';
+import {NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent,} from '@ng-select/ng-select';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {AsterFormComponent} from "../../component-library/aster-form/aster-form/aster-form.component";
 import {AsterAddProductService} from "../service/aster-add-product-service";

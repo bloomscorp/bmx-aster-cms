@@ -1,4 +1,4 @@
-import { AsterOrderListingService } from './aster-order-listing-service';
+import {AsterOrderListingService} from './aster-order-listing-service';
 
 describe('AsterOrderListingService', () => {
   it('should create an instance', () => {

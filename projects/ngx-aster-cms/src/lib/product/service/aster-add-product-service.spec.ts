@@ -1,4 +1,4 @@
-import { AsterAddProductService } from './aster-add-product-service';
+import {AsterAddProductService} from './aster-add-product-service';
 
 describe('AsterAddProductService', () => {
   it('should create an instance', () => {

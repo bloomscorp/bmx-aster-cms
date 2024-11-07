@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AsterFormComponent } from './aster-form.component';
+import {AsterFormComponent} from './aster-form.component';
 
 describe('AsterFormComponent', () => {
   let component: AsterFormComponent;

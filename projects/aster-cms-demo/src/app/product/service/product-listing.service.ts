@@ -1,9 +1,15 @@
 import {Injectable} from '@angular/core';
-import {AsterProductListingService} from "../../../../../ngx-aster-cms/src/lib/product/service/aster-product-listing-service";
-import {ProductListingScreenData} from "../../../../../ngx-aster-cms/src/lib/product/interface/screen/product-listing-screen-data";
+import {
+	AsterProductListingService
+} from "../../../../../ngx-aster-cms/src/lib/product/service/aster-product-listing-service";
+import {
+	ProductListingScreenData
+} from "../../../../../ngx-aster-cms/src/lib/product/interface/screen/product-listing-screen-data";
 import {ProductPreview} from "../interface/product-preview";
-import { TableData } from '../../../../../ngx-aster-cms/src/public-api';
-import {ProductPreviewTransmissionService} from "../../../../../ngx-aster-cms/src/lib/raintree/transmission/product/product-preview-transmission.service";
+import {TableData} from '../../../../../ngx-aster-cms/src/public-api';
+import {
+	ProductPreviewTransmissionService
+} from "../../../../../ngx-aster-cms/src/lib/raintree/transmission/product/product-preview-transmission.service";
 import {ProductPreviewData} from "../model/product-preview-data";
 
 @Injectable({
