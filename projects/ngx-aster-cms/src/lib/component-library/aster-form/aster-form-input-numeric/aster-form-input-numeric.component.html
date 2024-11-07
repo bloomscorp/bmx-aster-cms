@@ -1,14 +1,14 @@
-<div class="ax-text-input">
+<div class="ax-number-input">
 	<label>{{ data.label }}</label>
-	<input type="text"
+	<input type="number"
 		   [attr.id]="data.id"
 		   [attr.name]="data.name"
 		   [attr.placeholder]="data.placeholder"
-		   [attr.minlength]="data.min"
-		   [attr.maxlength]="data.max"
+		   [attr.min]="data.min"
+		   [attr.max]="data.max"
 		   [attr.pattern]="data.pattern"
 		   [readonly]="data.readonly"
-		   [attr.spellcheck]="data.spellcheck"
 		   [attr.value]="data.defaultValue"
-		   class="ax-text-input-field" />
+		   [attr.step]="data.step"
+		   class="ax-number-input-field" />
 </div>

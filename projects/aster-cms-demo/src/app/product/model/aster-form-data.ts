@@ -17,6 +17,7 @@ export class AsterFormData {
 		sku: 'P1',
 		name: 'Product One',
 		description: 'Product Description',
+		price: 1999
 	};
 
 	private static _sku: AsterFormInput<Product, string> = AsterFormInputService.prepareTextInput({
@@ -37,6 +38,13 @@ export class AsterFormData {
 		key: 'description',
 	});
 
+	private static _price: AsterFormInput<Product, number> = AsterFormInputService.prepareNumericInput({
+		model: AsterFormData._product,
+		label: 'Price',
+		key: 'price',
+		min: 0
+	});
+
 	public static get addProductFormData(): AsterForm<Product> {
 		return {
 			model: AsterFormData._product,
@@ -44,6 +52,7 @@ export class AsterFormData {
 				AsterFormData._sku,
 				AsterFormData._name,
 				AsterFormData._description,
+				AsterFormData._price,
 			]
 		};
 	}

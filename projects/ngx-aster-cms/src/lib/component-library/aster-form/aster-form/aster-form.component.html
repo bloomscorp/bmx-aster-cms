@@ -7,7 +7,9 @@
 						<aster-form-input-text *ngSwitchCase="INPUT_TYPES.TEXT"
 											   [data]="input"
 											   class="md:col-span-3"></aster-form-input-text>
-						<!--					<div *ngSwitchCase="INPUT_TYPES.NUMBER">number</div>-->
+						<aster-form-input-numeric *ngSwitchCase="INPUT_TYPES.NUMBER"
+												  [data]="input"
+												  class="md:col-span-3"></aster-form-input-numeric>
 					</ng-container>
 				</ng-container>
 			</div>

@@ -8,7 +8,7 @@ import {AsterFormInput} from "../interface/aster-form-input";
 	templateUrl: './aster-form-input-text.component.html',
 	styleUrl: './aster-form-input-text.component.scss'
 })
-export class AsterFormInputTextComponent<P> {
+export class AsterFormInputTextComponent<T> {
 
-	@Input() data: AsterFormInput<P, any> = {} as AsterFormInput<P, any>;
+	@Input() data: AsterFormInput<T, string> = {} as AsterFormInput<T, string>;
 }

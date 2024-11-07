@@ -4,4 +4,5 @@ export interface Product extends BehemothORM {
 	sku: string;
 	name: string;
 	description: string;
+	price: number;
 }

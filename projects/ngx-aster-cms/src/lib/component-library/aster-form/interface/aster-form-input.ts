@@ -9,9 +9,10 @@ export interface AsterFormInput<T, V> {
 	name: string;
 	placeholder: string;
 	defaultValue: V;
-	minlength: number;
-	maxlength: number;
+	min: number;
+	max: number;
 	pattern: string;
 	readonly: boolean;
 	spellcheck: boolean;
+	step: number;
 }
