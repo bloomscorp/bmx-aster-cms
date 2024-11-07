@@ -5,6 +5,8 @@ import {AsterProductListingService} from "../../../ngx-aster-cms/src/lib/product
 import {ProductListingService} from "./product/service/product-listing.service";
 import {AsterOrderListingService} from "../../../ngx-aster-cms/src/lib/order/service/aster-order-listing-service";
 import {OrderListingService} from "./order/service/order-listing.service";
+import {AsterAddProductService} from "../../../ngx-aster-cms/src/lib/product/service/aster-add-product-service";
+import {AddProductService} from "./product/service/add-product.service";
 
 export const APP_CONFIG: AsterConfig = {
 	production: environment.production,
@@ -37,4 +39,7 @@ export const asterServiceProviders: Array<Provider> = [{
 }, {
 		provide: AsterOrderListingService,
 		useClass: OrderListingService
+}, {
+	provide: AsterAddProductService,
+	useClass: AddProductService
 }];

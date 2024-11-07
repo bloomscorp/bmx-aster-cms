@@ -23,7 +23,7 @@ import {AsterAddProductService} from "../service/aster-add-product-service";
 	styleUrl: './add-product.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddProductComponent {
+export class AddProductComponent<P> {
 
 	public isBrowser: boolean = false;
     public Editor;
@@ -50,7 +50,7 @@ export class AddProductComponent {
 
 	constructor(
 		@Inject(PLATFORM_ID) platformId: Object,
-		public _: AsterAddProductService
+		public _: AsterAddProductService<P>
 	) {
 
 		this.isBrowser = isPlatformBrowser(platformId);
