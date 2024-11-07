@@ -6,7 +6,7 @@
 		"@angular/core": "^18.2.1",
 		"@angular/material": "^18.2.1",
 		"@auth0/angular-jwt": "^5.2.0",
-		"bmx-pastebox": "^1.0.14",
+		"bmx-pastebox": "^1.0.17",
 		"bmx-transmission": "^0.0.12"
 
 	},

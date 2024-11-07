@@ -6,6 +6,9 @@ import {
 import {
 	AsterFormInputType
 } from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/model/aster-form-input-type";
+import {
+	AsterFormInputService
+} from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/service/aster-form-input-service";
 
 export class AsterFormData {
 
@@ -16,29 +19,23 @@ export class AsterFormData {
 		description: 'Product Description',
 	};
 
-	private static _sku: AsterFormInput<Product, string> = {
+	private static _sku: AsterFormInput<Product, string> = AsterFormInputService.prepareTextInput({
 		model: AsterFormData._product,
-		type: AsterFormInputType.TEXT,
 		label: 'SKU',
-		key: 'sku',
-		defaultValue: '',
-	}
+		key: 'sku'
+	});
 
-	private static _name: AsterFormInput<Product, string> = {
+	private static _name: AsterFormInput<Product, string> = AsterFormInputService.prepareTextInput({
 		model: AsterFormData._product,
-		type: AsterFormInputType.TEXT,
 		label: 'Name',
 		key: 'name',
-		defaultValue: '',
-	}
+	});
 
-	private static _description: AsterFormInput<Product, string> = {
+	private static _description: AsterFormInput<Product, string> = AsterFormInputService.prepareTextInput({
 		model: AsterFormData._product,
-		type: AsterFormInputType.TEXT,
 		label: 'Description',
 		key: 'description',
-		defaultValue: '',
-	}
+	});
 
 	public static get addProductFormData(): AsterForm<Product> {
 		return {
