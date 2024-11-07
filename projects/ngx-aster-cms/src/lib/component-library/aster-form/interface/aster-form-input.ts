@@ -13,6 +13,8 @@ export interface AsterFormInput<T, V> {
 	max: number;
 	pattern: string;
 	readonly: boolean;
+	disabled: boolean;
 	spellcheck: boolean;
 	step: number;
+	options: V[];
 }

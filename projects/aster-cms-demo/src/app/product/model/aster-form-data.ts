@@ -9,6 +9,9 @@ import {
 import {
 	AsterFormInputService
 } from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/service/aster-form-input-service";
+import {
+	AsterFormSelectOption
+} from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-select-option";
 
 export class AsterFormData {
 
@@ -17,7 +20,8 @@ export class AsterFormData {
 		sku: 'P1',
 		name: 'Product One',
 		description: 'Product Description',
-		price: 1999
+		price: 1999,
+		category: 'Sunglasses'
 	};
 
 	private static _sku: AsterFormInput<Product, string> = AsterFormInputService.prepareTextInput({
@@ -45,6 +49,19 @@ export class AsterFormData {
 		min: 0
 	});
 
+	private static _category: AsterFormInput<Product, AsterFormSelectOption> = AsterFormInputService.prepareSelectInput({
+		model: AsterFormData._product,
+		label: 'Category',
+		key: 'category',
+		options: [{
+			value: '1',
+			name: 'Category 1',
+		}, {
+			value: '2',
+			name: 'Category 2',
+		}]
+	});
+
 	public static get addProductFormData(): AsterForm<Product> {
 		return {
 			model: AsterFormData._product,
@@ -53,6 +70,7 @@ export class AsterFormData {
 				AsterFormData._name,
 				AsterFormData._description,
 				AsterFormData._price,
+				AsterFormData._category,
 			]
 		};
 	}

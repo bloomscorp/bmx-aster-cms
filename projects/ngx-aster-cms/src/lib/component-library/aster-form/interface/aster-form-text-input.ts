@@ -12,5 +12,6 @@ export interface AsterFormTextInput<T> {
 	maxlength?: number;
 	pattern?: string;
 	readonly?: boolean;
+	disabled?: boolean;
 	spellcheck?: boolean;
 }

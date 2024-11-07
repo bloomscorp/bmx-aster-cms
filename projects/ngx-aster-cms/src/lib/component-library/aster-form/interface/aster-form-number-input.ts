@@ -10,5 +10,6 @@ export interface AsterFormNumberInput<T> {
 	max?: number;
 	pattern?: string;
 	readonly?: boolean;
+	disabled?: boolean;
 	step?: number;
 }

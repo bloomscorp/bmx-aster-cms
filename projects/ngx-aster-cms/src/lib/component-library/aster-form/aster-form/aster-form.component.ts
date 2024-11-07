@@ -4,6 +4,7 @@ import {NgForOf, NgSwitch, NgSwitchCase} from "@angular/common";
 import {AsterFormInputType} from "../model/aster-form-input-type";
 import {AsterFormInputTextComponent} from "../aster-form-input-text/aster-form-input-text.component";
 import {AsterFormInputNumericComponent} from "../aster-form-input-numeric/aster-form-input-numeric.component";
+import {AsterFormInputSelectComponent} from "../aster-form-input-select/aster-form-input-select.component";
 
 @Component({
 	selector: 'aster-form',
@@ -13,7 +14,8 @@ import {AsterFormInputNumericComponent} from "../aster-form-input-numeric/aster-
 		NgSwitch,
 		NgSwitchCase,
 		AsterFormInputTextComponent,
-		AsterFormInputNumericComponent
+		AsterFormInputNumericComponent,
+		AsterFormInputSelectComponent
 	],
 	templateUrl: './aster-form.component.html',
 	styleUrl: './aster-form.component.scss'
