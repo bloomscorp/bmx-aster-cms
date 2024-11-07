@@ -1,14 +1,14 @@
 <div class="ax-text-input">
 	<label>{{ data.label }}</label>
 	<input type="text"
-		   id=""
-		   name=""
-		   placeholder=""
-		   minlength=""
-		   maxlength=""
-		   pattern=""
-		   readonly=""
-		   spellcheck=""
-		   value="{{ data.defaultValue }}"
+		   [attr.id]="data.id"
+		   [attr.name]="data.name"
+		   [attr.placeholder]="data.placeholder"
+		   [attr.minlength]="data.minlength"
+		   [attr.maxlength]="data.maxlength"
+		   [attr.pattern]="data.pattern"
+		   [readonly]="data.readonly"
+		   [attr.spellcheck]="data.spellcheck"
+		   [attr.value]="data.defaultValue"
 		   class="ax-text-input-field" />
 </div>
