@@ -1,5 +1,5 @@
 import {CommonModule, isPlatformBrowser} from '@angular/common';
-import {ChangeDetectionStrategy, Component, Inject, PLATFORM_ID,} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Inject, OnInit, PLATFORM_ID,} from '@angular/core';
 import {HeaderSectionComponent} from '../../component-library/header/header-section/header-section.component';
 import {NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent,} from '@ng-select/ng-select';
 import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
@@ -23,7 +23,7 @@ import {AsterAddProductService} from "../service/aster-add-product-service";
 	styleUrl: './add-product.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddProductComponent<P> {
+export class AddProductComponent<P> implements OnInit {
 
 	public isBrowser: boolean = false;
     public Editor;
@@ -58,5 +58,9 @@ export class AddProductComponent<P> {
         if (this.isBrowser) {
             this.Editor = ClassicEditor;
         }
+	}
+
+	public ngOnInit(): void {
+		this._.data = this._.prepareData();
 	}
 }

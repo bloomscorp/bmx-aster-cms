@@ -11,6 +11,6 @@ export abstract class AsterAddProductService<P> {
 	public set data(data: AsterForm<P>) {
 		this._data = data;
 	}
-	
+
 	public abstract prepareData(): AsterForm<P>;
 }
