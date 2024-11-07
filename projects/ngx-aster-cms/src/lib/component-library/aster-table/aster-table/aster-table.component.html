@@ -1,4 +1,4 @@
-<section class="ax-table ax-default-font ax-default-transition flex flex-col justify-start w-fit">
+<section class="ax-table ax-default-font ax-default-transition flex flex-col justify-start w-full">
 	<div class="ax-table-headers flex flex-row justify-start">
 		<div *ngIf="data.columnData.numbered" class="ax-table-header ax-table-header-sm">
 			<span>Sl. No.</span>
@@ -14,7 +14,7 @@
 	</div>
 	<div class="ax-table-content flex flex-col justify-start">
 		<div *ngFor="let row of data.content; index as i;" class="ax-table-row flex flex-row justify-start">
-			<div *ngIf="data.columnData.numbered" class="ax-table-cell ax-table-cell-sm flex flex-row justify-end">
+			<div *ngIf="data.columnData.numbered" class="ax-table-cell ax-table-cell-sm flex flex-row justify-center">
 				<span>{{ i + 1 }}</span>
 			</div>
 			<div *ngFor="let key of data.keys; index as j;"

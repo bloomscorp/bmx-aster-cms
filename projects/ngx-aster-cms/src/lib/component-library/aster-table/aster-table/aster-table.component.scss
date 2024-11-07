@@ -1,7 +1,12 @@
+.test-b {
+	outline: 1px solid red;
+}
+
 .ax-table {
 
 	border-radius: 8px;
-	overflow-x: scroll;
+	overflow-x: auto;
+	max-width: 95%;
 
 	.ax-table-headers {
 
@@ -13,11 +18,11 @@
 		}
 
 		.ax-table-header-sm {
-			width: 80px;
+			min-width: 80px;
 		}
 
 		.ax-table-header-md {
-			width: 250px;
+			min-width: 250px;
 		}
 	}
 
@@ -68,11 +73,11 @@
 		}
 
 		.ax-table-cell-sm {
-			width: 80px;
+			min-width: 80px;
 		}
 
 		.ax-table-cell-md {
-			width: 250px;
+			min-width: 250px;
 		}
 	}
 }
