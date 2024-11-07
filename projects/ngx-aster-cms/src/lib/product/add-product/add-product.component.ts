@@ -13,6 +13,8 @@ import {
 } from '@ng-select/ng-select';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {AsterFormComponent} from "../../component-library/aster-form/aster-form/aster-form.component";
+import {AsterAddProductService} from "../service/aster-add-product-service";
 
 @Component({
 	selector: 'aster-cms-add-product',
@@ -24,13 +26,15 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 		NgSelectComponent,
 		HeaderSectionComponent,
 		CKEditorModule,
+		AsterFormComponent,
 	],
 	templateUrl: './add-product.component.html',
 	styleUrl: './add-product.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddProductComponent {
-	
+
+	public isBrowser: boolean = false;
     public Editor;
 	public editorConfig = {
 		toolbar: {
@@ -53,9 +57,11 @@ export class AddProductComponent {
 		language: 'en',
 	};
 
-	isBrowser = false;
+	constructor(
+		@Inject(PLATFORM_ID) platformId: Object,
+		public _: AsterAddProductService
+	) {
 
-	constructor(@Inject(PLATFORM_ID) platformId: Object) {
 		this.isBrowser = isPlatformBrowser(platformId);
 
         if (this.isBrowser) {
