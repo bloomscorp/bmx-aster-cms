@@ -63,7 +63,7 @@ export class ProductListingService extends AsterProductListingService<ProductPre
 					ariaLabel: 'view product details',
 					isRoute: true,
 					routeProvider: (product: ProductPreview, row: number, column: number): string => {
-						return `product/${product.id}`;
+						return `/product/${product.group}/${product.id}`;
 					},
 					run: (product: ProductPreview, row: number, column: number): void => {
 						console.warn(product);

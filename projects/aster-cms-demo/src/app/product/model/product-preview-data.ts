@@ -7,6 +7,7 @@ export class ProductPreviewData {
 		sku: 'SH-0022-CEO-EG-101-TPWT',
 		name: 'Transparent White Rectangular Full Rim Eyeglasses',
 		description: 'spectacle',
+        group: 'eyeglasses',
 		heroImage: 'image',
 		price: 1000,
 	};
@@ -16,6 +17,7 @@ export class ProductPreviewData {
 		sku: 'SH-0022-CEO-EG-101-TPWT',
 		name: 'Transparent White Rectangular Full Rim Eyeglasses',
 		description: 'spectacle',
+        group: 'eyeglasses',
 		heroImage: 'image',
 		price: 1000,
 	};

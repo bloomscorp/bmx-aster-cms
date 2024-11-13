@@ -4,14 +4,12 @@ import {
 	AsterFormInput
 } from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-input";
 import {
-	AsterFormInputType
-} from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/model/aster-form-input-type";
-import {
 	AsterFormInputService
 } from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/service/aster-form-input-service";
 import {
 	AsterFormSelectOption
 } from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-select-option";
+import {AsterFormImageOption} from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-image-option.';
 
 export class AsterFormData {
 
@@ -21,7 +19,13 @@ export class AsterFormData {
 		name: 'Product One',
 		description: 'Product Description',
 		price: 1999,
-		category: 'Sunglasses'
+		category: 'Sunglasses',
+        heroImage: 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/spectacle-hub/SH-0034-SB-EG-825-MTBLK/1.png',
+        galleryImages: [
+            'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/spectacle-hub/SH-0034-SB-EG-825-MTBLK/1.png',
+            'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/spectacle-hub/SH-0034-SB-EG-825-MTBLK/2.png',
+            'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/spectacle-hub/SH-0034-SB-EG-825-MTBLK/3.png'
+        ]
 	};
 
 	private static _sku: AsterFormInput<Product, string> = AsterFormInputService.prepareTextInput({
@@ -36,7 +40,7 @@ export class AsterFormData {
 		key: 'name',
 	});
 
-	private static _description: AsterFormInput<Product, string> = AsterFormInputService.prepareTextInput({
+	private static _description: AsterFormInput<Product, string> = AsterFormInputService.prepareRichTextInput({
 		model: AsterFormData._product,
 		label: 'Description',
 		key: 'description',
@@ -62,6 +66,46 @@ export class AsterFormData {
 		}]
 	});
 
+    private static _subCategory: AsterFormInput<Product, AsterFormSelectOption> = AsterFormInputService.prepareMultiSelectInput({
+		model: AsterFormData._product,
+		label: 'Sub Category',
+		key: 'subCategory',
+		options: [{
+			value: '1',
+			name: 'Sub Category 1',
+		}, {
+			value: '2',
+			name: 'Sub Category 2',
+		}],
+        appendTo: 'body'
+	});
+
+    private static _heroImage: AsterFormInput<Product, AsterFormImageOption> = AsterFormInputService.prepareImageInput({
+        model: AsterFormData._product,
+        label: 'Hero Image',
+        key: 'heroImage',
+        defaultValue: {
+            value: 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/spectacle-hub/SH-0034-SB-EG-825-MTBLK/1.png',
+            altText: 'Hero Image'
+        }
+    });
+
+    private static _galleryImages: AsterFormInput<Product, AsterFormImageOption[]> = AsterFormInputService.prepareMultiImageInput({
+        model: AsterFormData._product,
+        label: 'Gallery Images',
+        key: 'galleryImages',
+        defaultValue: [
+            {
+                value: 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/spectacle-hub/SH-0034-SB-EG-825-MTBLK/1.png',
+                altText: 'Gallery Image'
+            },
+            {
+                value: 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/spectacle-hub/SH-0034-SB-EG-825-MTBLK/2.png',
+                altText: 'Gallery Image'
+            }
+        ]
+    });
+
 	public static get addProductFormData(): AsterForm<Product> {
 		return {
 			model: AsterFormData._product,
@@ -71,6 +115,9 @@ export class AsterFormData {
 				AsterFormData._description,
 				AsterFormData._price,
 				AsterFormData._category,
+                AsterFormData._subCategory,
+                AsterFormData._heroImage,
+                AsterFormData._galleryImages
 			]
 		};
 	}

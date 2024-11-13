@@ -9,6 +9,9 @@ export interface AsterFormInput<T, V> {
 	name: string;
 	placeholder: string;
 	defaultValue: V;
+    multiselectDefaultValue: V[];
+    rows?: number;
+    cols?: number;
 	min: number;
 	max: number;
 	pattern: string;
@@ -17,4 +20,5 @@ export interface AsterFormInput<T, V> {
 	spellcheck: boolean;
 	step: number;
 	options: V[];
+    appendTo?: string;
 }

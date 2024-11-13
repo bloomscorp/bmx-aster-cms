@@ -5,14 +5,29 @@
 				<ng-container *ngFor="let input of data.inputs; index as i;">
 					<ng-container [ngSwitch]="input.type">
 						<aster-form-input-text *ngSwitchCase="INPUT_TYPES.TEXT"
-											   [data]="input"
-											   class="md:col-span-3"></aster-form-input-text>
+											     [data]="input"
+											     class="md:col-span-3"></aster-form-input-text>
 						<aster-form-input-numeric *ngSwitchCase="INPUT_TYPES.NUMBER"
-												  [data]="input"
-												  class="md:col-span-3"></aster-form-input-numeric>
+												 [data]="input"
+												 class="md:col-span-3"></aster-form-input-numeric>
 						<aster-form-input-select *ngSwitchCase="INPUT_TYPES.SELECT"
 												 [data]="input"
 												 class="md:col-span-3"></aster-form-input-select>
+                        <aster-form-input-multi-select *ngSwitchCase="INPUT_TYPES.MULTISELECT"
+                                                 [data]="input"
+                                                 class="md:col-span-3"></aster-form-input-multi-select>
+                        <aster-form-input-textarea *ngSwitchCase="INPUT_TYPES.TEXTAREA"
+                                                 [data]="input"
+                                                 class="md:col-span-3"></aster-form-input-textarea>
+                        <aster-form-input-richtext *ngSwitchCase="INPUT_TYPES.RICHTEXT"
+                                                 [data]="input"
+                                                 class="md:col-span-6"></aster-form-input-richtext>
+                        <aster-form-input-image *ngSwitchCase="INPUT_TYPES.IMAGE"
+                                                 [data]="input"
+                                                 class="md:col-span-3"></aster-form-input-image>
+                        <aster-form-input-multiple-image *ngSwitchCase="INPUT_TYPES.MULTIIMAGE"
+                                                 [data]="input"
+                                                 class="md:col-span-6"></aster-form-input-multiple-image>
 					</ng-container>
 				</ng-container>
 			</div>

@@ -1,0 +1,18 @@
+.ax-text-input {
+
+	.ax-text-input-field {
+
+		height: 2.5rem;
+		border-width: 1px;
+		margin-top: 0.25rem;
+		border-radius: 0.25rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		width: 100%;
+		background-color: #f9fafb;
+
+		&:hover, &:focus {
+			outline:none;
+		}
+	}
+}

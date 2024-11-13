@@ -33,12 +33,6 @@ export class DefaultRoutes {
 		pathMatch: 'full'
 	};
 
-	public static readonly PRODUCT_DETAILS: Route = {
-		path: AsterRequestMapper.PRODUCT_DETAILS,
-		loadComponent: () => import('../../product/product-details/product-details.component').then(m => m.ProductDetailsComponent),
-		pathMatch: 'full'
-	}
-
     public static readonly ADD_PRODUCT: Route = {
 		path: AsterRequestMapper.PRODUCT_ADD,
 		loadComponent: () => import('../../product/add-product/add-product.component').then(m => m.AddProductComponent),
@@ -81,7 +75,6 @@ export class DefaultRoutes {
 		DefaultRoutes.MANAGE_USERS,
 		DefaultRoutes.USER_DETAILS,
 		DefaultRoutes.MANAGE_PRODUCTS,
-		DefaultRoutes.PRODUCT_DETAILS,
 		DefaultRoutes.MANAGE_ORDERS,
 		DefaultRoutes.ORDER_DETAILS,
 		DefaultRoutes.NOT_FOUND,

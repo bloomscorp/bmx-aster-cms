@@ -6,4 +6,6 @@ export interface Product extends BehemothORM {
 	description: string;
 	price: number;
 	category: string;
+    heroImage: string;
+    galleryImages: string[];
 }

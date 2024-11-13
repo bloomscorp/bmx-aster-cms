@@ -1,0 +1,14 @@
+<div class="ax-multi-select-input">
+	<label>{{ data.label }}</label>
+	<ng-select [attr.id]="data.id"
+			[attr.name]="data.name"
+			[readonly]="data.disabled"
+            [items]="data.options" 
+            [multiple]="true"
+            [(ngModel)]="selectedOption"
+            [appendTo]="data.appendTo ? data.appendTo : 'body'" 
+            bindLabel="name" 
+            bindValue="value"
+			class="ax-multi-select-input-field">
+	</ng-select>
+</div>
