@@ -6,9 +6,10 @@ export interface AsterFormMultiSelectInput<T> {
 	key: string;
 	label?: string;
 	name?: string;
-	defaultValue?: AsterFormSelectOption[];
+	multiSelectDefaultValue?: AsterFormSelectOption[];
 	pattern?: string;
 	disabled?: boolean;
     appendTo?: string;
 	options: AsterFormSelectOption[];
+	getValues?: () => AsterFormSelectOption[];
 }

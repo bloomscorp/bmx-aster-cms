@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {ChangeDetectionStrategy, Component, Input, type OnInit} from '@angular/core';
-import {AsterFormImageOption} from '../interface/aster-form-image-option.';
+import {AsterFormImageItem} from '../interface/aster-form-image-item';
 import {AsterFormInput} from '../interface/aster-form-input';
 import {SanitizeUrlPipe} from '../../pipes/sanitize-url.pipe';
 
@@ -17,9 +17,9 @@ import {SanitizeUrlPipe} from '../../pipes/sanitize-url.pipe';
 })
 export class AsterFormInputMultipleImageComponent<T> implements OnInit {
 
-    @Input() data: AsterFormInput<T, AsterFormImageOption[]> = {} as AsterFormInput<T, AsterFormImageOption[]>;
+    @Input() data: AsterFormInput<T, AsterFormImageItem[]> = {} as AsterFormInput<T, AsterFormImageItem[]>;
 
-    public defaultImages: AsterFormImageOption[] = [];
+    public defaultImages: AsterFormImageItem[] = [];
 
     constructor() {
     }

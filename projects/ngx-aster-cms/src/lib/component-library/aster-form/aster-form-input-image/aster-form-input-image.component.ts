@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, type OnInit } from '@angular/core';
 import {AsterFormInput} from '../interface/aster-form-input';
 import {SanitizeUrlPipe} from '../../pipes/sanitize-url.pipe';
-import {AsterFormImageOption} from '../interface/aster-form-image-option.';
+import {AsterFormImageItem} from '../interface/aster-form-image-item';
 
 @Component({
 	selector: 'aster-form-input-image',
@@ -17,11 +17,11 @@ import {AsterFormImageOption} from '../interface/aster-form-image-option.';
 })
 export class AsterFormInputImageComponent<T> implements OnInit {
 
-	@Input() data: AsterFormInput<T,AsterFormImageOption> = {} as AsterFormInput<T,AsterFormImageOption>;
+	@Input() data: AsterFormInput<T,AsterFormImageItem> = {} as AsterFormInput<T,AsterFormImageItem>;
 
     public imageURL: string = '';
 
-    constructor() {        
+    constructor() {
     }
 
     ngOnInit(): void {

@@ -9,7 +9,7 @@ import {
 import {
 	AsterFormSelectOption
 } from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-select-option";
-import {AsterFormImageOption} from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-image-option.';
+import {AsterFormImageItem} from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-image-item';
 
 export class AsterFormData {
 
@@ -80,17 +80,17 @@ export class AsterFormData {
         appendTo: 'body'
 	});
 
-    private static _heroImage: AsterFormInput<Product, AsterFormImageOption> = AsterFormInputService.prepareImageInput({
+    private static _heroImage: AsterFormInput<Product, AsterFormImageItem> = AsterFormInputService.prepareImageInput({
         model: AsterFormData._product,
         label: 'Hero Image',
         key: 'heroImage',
         defaultValue: {
-            value: 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/spectacle-hub/SH-0034-SB-EG-825-MTBLK/1.png',
+            value: 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/aster/assets/images/upload-image.svg',
             altText: 'Hero Image'
         }
     });
 
-    private static _galleryImages: AsterFormInput<Product, AsterFormImageOption[]> = AsterFormInputService.prepareMultiImageInput({
+    private static _galleryImages: AsterFormInput<Product, AsterFormImageItem[]> = AsterFormInputService.prepareMultiImageInput({
         model: AsterFormData._product,
         label: 'Gallery Images',
         key: 'galleryImages',
@@ -123,6 +123,7 @@ export class AsterFormData {
 			],
 			submit: {
 				label: 'Add Product',
+				api: ''
 			}
 		};
 	}

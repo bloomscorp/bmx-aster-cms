@@ -1,4 +1,4 @@
-export interface AsterFormImageOption {
+export interface AsterFormImageItem {
     value: string | File;
     altText: string;
 }

@@ -1,4 +1,4 @@
-import {AsterFormImageOption} from './aster-form-image-option.';
+import {AsterFormImageItem} from './aster-form-image-item';
 
 export interface AsterFormImageInput<T> {
     id?: string;
@@ -7,9 +7,10 @@ export interface AsterFormImageInput<T> {
 	label?: string;
 	name?: string;
 	placeholder?: string;
-	defaultValue?: AsterFormImageOption;
+	defaultValue?: AsterFormImageItem;
 	min?: number;
 	max?: number;
 	readonly?: boolean;
 	disabled?: boolean;
+	getValue?: () => AsterFormImageItem;
 }

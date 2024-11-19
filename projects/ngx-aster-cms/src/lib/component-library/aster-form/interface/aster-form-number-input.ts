@@ -12,4 +12,5 @@ export interface AsterFormNumberInput<T> {
 	readonly?: boolean;
 	disabled?: boolean;
 	step?: number;
+	getValue?: () => number;
 }

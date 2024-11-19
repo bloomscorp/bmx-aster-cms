@@ -10,4 +10,5 @@ export interface AsterFormSelectInput<T> {
 	pattern?: string;
 	disabled?: boolean;
 	options: AsterFormSelectOption[];
+	getValue?: () => AsterFormSelectOption;
 }

@@ -14,4 +14,5 @@ export interface AsterFormTextAreaInput<T> {
 	readonly?: boolean;
 	disabled?: boolean;
 	spellcheck?: boolean;
+	getValue?: () => string;
 }

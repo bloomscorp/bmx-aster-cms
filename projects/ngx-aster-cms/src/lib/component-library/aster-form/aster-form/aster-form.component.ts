@@ -47,6 +47,7 @@ export class AsterFormComponent implements OnInit {
 	}
 
 	public onSubmit(): void {
-
+		// get data
+		// submit data
 	}
 }

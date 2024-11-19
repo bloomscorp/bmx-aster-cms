@@ -9,7 +9,8 @@ export interface AsterFormInput<T, V> {
 	name: string;
 	placeholder: string;
 	defaultValue: V;
-    multiselectDefaultValue: V[];
+    multiSelectDefaultValue: V[];
+	multiImageDefaultValue: V[];
     rows?: number;
     cols?: number;
 	min: number;
@@ -21,4 +22,6 @@ export interface AsterFormInput<T, V> {
 	step: number;
 	options: V[];
     appendTo?: string;
+	getValue: () => V;
+	getValues: () => V[];
 }
