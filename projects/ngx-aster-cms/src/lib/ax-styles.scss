@@ -5,3 +5,10 @@ $ax-outline-primary: #e5b5e5;
 .test-b {
 	outline: 1px solid red;
 }
+
+.ax-default-transition {
+	-webkit-transition: all 0.20s ease-in-out;
+	-moz-transition: all 0.20s ease-in-out;
+	-o-transition: all 0.20s ease-in-out;
+	transition: all 0.20s ease-in-out;
+}
