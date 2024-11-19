@@ -117,8 +117,13 @@ export class AsterFormData {
 				AsterFormData._category,
                 AsterFormData._subCategory,
                 AsterFormData._heroImage,
-                AsterFormData._galleryImages
-			]
+                AsterFormData._galleryImages,
+
+				AsterFormData._name,
+			],
+			submit: {
+				label: 'Add Product',
+			}
 		};
 	}
 }
