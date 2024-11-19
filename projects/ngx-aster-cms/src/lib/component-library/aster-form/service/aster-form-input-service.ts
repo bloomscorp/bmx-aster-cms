@@ -199,8 +199,8 @@ export class AsterFormInputService {
             name: data.name ? data.name : AsterFormInputService._prepareName(),
             placeholder: data.placeholder ? data.placeholder : '',
             defaultValue: data.defaultValue ? data.defaultValue : [{
-                value: 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/spectacle-hub/SH-0034-SB-EG-825-MTBLK/1.png',
-                altText: 'Default image'
+                value: 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/aster/assets/images/upload-image.svg',
+                altText: 'default image'
             }],
             multiselectDefaultValue: [],
             min: data.min ? data.min : 1,

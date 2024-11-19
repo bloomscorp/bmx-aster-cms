@@ -37,8 +37,8 @@ export const asterServiceProviders: Array<Provider> = [{
 	provide: AsterProductListingService,
 	useClass: ProductListingService
 }, {
-		provide: AsterOrderListingService,
-		useClass: OrderListingService
+	provide: AsterOrderListingService,
+	useClass: OrderListingService
 }, {
 	provide: AsterAddProductService,
 	useClass: AddProductService
