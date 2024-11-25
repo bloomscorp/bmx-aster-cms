@@ -40,16 +40,16 @@
 			id="file-preview-container"
 			class="grid grid-cols-2 gap-4 mt-4 md:grid-cols-6"
 		>
-			<div>
+			<div *ngFor="let defaultImage of defaultImages">
 				<img
 					class="has-mask h-36 object-center border"
-					[src]="this.defaultImages[0].value.toString() | sanitizeUrl"
+					[src]="defaultImage.value.toString() | sanitizeUrl"
 					alt="freepik image"
 				/>
 				<div class="ax-text-input">
 					<input
 						type="text"
-						[attr.value]="this.defaultImages[0].altText"
+						[attr.value]="defaultImage.altText"
 						class="ax-text-input-field text-black"
 					/>
 				</div>
