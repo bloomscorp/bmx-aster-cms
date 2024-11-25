@@ -4,7 +4,7 @@ export enum AsterFormInputType {
 	SELECT = 2,
 	MULTISELECT = 3,
     TEXTAREA = 4,
-    RICHTEXT = 5,
+    RICH_TEXT = 5,
     IMAGE = 6,
-    MULTIIMAGE = 7
+    MULTI_IMAGE = 7
 }

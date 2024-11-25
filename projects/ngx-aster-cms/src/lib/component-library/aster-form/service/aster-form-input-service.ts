@@ -137,7 +137,7 @@ export class AsterFormInputService {
         return {
             id: data.id ? data.id : AsterFormInputService._prepareId(),
             model: data.model,
-            type: AsterFormInputType.RICHTEXT,
+            type: AsterFormInputType.RICH_TEXT,
             key: data.key,
             label: data.label ? data.label : '',
             name: data.name ? data.name : AsterFormInputService._prepareName(),
@@ -238,7 +238,7 @@ export class AsterFormInputService {
         return {
             id: data.id ? data.id : AsterFormInputService._prepareId(),
             model: data.model,
-            type: AsterFormInputType.MULTIIMAGE,
+            type: AsterFormInputType.MULTI_IMAGE,
             key: data.key,
             label: data.label ? data.label : '',
             name: data.name ? data.name : AsterFormInputService._prepareName(),
