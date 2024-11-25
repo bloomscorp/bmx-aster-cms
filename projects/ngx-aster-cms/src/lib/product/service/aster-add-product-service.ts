@@ -1,6 +1,7 @@
 import {AsterForm} from "../../component-library/aster-form/interface/aster-form";
+import {AsterFormCompatible} from "../../component-library/aster-form/interface/aster-form-compatible";
 
-export abstract class AsterAddProductService<P> {
+export abstract class AsterAddProductService<P extends AsterFormCompatible> {
 
 	private _data: AsterForm<P> = {} as AsterForm<P>;
 

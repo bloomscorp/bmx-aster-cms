@@ -14,6 +14,8 @@ import {AsterFormInputImageComponent} from '../aster-form-input-image/aster-form
 import {
 	AsterFormInputMultipleImageComponent
 } from '../aster-form-input-multiple-image/aster-form-input-multiple-image.component';
+import {LooseObject} from "../../../interface/loose-object";
+import {AsterFormService} from "../service/aster-form.service";
 
 @Component({
 	selector: 'aster-form',
@@ -42,6 +44,9 @@ export class AsterFormComponent implements OnInit {
 	@Input() public data: AsterForm<any> = {} as AsterForm<any>;
 	public INPUT_TYPES: typeof AsterFormInputType = AsterFormInputType;
 
+	constructor(public _: AsterFormService) {
+	}
+
 	public ngOnInit(): void {
 
 	}
@@ -49,5 +54,11 @@ export class AsterFormComponent implements OnInit {
 	public onSubmit(): void {
 		// get data
 		// submit data
+		const response: LooseObject = this.data.mapper(
+			this.data.model,
+			this.data.inputs
+		);
+
+		console.log(response);
 	}
 }

@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {AsterForm} from "./interface/aster-form";
-import {AsterFormPreview} from "./interface/aster-form-preview";
-import {AsterFormInput} from "./interface/aster-form-input";
-import {AsterFormCompatible} from "./interface/aster-form-compatible";
-import {LooseObject} from "../../interface/loose-object";
-import {AsterFormInputType} from "./model/aster-form-input-type";
+import {AsterForm} from "../interface/aster-form";
+import {AsterFormPreview} from "../interface/aster-form-preview";
+import {AsterFormInput} from "../interface/aster-form-input";
+import {AsterFormCompatible} from "../interface/aster-form-compatible";
+import {LooseObject} from "../../../interface/loose-object";
+import {AsterFormInputType} from "../model/aster-form-input-type";
 
 @Injectable({
 	providedIn: 'root'

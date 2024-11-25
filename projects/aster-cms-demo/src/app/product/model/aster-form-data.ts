@@ -10,7 +10,7 @@ import {
 	AsterFormSelectOption
 } from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-select-option";
 import {AsterFormImageItem} from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-image-item';
-import {AsterFormService} from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/aster-form.service";
+import {AsterFormService} from "../../../../../ngx-aster-cms/src/lib/component-library/aster-form/service/aster-form.service";
 
 export class AsterFormData {
 

@@ -6,6 +6,7 @@ import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {AsterFormComponent} from "../../component-library/aster-form/aster-form/aster-form.component";
 import {AsterAddProductService} from "../service/aster-add-product-service";
+import {AsterFormCompatible} from "../../component-library/aster-form/interface/aster-form-compatible";
 
 @Component({
 	selector: 'aster-cms-add-product',
@@ -23,7 +24,7 @@ import {AsterAddProductService} from "../service/aster-add-product-service";
 	styleUrl: './add-product.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddProductComponent<P> implements OnInit {
+export class AddProductComponent<P extends AsterFormCompatible> implements OnInit {
 
 	public isBrowser: boolean = false;
     public Editor;
