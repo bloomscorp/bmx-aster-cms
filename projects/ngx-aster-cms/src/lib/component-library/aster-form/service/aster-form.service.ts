@@ -5,6 +5,7 @@ import {AsterFormInput} from "../interface/aster-form-input";
 import {AsterFormCompatible} from "../interface/aster-form-compatible";
 import {LooseObject} from "../../../interface/loose-object";
 import {AsterFormInputType} from "../model/aster-form-input-type";
+import {AsterFormInputService} from "./aster-form-input-service";
 
 @Injectable({
 	providedIn: 'root'
@@ -19,6 +20,11 @@ export class AsterFormService {
 		const response: LooseObject = {} as AsterFormCompatible;
 
 		inputs.forEach((input: AsterFormInput<T, any>): void => {
+
+			// input.getValue = input.getValue();
+
+			// console.log(input.getValue());
+
 			switch (input.type) {
 				case AsterFormInputType.TEXT:
 				case AsterFormInputType.NUMBER:
@@ -26,6 +32,8 @@ export class AsterFormService {
 				case AsterFormInputType.TEXTAREA:
 				case AsterFormInputType.RICH_TEXT:
 				case AsterFormInputType.IMAGE:
+					// console.log(`default mapper => ${input.type}`);
+					// console.log(input.getValue);
 					response[input.key] = input.getValue();
 					break;
 				case AsterFormInputType.MULTISELECT:
@@ -35,6 +43,9 @@ export class AsterFormService {
 				default: response[input.key] = null;
 			}
 		});
+
+		// console.log('mapper response', response);
+		// console.log('========');
 
 		return response;
 	}
@@ -46,5 +57,56 @@ export class AsterFormService {
 			submit: preview.submit,
 			mapper: AsterFormService.defaultMapper
 		}
+	}
+
+	public prepareGetValues<T>(inputs: AsterFormInput<T, any>[]): void {
+		inputs.forEach((input: AsterFormInput<T, any>): void => {
+			switch (input.type) {
+				case AsterFormInputType.TEXT:
+				case AsterFormInputType.TEXTAREA:
+				case AsterFormInputType.RICH_TEXT:
+					input.getValue = AsterFormInputService.prepareGetValue(
+						input.getValue,
+						input.defaultValue,
+						''
+					);
+					break;
+				case AsterFormInputType.NUMBER:
+					input.getValue = AsterFormInputService.prepareGetValue(
+						input.getValue,
+						input.defaultValue,
+						0
+					);
+					break;
+				case AsterFormInputType.SELECT:
+					input.getValue = AsterFormInputService.prepareGetValue(
+						input.getValue,
+						input.defaultValue,
+						AsterFormInputService.prepareSelectDefaultValue(input)
+					);
+					break;
+				case AsterFormInputType.IMAGE:
+					input.getValue = AsterFormInputService.prepareGetValue(
+						input.getValue,
+						input.defaultValue,
+						AsterFormInputService.prepareImageDefaultValue()
+					);
+					break;
+				case AsterFormInputType.MULTISELECT:
+					input.getValues = AsterFormInputService.prepareGetValues(
+						input.getValues,
+						input.multiSelectDefaultValue,
+						[]
+					);
+					break;
+				case AsterFormInputType.MULTI_IMAGE:
+					input.getValues = AsterFormInputService.prepareGetValues(
+						input.getValues,
+						input.multiImageDefaultValue,
+						[]
+					);
+					break;
+			}
+		});
 	}
 }

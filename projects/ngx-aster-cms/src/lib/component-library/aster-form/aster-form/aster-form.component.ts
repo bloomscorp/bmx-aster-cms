@@ -52,13 +52,16 @@ export class AsterFormComponent implements OnInit {
 	}
 
 	public onSubmit(): void {
-		// get data
-		// submit data
+
+		this._.prepareGetValues(this.data.inputs);
+
 		const response: LooseObject = this.data.mapper(
 			this.data.model,
 			this.data.inputs
 		);
 
 		console.log(response);
+
+		// submit data
 	}
 }

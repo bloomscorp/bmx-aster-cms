@@ -16,7 +16,7 @@ export class AsterFormInputTextComponent<T> {
 	@Input() data: AsterFormInput<T, string> = {} as AsterFormInput<T, string>;
 
 	public keyPress(event: any): void {
-		console.log(`v => ${event.target.value}`);
-		console.log(`d => ${this.data.defaultValue}`);
+		// console.log(`v => ${event.target.value}`);
+		// console.log(`d => ${this.data.defaultValue}`);
 	}
 }

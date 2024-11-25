@@ -22,31 +22,32 @@ export class AsterFormInputService {
         return alphaNumericID(12);
     }
 
-    private static _prepareSelectDefaultValue<P>(data: AsterFormSelectInput<P>): AsterFormSelectOption {
+    public static prepareSelectDefaultValue<P>(data: AsterFormSelectInput<P>): AsterFormSelectOption {
         return {
             name: data.label ? `Select ${data.label}` : 'Choose from dropdown',
             value: ''
         };
     }
 
-	private static _prepareImageDefaultValue(empty: boolean = true): AsterFormImageItem {
+	public static prepareImageDefaultValue(empty: boolean = true): AsterFormImageItem {
 		return {
 			value: empty ? '' : 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/aster/assets/images/upload-image.svg',
 			altText: empty ? '' : 'default image'
 		};
 	}
 
-	private static _prepareGetValue<V>(
+	public static prepareGetValue<V>(
 		getValue: (() => V) | undefined,
 		defaultValue: V | undefined,
 		otherDefault: V
 	): () => V {
+		console.log(`pgv default value => ${defaultValue}`);
 		if (getValue)
 			return getValue;
 		return defaultValue ? ((): NonNullable<V> => defaultValue) : ((): V => otherDefault);
 	}
 
-	private static _prepareGetValues<V>(
+	public static prepareGetValues<V>(
 		getValues: (() => V[]) | undefined,
 		defaultValue: V[] | undefined,
 		otherDefault: V[]
@@ -57,7 +58,8 @@ export class AsterFormInputService {
 	}
 
     public static prepareTextInput<P>(data: AsterFormTextInput<P>): AsterFormInput<P, string> {
-        return {
+
+        const x: AsterFormInput<P, string> = {
             id: data.id ? data.id : AsterFormInputService._prepareId(),
             model: data.model,
             type: AsterFormInputType.TEXT,
@@ -76,9 +78,11 @@ export class AsterFormInputService {
             spellcheck: data.spellcheck ? data.spellcheck : true,
             step: 0,
             options: [],
-			getValue: AsterFormInputService._prepareGetValue(data.getValue, data.defaultValue, ''),
+			getValue: () => '',
 			getValues: (): never[] => []
         };
+
+		return x;
     }
 
     public static prepareNumericInput<P>(data: AsterFormNumberInput<P>): AsterFormInput<P, number> {
@@ -101,7 +105,7 @@ export class AsterFormInputService {
             spellcheck: false,
             step: data.step ? data.step : 1,
             options: [],
-			getValue: AsterFormInputService._prepareGetValue(data.getValue, data.defaultValue, 0),
+			getValue: () => 0,
 			getValues: (): never[] => []
         };
     }
@@ -128,7 +132,7 @@ export class AsterFormInputService {
             cols: data.cols ? data.cols : 30,
             step: 0,
             options: [],
-			getValue: AsterFormInputService._prepareGetValue(data.getValue, data.defaultValue, ''),
+			getValue: () => '',
 			getValues: (): never[] => []
         };
     }
@@ -153,7 +157,7 @@ export class AsterFormInputService {
             spellcheck: data.spellcheck ? data.spellcheck : true,
             step: 0,
             options: [],
-			getValue: AsterFormInputService._prepareGetValue(data.getValue, data.defaultValue, ''),
+			getValue: () => '',
 			getValues: (): never[] => []
         };
     }
@@ -167,7 +171,7 @@ export class AsterFormInputService {
             label: data.label ? data.label : '',
             name: data.name ? data.name : AsterFormInputService._prepareName(),
             placeholder: '',
-            defaultValue: data.defaultValue ? data.defaultValue : AsterFormInputService._prepareSelectDefaultValue(data),
+            defaultValue: data.defaultValue ? data.defaultValue : AsterFormInputService.prepareSelectDefaultValue(data),
             multiSelectDefaultValue: [],
 			multiImageDefaultValue: [],
             min: 0,
@@ -178,7 +182,7 @@ export class AsterFormInputService {
             spellcheck: false,
             step: 1,
             options: data.options ? data.options : [],
-			getValue: AsterFormInputService._prepareGetValue(data.getValue, data.defaultValue, AsterFormInputService._prepareSelectDefaultValue(data)),
+			getValue: () => AsterFormInputService.prepareSelectDefaultValue(data),
 			getValues: (): never[] => []
         };
     }
@@ -204,7 +208,7 @@ export class AsterFormInputService {
             step: 1,
             options: data.options ? data.options : [],
             appendTo: data.appendTo,
-			getValues: AsterFormInputService._prepareGetValues(data.getValues, data.multiSelectDefaultValue, []),
+			getValues: (): never[] => [],
 			getValue: (): AsterFormSelectOption => { return {} as AsterFormSelectOption; }
         };
     }
@@ -218,7 +222,7 @@ export class AsterFormInputService {
             label: data.label ? data.label : '',
             name: data.name ? data.name : AsterFormInputService._prepareName(),
             placeholder: data.placeholder ? data.placeholder : '',
-            defaultValue: data.defaultValue ? data.defaultValue : AsterFormInputService._prepareImageDefaultValue(),
+            defaultValue: data.defaultValue ? data.defaultValue : AsterFormInputService.prepareImageDefaultValue(),
             multiSelectDefaultValue: [],
 			multiImageDefaultValue: [],
             min: data.min ? data.min : 1,
@@ -229,7 +233,7 @@ export class AsterFormInputService {
             spellcheck: false,
             step: 0,
             options: [],
-			getValue: AsterFormInputService._prepareGetValue(data.getValue, data.defaultValue, AsterFormInputService._prepareImageDefaultValue()),
+			getValue: () => AsterFormInputService.prepareImageDefaultValue(),
 			getValues: (): never[] => []
         }
     }
@@ -254,7 +258,7 @@ export class AsterFormInputService {
             spellcheck: false,
             step: 0,
             options: [],
-			getValues: AsterFormInputService._prepareGetValues(data.getValues, data.multiImageDefaultValue, []),
+			getValues: () => [],
 			getValue: (): AsterFormImageItem => { return {} as AsterFormImageItem; }
         }
     }
