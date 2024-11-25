@@ -41,7 +41,6 @@ export class AsterFormInputService {
 		defaultValue: V | undefined,
 		otherDefault: V
 	): () => V {
-		console.log(`pgv default value => ${defaultValue}`);
 		if (getValue)
 			return getValue;
 		return defaultValue ? ((): NonNullable<V> => defaultValue) : ((): V => otherDefault);
