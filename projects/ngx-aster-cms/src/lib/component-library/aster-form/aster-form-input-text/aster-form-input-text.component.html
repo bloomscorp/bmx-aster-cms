@@ -11,5 +11,7 @@
 		   [disabled]="data.disabled"
 		   [attr.spellcheck]="data.spellcheck"
 		   [attr.value]="data.defaultValue"
+		   [(ngModel)]="data.defaultValue"
+		   (keyup)="keyPress($event)"
 		   class="ax-text-input-field" />
 </div>
