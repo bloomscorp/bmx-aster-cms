@@ -1,5 +1,5 @@
 import {CommonModule} from '@angular/common';
-import {ChangeDetectionStrategy, Component, Input, type OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {AsterFormInput} from '../interface/aster-form-input';
 import {AsterFormSelectOption} from '../interface/aster-form-select-option';
 import {NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent,} from '@ng-select/ng-select';
@@ -21,12 +21,12 @@ import {FormsModule} from '@angular/forms';
 })
 export class AsterFormInputMultiSelectComponent<T> {
 
-    @Input() data: AsterFormInput<T, AsterFormSelectOption[]> = {} as AsterFormInput<T, AsterFormSelectOption[]>;
+    @Input() data: AsterFormInput<T, AsterFormSelectOption> = {} as AsterFormInput<T, AsterFormSelectOption>;
 
     public selectedOption: AsterFormSelectOption[] = [];
 
     constructor() {
-        this.selectedOption = this.data.defaultValue;
+        this.selectedOption = this.data.multiSelectDefaultValue || [];
     }
 
     // TODO: set option to default value if no options available
