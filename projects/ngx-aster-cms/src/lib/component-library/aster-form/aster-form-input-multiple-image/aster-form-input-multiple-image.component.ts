@@ -17,7 +17,7 @@ import {SanitizeUrlPipe} from '../../pipes/sanitize-url.pipe';
 })
 export class AsterFormInputMultipleImageComponent<T> implements OnInit {
 
-    @Input() data: AsterFormInput<T, AsterFormImageItem[]> = {} as AsterFormInput<T, AsterFormImageItem[]>;
+    @Input() data: AsterFormInput<T, AsterFormImageItem> = {} as AsterFormInput<T, AsterFormImageItem>;
 
     public defaultImages: AsterFormImageItem[] = [];
 
@@ -25,9 +25,9 @@ export class AsterFormInputMultipleImageComponent<T> implements OnInit {
     }
 
     ngOnInit(): void {
-
-        if (this.data.defaultValue) {
-            this.data.defaultValue.forEach((image) => {
+        console.log(this.data.multiImageDefaultValue);
+        if (this.data.multiImageDefaultValue) {
+            this.data.multiImageDefaultValue.forEach((image) => {
                 if (image.value instanceof File) {
                     image.value = URL.createObjectURL(image.value);
                 }
