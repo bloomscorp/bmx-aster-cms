@@ -15,12 +15,13 @@ export const routes: Routes = [
     DefaultRoutes.MANAGE_USERS,
     DefaultRoutes.USER_DETAILS,
     DefaultRoutes.MANAGE_PRODUCTS,
+    DefaultRoutes.ADD_PRODUCT,
+    DefaultRoutes.UPDATE_PRODUCT,
     {
         path: AsterRequestMapper.PRODUCT_DETAILS,
         loadComponent: () => import('./product/product-details/product-details.component').then(m => m.ProductDetailsComponent),
         pathMatch: 'full'
     },
-    DefaultRoutes.ADD_PRODUCT,
     DefaultRoutes.MANAGE_ORDERS,
     DefaultRoutes.ORDER_DETAILS,
     DefaultRoutes.NOT_FOUND,

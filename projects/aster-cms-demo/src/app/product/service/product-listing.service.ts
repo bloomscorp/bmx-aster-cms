@@ -27,7 +27,8 @@ export class ProductListingService extends AsterProductListingService<ProductPre
         header: {
             title: 'Manage Your Products',
             subtitle: 'View and manage your products listed here'
-        }
+        },
+        addProductLink: '/product/add'
     };
 
 	public override prepareProductListTable(): TableData<ProductPreview> {
@@ -39,15 +40,7 @@ export class ProductListingService extends AsterProductListingService<ProductPre
 					}
 				}, {
 					header: {
-						title: 'Image'
-					}
-				}, {
-					header: {
 						title: 'Name'
-					}
-				}, {
-					header: {
-						title: 'Description'
 					}
 				}, {
 					header: {
@@ -63,7 +56,7 @@ export class ProductListingService extends AsterProductListingService<ProductPre
 					ariaLabel: 'view product details',
 					isRoute: true,
 					routeProvider: (product: ProductPreview, row: number, column: number): string => {
-						return `/product/${product.group}/${product.id}`;
+						return `/product/update/${product.id}`;
 					},
 					run: (product: ProductPreview, row: number, column: number): void => {
 						console.warn(product);
@@ -72,7 +65,7 @@ export class ProductListingService extends AsterProductListingService<ProductPre
 				numbered: true
 			},
 			content: [],
-			keys: ['sku', 'heroImage', 'name', 'description', 'price'],
+			keys: ['sku', 'name', 'price'],
 		};
 	}
 

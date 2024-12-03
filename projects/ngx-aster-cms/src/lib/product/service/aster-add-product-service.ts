@@ -1,7 +1,15 @@
 import {AsterForm} from "../../component-library/aster-form/interface/aster-form";
 import {AsterFormCompatible} from "../../component-library/aster-form/interface/aster-form-compatible";
+import { AddProductScreenData } from "../interface/screen/add-product-screen-data";
 
 export abstract class AsterAddProductService<P extends AsterFormCompatible> {
+
+    public screen: AddProductScreenData = {
+		header: {
+			title: 'Add Your Products',
+			subtitle: 'Create and manage your products here'
+		},
+	};
 
 	private _data: AsterForm<P> = {} as AsterForm<P>;
 

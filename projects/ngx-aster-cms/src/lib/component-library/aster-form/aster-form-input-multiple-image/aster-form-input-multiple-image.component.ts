@@ -12,7 +12,7 @@ import {SanitizeUrlPipe} from '../../pipes/sanitize-url.pipe';
         SanitizeUrlPipe
     ],
     templateUrl: './aster-form-input-multiple-image.component.html',
-    styleUrls: ['./aster-form-input-multiple-image.component.css'],
+    styleUrls: ['./aster-form-input-multiple-image.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AsterFormInputMultipleImageComponent<T> implements OnInit {

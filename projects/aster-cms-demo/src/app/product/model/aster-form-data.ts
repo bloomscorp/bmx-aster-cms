@@ -32,7 +32,7 @@ export class AsterFormData {
 	private static _sku: AsterFormInput<Product, string> = AsterFormInputService.prepareTextInput({
 		model: AsterFormData._product,
 		label: 'SKU',
-		key: 'sku'
+		key: 'sku',
 	});
 
 	private static _name: AsterFormInput<Product, string> = AsterFormInputService.prepareTextInput({
@@ -122,6 +122,26 @@ export class AsterFormData {
 			],
 			submit: {
 				label: 'Add Product',
+				api: ''
+			}
+		});
+	}
+
+    public static get updateProductFormData(): AsterForm<Product> {
+		return AsterFormService.prepare({
+			model: AsterFormData._product,
+			inputs: [
+				AsterFormData._sku,
+				AsterFormData._name,
+				AsterFormData._description,
+				AsterFormData._price,
+				AsterFormData._category,
+				AsterFormData._subCategory,
+				AsterFormData._heroImage,
+				AsterFormData._galleryImages,
+			],
+			submit: {
+				label: 'Update Product',
 				api: ''
 			}
 		});

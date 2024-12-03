@@ -39,6 +39,12 @@ export class DefaultRoutes {
 		pathMatch: 'full'
 	}
 
+    public static readonly UPDATE_PRODUCT: Route = {
+        path: AsterRequestMapper.PRODUCT_UPDATE,
+        loadComponent: () => import('../../product/update-product/update-product.component').then(m => m.UpdateProductComponent),
+        pathMatch: 'full'
+    }
+
 	public static readonly  MANAGE_ORDERS: Route = {
 		path: AsterRequestMapper.MANAGE_ORDERS,
 		loadComponent: () => import('../../order/order-listing/order-listing.component').then(m => m.OrderListingComponent),

@@ -12,7 +12,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
         CKEditorModule
     ],
     templateUrl: './aster-form-input-richtext.component.html',
-    styleUrls: ['./aster-form-input-richtext.component.css'],
+    styleUrls: ['./aster-form-input-richtext.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AsterFormInputRichtextComponent<T> {

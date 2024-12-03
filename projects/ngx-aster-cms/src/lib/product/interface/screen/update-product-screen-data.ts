@@ -1,6 +1,5 @@
 import { TitleData } from '../../../component-library/header/interface/title-data';
 
-export interface ProductListingScreenData {
+export interface UpdateProductScreenData {
 	header: TitleData;
-	addProductLink: string;
 }

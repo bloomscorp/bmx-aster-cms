@@ -1,7 +1,12 @@
 <!-- TODO: take TitleData as @Input() -->
-<aster-cms-header-section
-	[section]="screen.header.title"
-	[subSection]="screen.header.subtitle"></aster-cms-header-section>
+<aster-cms-header-section [section]="screen.header.title"
+    [subSection]="screen.header.subtitle"></aster-cms-header-section>
+<div class="flex justify-end mb-6 pr-14">
+    <a class="ax-add-product-button p-1" 
+        [routerLink]="screen.addProductLink">
+        Add Product
+    </a>
+</div>
 @if (!_.isLoading) {
-	<aster-cms-aster-table [tableData]="_.table"></aster-cms-aster-table>
+<aster-cms-aster-table [tableData]="_.table"></aster-cms-aster-table>
 }

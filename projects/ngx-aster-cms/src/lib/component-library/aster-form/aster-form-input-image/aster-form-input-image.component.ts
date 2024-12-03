@@ -12,7 +12,7 @@ import {AsterFormImageItem} from '../interface/aster-form-image-item';
         SanitizeUrlPipe
 	],
 	templateUrl: './aster-form-input-image.component.html',
-	styleUrls: ['./aster-form-input-image.component.css'],
+	styleUrls: ['./aster-form-input-image.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AsterFormInputImageComponent<T> implements OnInit {

@@ -60,7 +60,7 @@ export class AsterFormComponent implements OnInit {
 			this.data.inputs
 		);
 
-		console.log(response);
+		console.log('response', response);
 
 		// submit data
 	}

@@ -9,7 +9,7 @@ import {AsterFormInput} from '../interface/aster-form-input';
 		CommonModule,
 	],
 	templateUrl: './aster-form-input-textarea.component.html',
-	styleUrls: ['./aster-form-input-textarea.component.css'],
+	styleUrls: ['./aster-form-input-textarea.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AsterFormInputTextareaComponent<T> {

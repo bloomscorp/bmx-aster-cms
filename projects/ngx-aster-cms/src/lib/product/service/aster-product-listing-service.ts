@@ -7,7 +7,8 @@ export abstract class AsterProductListingService<P> {
 		header: {
 			title: 'Manage Products',
 			subtitle: 'View and manage your products here'
-		}
+		},
+        addProductLink: '/product/add'
 	};
 
 	private _loading: boolean = true;
