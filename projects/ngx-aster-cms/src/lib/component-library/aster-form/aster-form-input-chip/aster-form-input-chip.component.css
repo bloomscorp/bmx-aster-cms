@@ -1,0 +1,34 @@
+.ax-number-input {
+
+	.ax-number-input-field {
+
+		/* height: 2.5rem; */
+		border-width: 1px;
+		margin-top: 0.25rem;
+		border-radius: 0.25rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		width: 100%;
+		background-color: #f9fafb;
+
+		&:hover, &:focus {
+			outline:none;
+		}
+
+        > * {
+            border: none;
+        }
+	}
+}
+
+::ng-deep .ng2-tag-input {
+    border: none!important;
+}
+
+::ng-deep .ng2-tag-input.ng2-tag-input--focused {
+    border: none!important;
+}
+
+::ng-deep .ng2-tag-input__text {
+    background-color: #f9fafb;
+}

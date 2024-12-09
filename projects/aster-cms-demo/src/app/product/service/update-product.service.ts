@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AsterUpdateProductService } from '../../../../../ngx-aster-cms/src/lib/product/service/aster-update-product.service';
+import { AsterUpdateProductService } from '../../../../../ngx-aster-cms/src/lib/product/service/aster-update-product-service';
 import { Product } from '../interface/product';
 import { AsterForm } from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form';
 import { AsterFormData } from '../model/aster-form-data';

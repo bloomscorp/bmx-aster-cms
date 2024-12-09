@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, type OnInit } from '@angular/core';
 import { HeaderSectionComponent } from '../../component-library/header/header-section/header-section.component';
 import { AsterFormComponent } from '../../component-library/aster-form/aster-form/aster-form.component';
 import { UpdateProductScreenData } from '../interface/screen/update-product-screen-data';
-import { AsterUpdateProductService } from '../service/aster-update-product.service';
+import { AsterUpdateProductService } from '../service/aster-update-product-service';
 import { AsterFormCompatible } from '../../component-library/aster-form/interface/aster-form-compatible';
 
 @Component({

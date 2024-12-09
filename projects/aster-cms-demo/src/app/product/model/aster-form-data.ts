@@ -107,6 +107,13 @@ export class AsterFormData {
         ]
     });
 
+    private static _tags: AsterFormInput<Product, string[]> = AsterFormInputService.prepareChipInput({
+        model: AsterFormData._product,
+        label: 'Tags',
+        key: 'tags',
+        defaultValue: ['Tag 1', 'Tag 2']
+    })
+
 	public static get addProductFormData(): AsterForm<Product> {
 		return AsterFormService.prepare({
 			model: AsterFormData._product,
@@ -119,6 +126,7 @@ export class AsterFormData {
 				AsterFormData._subCategory,
 				AsterFormData._heroImage,
 				AsterFormData._galleryImages,
+                AsterFormData._tags
 			],
 			submit: {
 				label: 'Add Product',
@@ -139,6 +147,7 @@ export class AsterFormData {
 				AsterFormData._subCategory,
 				AsterFormData._heroImage,
 				AsterFormData._galleryImages,
+                AsterFormData._tags
 			],
 			submit: {
 				label: 'Update Product',

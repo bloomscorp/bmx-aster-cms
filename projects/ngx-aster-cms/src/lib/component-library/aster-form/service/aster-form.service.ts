@@ -106,6 +106,12 @@ export class AsterFormService {
 						[]
 					);
 					break;
+                case AsterFormInputType.CHIP:
+                    input.getValues = AsterFormInputService.prepareGetValues(
+                        input.getValues,
+                        input.defaultValue,
+                        []
+                    )
 			}
 		});
 	}

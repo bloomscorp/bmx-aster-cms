@@ -11,6 +11,7 @@ import {AsterFormRichtextInput} from '../interface/aster-form-richtext-input';
 import {AsterFormImageInput} from '../interface/aster-form-image-input';
 import {AsterFormImageItem} from '../interface/aster-form-image-item';
 import {AsterFormMultiImageInput} from '../interface/aster-form-multi-image-input';
+import { AsterFormChipInput } from "../interface/aster-form-chip-input";
 
 export class AsterFormInputService {
 
@@ -260,5 +261,30 @@ export class AsterFormInputService {
 			getValues: () => [],
 			getValue: (): AsterFormImageItem => { return {} as AsterFormImageItem; }
         }
+    }
+
+    public static prepareChipInput<P>(data: AsterFormChipInput<P>): AsterFormInput<P, string[]> {
+        return {
+            id: data.id ? data.id : AsterFormInputService._prepareId(),
+            model: data.model,
+            type: AsterFormInputType.CHIP,
+            key: data.key,
+            label: data.label ? data.label : '',
+            name: data.name ? data.name : AsterFormInputService._prepareName(),
+            placeholder: data.placeholder ? data.placeholder : '',
+            defaultValue: data.defaultValue ? data.defaultValue : [],
+            multiSelectDefaultValue: [],
+			multiImageDefaultValue: [],
+            min: data.min ? data.min : 1,
+            max: data.max ? data.max : 999,
+            pattern: '',
+            readonly: data.readonly ? data.readonly : false,
+            disabled: data.disabled ? data.disabled : false,
+            spellcheck: false,
+            step: 0,
+            options: [],
+			getValue: () => [],
+			getValues: (): never[] => []
+        };
     }
 }

@@ -16,23 +16,25 @@ import {
 } from '../aster-form-input-multiple-image/aster-form-input-multiple-image.component';
 import {LooseObject} from "../../../interface/loose-object";
 import {AsterFormService} from "../service/aster-form.service";
+import { AsterFormInputChipComponent } from "../aster-form-input-chip/aster-form-input-chip.component";
 
 @Component({
 	selector: 'aster-form',
 	standalone: true,
 	imports: [
-		NgForOf,
-		NgSwitch,
-		NgSwitchCase,
-		AsterFormInputTextComponent,
-		AsterFormInputNumericComponent,
-		AsterFormInputSelectComponent,
-		AsterFormInputMultiSelectComponent,
-		AsterFormInputTextareaComponent,
-		AsterFormInputRichtextComponent,
-		AsterFormInputImageComponent,
-		AsterFormInputMultipleImageComponent
-	],
+    NgForOf,
+    NgSwitch,
+    NgSwitchCase,
+    AsterFormInputTextComponent,
+    AsterFormInputNumericComponent,
+    AsterFormInputSelectComponent,
+    AsterFormInputMultiSelectComponent,
+    AsterFormInputTextareaComponent,
+    AsterFormInputRichtextComponent,
+    AsterFormInputImageComponent,
+    AsterFormInputMultipleImageComponent,
+    AsterFormInputChipComponent
+],
 	templateUrl: './aster-form.component.html',
 	styleUrls: [
 		'./aster-form.component.scss',
