@@ -78,8 +78,8 @@ export class AsterFormInputService {
             spellcheck: data.spellcheck ? data.spellcheck : true,
             step: 0,
             options: [],
-			getValue: () => '',
-			getValues: (): never[] => []
+			getValue: undefined,
+			getValues: undefined
         };
 
 		return x;
@@ -105,8 +105,8 @@ export class AsterFormInputService {
             spellcheck: false,
             step: data.step ? data.step : 1,
             options: [],
-			getValue: () => 0,
-			getValues: (): never[] => []
+			getValue: undefined,
+			getValues: undefined
         };
     }
 
@@ -132,8 +132,8 @@ export class AsterFormInputService {
             cols: data.cols ? data.cols : 30,
             step: 0,
             options: [],
-			getValue: () => '',
-			getValues: (): never[] => []
+			getValue: undefined,
+			getValues: undefined
         };
     }
 
@@ -157,8 +157,8 @@ export class AsterFormInputService {
             spellcheck: data.spellcheck ? data.spellcheck : true,
             step: 0,
             options: [],
-			getValue: () => '',
-			getValues: (): never[] => []
+			getValue: undefined,
+			getValues: undefined
         };
     }
 
@@ -182,8 +182,8 @@ export class AsterFormInputService {
             spellcheck: false,
             step: 1,
             options: data.options ? data.options : [],
-			getValue: () => AsterFormInputService.prepareSelectDefaultValue(data),
-			getValues: (): never[] => []
+			getValue: undefined,
+			getValues: undefined
         };
     }
 
@@ -208,8 +208,8 @@ export class AsterFormInputService {
             step: 1,
             options: data.options ? data.options : [],
             appendTo: data.appendTo,
-			getValues: (): never[] => [],
-			getValue: (): AsterFormSelectOption => { return {} as AsterFormSelectOption; }
+			getValue: undefined,
+			getValues: undefined
         };
     }
 
@@ -233,8 +233,8 @@ export class AsterFormInputService {
             spellcheck: false,
             step: 0,
             options: [],
-			getValue: () => AsterFormInputService.prepareImageDefaultValue(),
-			getValues: (): never[] => []
+			getValue: undefined,
+			getValues: undefined
         }
     }
 
@@ -258,8 +258,8 @@ export class AsterFormInputService {
             spellcheck: false,
             step: 0,
             options: [],
-			getValues: () => [],
-			getValue: (): AsterFormImageItem => { return {} as AsterFormImageItem; }
+			getValue: undefined,
+			getValues: undefined
         }
     }
 

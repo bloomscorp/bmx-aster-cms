@@ -34,18 +34,15 @@ export class AsterFormService {
 				case AsterFormInputType.IMAGE:
 					// console.log(`default mapper => ${input.type}`);
 					// console.log(input.getValue);
-					response[input.key] = input.getValue();
+					response[input.key] = input.getValue!();
 					break;
 				case AsterFormInputType.MULTISELECT:
 				case AsterFormInputType.MULTI_IMAGE:
-					response[input.key] = input.getValues();
+					response[input.key] = input.getValues!();
 					break;
 				default: response[input.key] = null;
 			}
 		});
-
-		// console.log('mapper response', response);
-		// console.log('========');
 
 		return response;
 	}

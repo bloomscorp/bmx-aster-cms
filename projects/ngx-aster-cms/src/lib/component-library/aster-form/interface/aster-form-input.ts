@@ -22,6 +22,6 @@ export interface AsterFormInput<T, V> {
 	step: number;
 	options: V[];
     appendTo?: string;
-	getValue: () => V;
-	getValues: () => V[];
+	getValue: (() => V) | undefined;
+	getValues: (() => V[]) | undefined;
 }

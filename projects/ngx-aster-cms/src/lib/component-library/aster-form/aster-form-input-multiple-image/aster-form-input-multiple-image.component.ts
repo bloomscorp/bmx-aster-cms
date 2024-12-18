@@ -25,7 +25,6 @@ export class AsterFormInputMultipleImageComponent<T> implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(this.data.multiImageDefaultValue);
         if (this.data.multiImageDefaultValue) {
             this.data.multiImageDefaultValue.forEach((image) => {
                 if (image.value instanceof File) {
