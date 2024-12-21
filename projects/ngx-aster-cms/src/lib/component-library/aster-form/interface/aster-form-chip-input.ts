@@ -5,10 +5,10 @@ export interface AsterFormChipInput<T> {
 	label?: string;
 	name?: string;
 	placeholder?: string;
-	defaultValue?: string[];
+	chipDefaultValue?: string[];
 	min?: number;
 	max?: number;
 	readonly?: boolean;
 	disabled?: boolean;
-	getValue?: () => string;
+	getValues?: () => string[];
 }

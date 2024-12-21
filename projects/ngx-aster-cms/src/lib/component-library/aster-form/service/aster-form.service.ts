@@ -40,6 +40,9 @@ export class AsterFormService {
 				case AsterFormInputType.MULTI_IMAGE:
 					response[input.key] = input.getValues!();
 					break;
+                case AsterFormInputType.CHIP:
+                    response[input.key] = input.getValues!();
+                    break;
 				default: response[input.key] = null;
 			}
 		});

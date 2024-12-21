@@ -64,7 +64,11 @@ export class AsterFormData {
 		}, {
 			value: '2',
 			name: 'Category 2',
-		}]
+		}],
+        defaultValue: {
+            value: '2',
+            name: 'Category 2'
+        }
 	});
 
     private static _subCategory: AsterFormInput<Product, AsterFormSelectOption> = AsterFormInputService.prepareMultiSelectInput({
@@ -107,11 +111,11 @@ export class AsterFormData {
         ]
     });
 
-    private static _tags: AsterFormInput<Product, string[]> = AsterFormInputService.prepareChipInput({
+    private static _tags: AsterFormInput<Product, string> = AsterFormInputService.prepareChipInput({
         model: AsterFormData._product,
         label: 'Tags',
         key: 'tags',
-        defaultValue: ['Tag 1', 'Tag 2']
+        chipDefaultValue: ['Tag 1', 'Tag 2']
     })
 
 	public static get addProductFormData(): AsterForm<Product> {

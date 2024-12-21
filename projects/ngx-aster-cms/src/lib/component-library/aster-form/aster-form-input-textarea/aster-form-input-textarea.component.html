@@ -11,5 +11,6 @@
 		   [disabled]="data.disabled"
            [attr.spellcheck]="data.spellcheck"
            [attr.rows]="data.rows ? data.rows : 3"
-		   class="ax-textarea-input-field">{{data.defaultValue}}</textarea>
+           [(ngModel)]="data.defaultValue"
+		   class="ax-textarea-input-field"></textarea>
 </div>

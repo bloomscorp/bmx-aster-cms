@@ -3,7 +3,13 @@
 	<select [attr.id]="data.id"
 			[attr.name]="data.name"
 			[disabled]="data.disabled"
+            [attr.readonly]="data.readonly"
+            (change)="onChange($event)"
 			class="ax-select-input-field">
-		<option *ngFor="let option of data.options; index as i;" [value]="option.value">{{ option.name }}</option>
+		<option *ngFor="let option of data.options; index as i;" 
+                [value]="option.value"
+                [selected]="option.value === data.defaultValue?.value">
+            {{ option.name }}
+        </option>
 	</select>
 </div>
