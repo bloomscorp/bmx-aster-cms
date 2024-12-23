@@ -1,6 +1,7 @@
 import {AsterFormInputType} from "../model/aster-form-input-type";
 
 export interface AsterFormInput<T, V> {
+	[key: string]: any;
 	id: string;
 	model: T;
 	type: AsterFormInputType;
@@ -25,4 +26,5 @@ export interface AsterFormInput<T, V> {
     appendTo: string;
 	getValue: (() => V) | undefined;
 	getValues: (() => V[]) | undefined;
+	isOtherDefaultSet: boolean;
 }

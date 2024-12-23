@@ -38,23 +38,32 @@ export class AsterFormInputService {
 	}
 
 	public static prepareGetValue<V>(
-		getValue: (() => V) | undefined,
-		defaultValue: V | undefined,
+		input: AsterFormInput<any, V>,
 		otherDefault: V
 	): () => V {
-		if (getValue)
-			return getValue;
-		return defaultValue ? ((): NonNullable<V> => defaultValue) : ((): V => otherDefault);
+		if (input.getValue && !input.isOtherDefaultSet)
+			return input.getValue;
+		if (input.defaultValue)
+			return (): V => input.defaultValue;
+		else {
+			input.isOtherDefaultSet = true;
+			return (): V => otherDefault;
+		}
 	}
 
 	public static prepareGetValues<V>(
-		getValues: (() => V[]) | undefined,
-		defaultValue: V[] | undefined,
+		input: AsterFormInput<any, V>,
+		defaultValueKey: string,
 		otherDefault: V[]
 	): () => V[] {
-		if (getValues)
-			return getValues;
-		return defaultValue ? ((): NonNullable<V[]> => defaultValue) : ((): V[] => otherDefault);
+		if (input.getValues && !input.isOtherDefaultSet)
+			return input.getValues;
+		if (input[defaultValueKey])
+			return (): V[] => input[defaultValueKey];
+		else {
+			input.isOtherDefaultSet = true;
+			return (): V[] => otherDefault;
+		}
 	}
 
     public static prepareTextInput<P>(data: AsterFormTextInput<P>): AsterFormInput<P, string> {
@@ -83,7 +92,8 @@ export class AsterFormInputService {
             step: 0,
             options: [],
 			getValue: undefined,
-			getValues: undefined
+			getValues: undefined,
+			isOtherDefaultSet: false
         };
 
 		return x;
@@ -114,7 +124,8 @@ export class AsterFormInputService {
             step: data.step ? data.step : 1,
             options: [],
 			getValue: undefined,
-			getValues: undefined
+			getValues: undefined,
+			isOtherDefaultSet: false
         };
     }
 
@@ -143,7 +154,8 @@ export class AsterFormInputService {
             options: [],
             appendTo: '',
 			getValue: undefined,
-			getValues: undefined
+			getValues: undefined,
+			isOtherDefaultSet: false
         };
     }
 
@@ -172,7 +184,8 @@ export class AsterFormInputService {
             step: 0,
             options: [],
 			getValue: undefined,
-			getValues: undefined
+			getValues: undefined,
+			isOtherDefaultSet: false
         };
     }
 
@@ -201,7 +214,8 @@ export class AsterFormInputService {
             appendTo: '',
             options: data.options ? data.options : [],
 			getValue: undefined,
-			getValues: undefined
+			getValues: undefined,
+			isOtherDefaultSet: false
         };
     }
 
@@ -230,7 +244,8 @@ export class AsterFormInputService {
             options: data.options ? data.options : [],
             appendTo: data.appendTo ? data.appendTo : 'body',
 			getValue: undefined,
-			getValues: undefined
+			getValues: undefined,
+			isOtherDefaultSet: false
         };
     }
 
@@ -259,7 +274,8 @@ export class AsterFormInputService {
             options: [],
             appendTo: '',
 			getValue: undefined,
-			getValues: undefined
+			getValues: undefined,
+			isOtherDefaultSet: false
         }
     }
 
@@ -288,7 +304,8 @@ export class AsterFormInputService {
             options: [],
             appendTo: '',
 			getValue: undefined,
-			getValues: undefined
+			getValues: undefined,
+			isOtherDefaultSet: false
         }
     }
 
@@ -317,7 +334,8 @@ export class AsterFormInputService {
             options: [],
             appendTo: '',
 			getValue: undefined,
-			getValues: undefined
+			getValues: undefined,
+			isOtherDefaultSet: false
         };
     }
 }

@@ -6,9 +6,9 @@
             [attr.readonly]="data.readonly"
             (change)="onChange($event)"
 			class="ax-select-input-field">
-		<option *ngFor="let option of data.options; index as i;" 
+		<option *ngFor="let option of data.options; index as i;"
                 [value]="option.value"
-                [selected]="option.value === data.defaultValue?.value">
+                [selected]="option.value === data.defaultValue.value">
             {{ option.name }}
         </option>
 	</select>

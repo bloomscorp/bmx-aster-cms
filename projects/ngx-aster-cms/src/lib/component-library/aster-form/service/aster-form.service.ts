@@ -65,52 +65,42 @@ export class AsterFormService {
 				case AsterFormInputType.TEXT:
 				case AsterFormInputType.TEXTAREA:
 				case AsterFormInputType.RICH_TEXT:
-					input.getValue = AsterFormInputService.prepareGetValue(
-						input.getValue,
-						input.defaultValue,
-						''
-					);
+					input.getValue = AsterFormInputService.prepareGetValue(input, '');
 					break;
 				case AsterFormInputType.NUMBER:
-					input.getValue = AsterFormInputService.prepareGetValue(
-						input.getValue,
-						input.defaultValue,
-						0
-					);
+					input.getValue = AsterFormInputService.prepareGetValue(input, 0);
 					break;
 				case AsterFormInputType.SELECT:
 					input.getValue = AsterFormInputService.prepareGetValue(
-						input.getValue,
-						input.defaultValue,
+						input,
 						AsterFormInputService.prepareSelectDefaultValue(input)
 					);
 					break;
 				case AsterFormInputType.IMAGE:
 					input.getValue = AsterFormInputService.prepareGetValue(
-						input.getValue,
-						input.defaultValue,
+						input,
 						AsterFormInputService.prepareImageDefaultValue()
 					);
 					break;
 				case AsterFormInputType.MULTISELECT:
 					input.getValues = AsterFormInputService.prepareGetValues(
-						input.getValues,
-						input.multiSelectDefaultValue,
-						[]
+						input,
+						'multiSelectDefaultValue',
+						input.multiSelectDefaultValue
 					);
 					break;
 				case AsterFormInputType.MULTI_IMAGE:
 					input.getValues = AsterFormInputService.prepareGetValues(
-						input.getValues,
-						input.multiImageDefaultValue,
-						[]
+						input,
+						'multiImageDefaultValue',
+						input.multiImageDefaultValue
 					);
 					break;
                 case AsterFormInputType.CHIP:
                     input.getValues = AsterFormInputService.prepareGetValues(
-                        input.getValues,
-                        input.defaultValue,
-                        []
+                        input,
+						'chipDefaultValue',
+                        input.chipDefaultValue
                     )
 			}
 		});
