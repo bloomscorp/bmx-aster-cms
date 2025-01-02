@@ -17,6 +17,9 @@ import {
 import {LooseObject} from "../../../interface/loose-object";
 import {AsterFormService} from "../service/aster-form.service";
 import { AsterFormInputChipComponent } from "../aster-form-input-chip/aster-form-input-chip.component";
+import { ProductTransmissionService } from '../../../raintree/transmission/product/product-transmission.service';
+import { ProductPreview } from '../../../../../../aster-cms-demo/src/app/product/interface/product-preview';
+import { RaintreeResponse } from 'bmx-transmission/lib/raintree/interface/raintree-response';
 
 @Component({
 	selector: 'aster-form',
@@ -46,7 +49,10 @@ export class AsterFormComponent implements OnInit {
 	@Input() public data: AsterForm<any> = {} as AsterForm<any>;
 	public INPUT_TYPES: typeof AsterFormInputType = AsterFormInputType;
 
-	constructor(public _: AsterFormService) {
+	constructor(
+        public _: AsterFormService,
+        public _api: ProductTransmissionService<ProductPreview>
+    ) {
 	}
 
 	public ngOnInit(): void {
@@ -55,19 +61,24 @@ export class AsterFormComponent implements OnInit {
 
 	public onSubmit(): void {
 
-		// console.log(this.data.inputs);
-
 		this._.prepareGetValues(this.data.inputs);
-
-		// console.log(this.data.inputs);
 
 		const response: LooseObject = this.data.mapper(
 			this.data.model,
 			this.data.inputs
 		);
 
-		console.log('response', response);
+        // TODO: will be remove once no longer required for aster-form
+		// this.data.submit.operation(response);
 
-		// submit data
+        this._api.create(
+            response,
+            () => {},
+            (response: RaintreeResponse) => {},
+            (response: RaintreeResponse) => {},
+            () => {},
+            () => {},
+            this.data.submit.api
+        )
 	}
 }

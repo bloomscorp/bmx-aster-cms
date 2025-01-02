@@ -18,11 +18,8 @@ export class AsterFormInputSelectComponent<T> implements OnInit {
     
     ngOnInit(): void {
     }
-
-	// TODO: set option to default value if no options available
-	// TODO: set option to default value
+    
     public onChange(event: any) {
         this.data.defaultValue = this.data.options.find(option => option.value === event.target.value) as AsterFormSelectOption;
-        console.log(this.data.defaultValue);
     }
 }

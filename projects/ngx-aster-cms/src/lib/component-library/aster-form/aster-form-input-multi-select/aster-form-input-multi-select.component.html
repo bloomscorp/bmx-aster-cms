@@ -5,7 +5,7 @@
 			[readonly]="data.disabled"
             [items]="data.options" 
             [multiple]="true"
-            [(ngModel)]="selectedOption"
+            [(ngModel)]="data.multiSelectDefaultValue"
             [appendTo]="data.appendTo ? data.appendTo : 'body'" 
             bindLabel="name" 
             bindValue="value"

@@ -10,6 +10,8 @@ export class RequestMapperService {
 
     public static readonly GET_PRODUCT_PREVIEW: string = ConfigurationService.SERVER_ENDPOINT + '/get/product-preview-list';
 
+    public static readonly CREATE_PRODUCT: string = ConfigurationService.SERVER_ENDPOINT + '/add/product';
+
     constructor() { }
 
 }

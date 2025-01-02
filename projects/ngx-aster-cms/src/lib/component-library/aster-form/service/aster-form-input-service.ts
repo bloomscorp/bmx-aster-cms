@@ -12,6 +12,7 @@ import {AsterFormImageInput} from '../interface/aster-form-image-input';
 import {AsterFormImageItem} from '../interface/aster-form-image-item';
 import {AsterFormMultiImageInput} from '../interface/aster-form-multi-image-input';
 import { AsterFormChipInput } from "../interface/aster-form-chip-input";
+import { AsterFormChipValue } from "../interface/aster-form-chip-value";
 
 export class AsterFormInputService {
 
@@ -32,7 +33,10 @@ export class AsterFormInputService {
 
 	public static prepareImageDefaultValue(empty: boolean = true): AsterFormImageItem {
 		return {
-			value: empty ? '' : 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/aster/assets/images/upload-image.svg',
+            imageUrl: empty ? '' : 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/aster/assets/images/upload-image.svg',
+            order: 1,
+            imageFile: null,
+			deleted: false,
 			altText: empty ? '' : 'default image'
 		};
 	}
@@ -309,7 +313,7 @@ export class AsterFormInputService {
         }
     }
 
-    public static prepareChipInput<P>(data: AsterFormChipInput<P>): AsterFormInput<P, string> {
+    public static prepareChipInput<P>(data: AsterFormChipInput<P>): AsterFormInput<P, AsterFormChipValue> {
         return {
             id: data.id ? data.id : AsterFormInputService._prepareId(),
             model: data.model,
@@ -318,7 +322,7 @@ export class AsterFormInputService {
             label: data.label ? data.label : '',
             name: data.name ? data.name : AsterFormInputService._prepareName(),
             placeholder: data.placeholder ? data.placeholder : '',
-            defaultValue: '',
+            defaultValue: {} as AsterFormChipValue,
             multiSelectDefaultValue: [],
 			multiImageDefaultValue: [],
             chipDefaultValue: data.chipDefaultValue ? data.chipDefaultValue : [],

@@ -1,14 +1,13 @@
-import {BmxTransmissionService} from "bmx-transmission";
-import {RaintreeResponse} from "bmx-transmission/lib/raintree/interface/raintree-response";
-import {JWTService} from "../../authentication/jwt.service";
+import { BmxTransmissionService } from 'bmx-transmission';
+import { RaintreeResponse } from 'bmx-transmission/lib/raintree/interface/raintree-response';
+import { JWTService } from '../../authentication/jwt.service';
+import { FormPayload } from 'bmx-transmission/lib/raintree/interface/form-payload';
 
 export abstract class CRUDTransmissionService<E> {
-
 	protected constructor(
 		private _transmission: BmxTransmissionService,
-		private _jwt: JWTService,
-	) {
-	}
+		private _jwt: JWTService
+	) {}
 
 	public readAll<P extends RaintreeResponse>(
 		onPreExecute: () => void,
@@ -31,7 +30,28 @@ export abstract class CRUDTransmissionService<E> {
 		);
 	}
 
-	public abstract create(): void;
+	public create<P extends FormPayload>(
+		payload: P,
+		onPreExecute: () => void,
+		onPostExecute: (response: RaintreeResponse) => void,
+		onSuccess: (response: RaintreeResponse) => void,
+		onFailure: () => void,
+		onComplete: () => void,
+        url: string,
+	): void {
+        this._transmission.executeFormPostPayload<P>(
+			url,
+			payload,
+			this._jwt.injectToken(url, false),
+			onPreExecute,
+			onPostExecute,
+			onSuccess,
+			onFailure,
+			onComplete,
+            true
+		);
+    };
+    
 	public abstract read(): void;
 	public abstract update(): void;
 	public abstract delete(): void;

@@ -1,4 +1,7 @@
 export interface AsterFormImageItem {
-    value: string | File;
-    altText: string;
+	imageUrl: string;
+	order: number;
+	imageFile?: File | null;
+	altText: string;
+	deleted: boolean;
 }

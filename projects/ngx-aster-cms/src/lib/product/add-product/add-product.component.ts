@@ -20,9 +20,9 @@ import { AddProductScreenData } from '../interface/screen/add-product-screen-dat
 	standalone: true,
 	imports: [
 		CommonModule,
-		NgLabelTemplateDirective,
-		NgOptionTemplateDirective,
-		NgSelectComponent,
+		// NgLabelTemplateDirective,
+		// NgOptionTemplateDirective,
+		// NgSelectComponent,
 		HeaderSectionComponent,
 		AsterFormComponent,
 	],

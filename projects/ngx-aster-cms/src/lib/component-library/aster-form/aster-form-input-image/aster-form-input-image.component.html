@@ -4,19 +4,21 @@
         <label
             class="flex flex-col rounded-lg border-2 border-dashed w-full h-60 p-10 group text-center">
             <div class="h-full w-full text-center flex flex-col items-center justify-center">
-                <div class="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
+                <div class="flex flex-auto max-h-48 mx-auto mt-4">
                     <img class="has-mask h-36 object-center"
-                        [src]="this.imageURL | sanitizeUrl"
-                        alt="freepik image">
+                        [src]="this.imageURL | sanitizeUrl">
+                        @if (!hideDeleteButton) {
+                            <mat-icon class="cursor-pointer text-red-600" (click)="removeImage($event)">backspace</mat-icon>
+                        }
                 </div>
                 <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here</p>
             </div>
-            <input type="file" class="hidden">
+            <input type="file" class="hidden" (change)="uploadData($event)">
         </label>
     </div>
 </div>
 <div class="ax-text-input">
 	<input type="text"
-		   [attr.value]="data.defaultValue.altText"
+		   [(ngModel)]="data.defaultValue.altText"
 		   class="ax-text-input-field" />
 </div>
