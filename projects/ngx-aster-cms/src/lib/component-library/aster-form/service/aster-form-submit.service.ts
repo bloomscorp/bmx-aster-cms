@@ -3,6 +3,7 @@ import {AsterFormSubmitAdapter} from "../interface/aster-form-submit-adapter";
 import {AsterFormSubmit} from "../interface/aster-form-submit";
 import {AsterFormTransmission} from "../interface/aster-form-transmission";
 import {AsterFormTransmissionCallback} from "../interface/aster-form-transmission-callback";
+import {AsterFormTransmissionAdapter} from "../interface/aster-form-transmission-adapter";
 
 @Injectable({
 	providedIn: 'root'
@@ -12,38 +13,53 @@ export class AsterFormSubmitService {
 	constructor() {
 	}
 
-	private static defaultPreExecute(): AsterFormTransmissionCallback {
+	private static defaultPreExecute(
+		message: string = '',
+		callback: (data?: any) => void = (): void => {}
+	): AsterFormTransmissionCallback {
 		return {
-			message: '',
-			callback: (): void => {}
+			message: message,
+			callback: callback
 		};
 	}
 
-	private static defaultPostExecute(): AsterFormTransmissionCallback {
+	private static defaultPostExecute(
+		message: string = '',
+		callback: (data?: any) => void = (): void => {}
+	): AsterFormTransmissionCallback {
 		return {
-			message: '',
-			callback: (): void => {}
+			message: message,
+			callback: callback
 		};
 	}
 
-	private static defaultSuccess(): AsterFormTransmissionCallback {
+	private static defaultSuccess(
+		message: string = 'Operation Successful!',
+		callback: (data?: any) => void = (): void => {}
+	): AsterFormTransmissionCallback {
 		return {
-			message: 'Operation Successful!',
-			callback: (): void => {}
+			message: message,
+			callback: callback
 		};
 	}
 
-	private static defaultFailure(): AsterFormTransmissionCallback {
+	private static defaultFailure(
+		message: string = 'Operation Failed!',
+		callback: (data?: any) => void = (): void => {}
+	): AsterFormTransmissionCallback {
 		return {
-			message: 'Operation Failed!',
-			callback: (): void => {}
+			message: message,
+			callback: callback
 		};
 	}
 
-	private static defaultComplete(): AsterFormTransmissionCallback {
+	private static defaultComplete(
+		message: string = '',
+		callback: (data?: any) => void = (): void => {}
+	): AsterFormTransmissionCallback {
 		return {
-			message: '',
-			callback: (): void => {}
+			message: message,
+			callback: callback
 		};
 	}
 
@@ -61,7 +77,26 @@ export class AsterFormSubmitService {
 
 		if (adapter.transmission) {
 			return {
-				preExecute: adapter.transmission.preExecute ? adapter.transmission.preExecute : AsterFormSubmitService.defaultPreExecute()
+				preExecute: AsterFormSubmitService.defaultPreExecute(
+					adapter.transmission.preExecute?.message,
+					adapter.transmission.preExecute?.callback
+				),
+				postExecute: AsterFormSubmitService.defaultPostExecute(
+					adapter.transmission.preExecute?.message,
+					adapter.transmission.preExecute?.callback
+				),
+				success: AsterFormSubmitService.defaultSuccess(
+					adapter.transmission.preExecute?.message,
+					adapter.transmission.preExecute?.callback
+				),
+				failure: AsterFormSubmitService.defaultFailure(
+					adapter.transmission.preExecute?.message,
+					adapter.transmission.preExecute?.callback
+				),
+				complete: AsterFormSubmitService.defaultComplete(
+					adapter.transmission.preExecute?.message,
+					adapter.transmission.preExecute?.callback
+				)
 			};
 		} else return AsterFormSubmitService.defaultTransmission();
 	}
