@@ -60,7 +60,9 @@ export class AsterFormSubmitService {
 	private static prepareTransmission(adapter: AsterFormSubmitAdapter): AsterFormTransmission {
 
 		if (adapter.transmission) {
-
+			return {
+				preExecute: adapter.transmission.preExecute ? adapter.transmission.preExecute : AsterFormSubmitService.defaultPreExecute()
+			};
 		} else return AsterFormSubmitService.defaultTransmission();
 	}
 

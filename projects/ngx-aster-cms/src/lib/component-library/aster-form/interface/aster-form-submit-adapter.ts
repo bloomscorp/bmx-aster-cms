@@ -1,8 +1,8 @@
-import {AsterFormTransmission} from "./aster-form-transmission";
+import {AsterFormTransmissionAdapter} from "./aster-form-transmission-adapter";
 
 export interface AsterFormSubmitAdapter {
 	api: string;
 	label?: string;
 	type?: AsterFormType;
-	transmission?: AsterFormTransmission;
+	transmission?: AsterFormTransmissionAdapter;
 }
