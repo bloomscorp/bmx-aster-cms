@@ -41,7 +41,7 @@ export class ProductPreviewTransmissionService<P> extends CRUDTransmissionServic
 		);
 	}
 
-	create(): void {
+	public override create(): void {
 	}
 
 	delete(): void {

@@ -21,10 +21,6 @@ export class AsterFormService {
 
 		inputs.forEach((input: AsterFormInput<T, any>): void => {
 
-			// input.getValue = input.getValue();
-
-			// console.log(input.getValue());
-
 			switch (input.type) {
 				case AsterFormInputType.TEXT:
 				case AsterFormInputType.NUMBER:
@@ -32,8 +28,6 @@ export class AsterFormService {
 				case AsterFormInputType.TEXTAREA:
 				case AsterFormInputType.RICH_TEXT:
 				case AsterFormInputType.IMAGE:
-					// console.log(`default mapper => ${input.type}`);
-					// console.log(input.getValue);
 					response[input.key] = input.getValue!();
 					break;
 				case AsterFormInputType.MULTISELECT:
@@ -101,7 +95,7 @@ export class AsterFormService {
                         input,
 						'chipDefaultValue',
                         input.chipDefaultValue
-                    )
+                    );
 			}
 		});
 	}
