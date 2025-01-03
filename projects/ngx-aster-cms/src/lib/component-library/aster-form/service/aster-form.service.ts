@@ -6,13 +6,18 @@ import {AsterFormCompatible} from "../interface/aster-form-compatible";
 import {LooseObject} from "../../../interface/loose-object";
 import {AsterFormInputType} from "../model/aster-form-input-type";
 import {AsterFormInputService} from "./aster-form-input-service";
+import {AsterFormSubmitAdapter} from "../interface/aster-form-submit-adapter";
+import {AsterFormSubmit} from "../interface/aster-form-submit";
+import {AsterFormSubmitService} from "./aster-form-submit.service";
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AsterFormService {
 
-	constructor() {
+	constructor(
+		private _formSubmit: AsterFormSubmitService
+	) {
 	}
 
 	public static defaultMapper<T extends AsterFormCompatible>(model: T, inputs: AsterFormInput<T, any>[]): LooseObject {
@@ -48,7 +53,7 @@ export class AsterFormService {
 		return {
 			model: preview.model,
 			inputs: preview.inputs,
-			submit: preview.submit,
+			submit: AsterFormSubmitService.prepareFormSubmit(preview.submit),
 			mapper: AsterFormService.defaultMapper
 		}
 	}

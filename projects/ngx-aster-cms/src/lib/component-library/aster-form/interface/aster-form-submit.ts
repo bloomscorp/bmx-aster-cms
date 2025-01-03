@@ -1,6 +1,8 @@
+import {AsterFormTransmission} from "./aster-form-transmission";
+
 export interface AsterFormSubmit {
-	label: string;
 	api: string;
-	type: 'POST' | 'PATCH';
-    operation: (data: any) => any;
+	label: string;
+	type: AsterFormType;
+	transmission: AsterFormTransmission;
 }

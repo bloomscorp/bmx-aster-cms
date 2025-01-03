@@ -17,9 +17,8 @@ import {
 import {LooseObject} from "../../../interface/loose-object";
 import {AsterFormService} from "../service/aster-form.service";
 import { AsterFormInputChipComponent } from "../aster-form-input-chip/aster-form-input-chip.component";
-import { ProductTransmissionService } from '../../../raintree/transmission/product/product-transmission.service';
-import { ProductPreview } from '../../../../../../aster-cms-demo/src/app/product/interface/product-preview';
 import { RaintreeResponse } from 'bmx-transmission/lib/raintree/interface/raintree-response';
+import {AsterFormTransmissionService} from "../../../raintree/transmission/aster-form/aster-form-transmission.service";
 
 @Component({
 	selector: 'aster-form',
@@ -51,7 +50,7 @@ export class AsterFormComponent implements OnInit {
 
 	constructor(
         public _: AsterFormService,
-        public _api: ProductTransmissionService<ProductPreview>
+        public _api: AsterFormTransmissionService
     ) {
 	}
 

@@ -1,0 +1,1 @@
+type AsterFormType = 'POST' | 'PATCH';

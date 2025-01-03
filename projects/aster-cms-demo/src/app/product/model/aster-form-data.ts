@@ -168,9 +168,6 @@ export class AsterFormData {
 			submit: {
 				label: 'Add Product',
 				api: '',
-                operation: (data: any) => {
-                    console.log('now can control the data', data);
-                }
 			},
 		});
 	}
@@ -192,9 +189,6 @@ export class AsterFormData {
 			submit: {
 				label: 'Update Product',
 				api: '',
-                operation: (data: any) => {
-                    console.log('now can control the data', data);
-                }
 			},
 		});
 	}
