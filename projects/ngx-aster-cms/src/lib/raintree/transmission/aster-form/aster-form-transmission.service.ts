@@ -40,6 +40,8 @@ export class AsterFormTransmissionService extends CRUDTransmissionService<any> {
 		);
 	}
 
+	public patch(): void {}
+
 	public override create<F extends FormPayload>(
 		payload: F,
 		onPreExecute: () => void,

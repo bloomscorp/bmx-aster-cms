@@ -67,17 +67,29 @@ export class AsterFormComponent implements OnInit {
 			this.data.inputs
 		);
 
-        // TODO: will be remove once no longer required for aster-form
-		// this.data.submit.operation(response);
-
-        this._api.create(
-            response,
-            () => {},
-            (response: RaintreeResponse) => {},
-            (response: RaintreeResponse) => {},
-            () => {},
-            () => {},
-            this.data.submit.api
-        )
+		switch (this.data.submit.type) {
+			case "POST":
+				this._api.post(
+					response,
+					(): void => {
+						this.data.submit.transmission.preExecute.callback();
+					},
+					(response: RaintreeResponse) => {
+						this.data.submit.transmission.postExecute.callback(response);
+					},
+					(response: RaintreeResponse) => {
+						this.data.submit.transmission.success.callback(response);
+					},
+					() => {
+						this.data.submit.transmission.failure.callback();
+					},
+					() => {
+						this.data.submit.transmission.complete.callback();
+					},
+					this.data.submit.api
+				);
+				break;
+			case "PATCH": break;
+		}
 	}
 }
