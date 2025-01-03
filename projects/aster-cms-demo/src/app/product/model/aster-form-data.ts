@@ -189,6 +189,9 @@ export class AsterFormData {
 			submit: {
 				label: 'Update Product',
 				api: '',
+				transmission: {
+
+				}
 			},
 		});
 	}

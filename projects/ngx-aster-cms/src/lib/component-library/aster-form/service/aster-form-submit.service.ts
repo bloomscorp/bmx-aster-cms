@@ -74,7 +74,6 @@ export class AsterFormSubmitService {
 	}
 
 	private static prepareTransmission(adapter: AsterFormSubmitAdapter): AsterFormTransmission {
-
 		if (adapter.transmission) {
 			return {
 				preExecute: AsterFormSubmitService.defaultPreExecute(
@@ -102,7 +101,6 @@ export class AsterFormSubmitService {
 	}
 
 	public static prepareFormSubmit(adapter: AsterFormSubmitAdapter): AsterFormSubmit {
-
 		return {
 			api: adapter.api,
 			label: adapter.label ? adapter.label : 'Submit',

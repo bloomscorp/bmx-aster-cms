@@ -52,7 +52,7 @@ export class AsterFormService {
 			model: preview.model,
 			inputs: preview.inputs,
 			submit: AsterFormSubmitService.prepareFormSubmit(preview.submit),
-			mapper: AsterFormService.defaultMapper
+			mapper: preview.mapper ? preview.mapper : AsterFormService.defaultMapper
 		}
 	}
 
