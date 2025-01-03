@@ -14,11 +14,11 @@ import {AsterFormInputImageComponent} from '../aster-form-input-image/aster-form
 import {
 	AsterFormInputMultipleImageComponent
 } from '../aster-form-input-multiple-image/aster-form-input-multiple-image.component';
-import {LooseObject} from "../../../interface/loose-object";
 import {AsterFormService} from "../service/aster-form.service";
 import { AsterFormInputChipComponent } from "../aster-form-input-chip/aster-form-input-chip.component";
 import { RaintreeResponse } from 'bmx-transmission/lib/raintree/interface/raintree-response';
 import {AsterFormTransmissionService} from "../../../raintree/transmission/aster-form/aster-form-transmission.service";
+import {FormPayload} from "bmx-transmission/lib/raintree/interface/form-payload";
 
 @Component({
 	selector: 'aster-form',
@@ -62,7 +62,7 @@ export class AsterFormComponent implements OnInit {
 
 		this._.prepareGetValues(this.data.inputs);
 
-		const response: LooseObject = this.data.mapper(
+		const response: FormPayload = this.data.mapper(
 			this.data.model,
 			this.data.inputs
 		);

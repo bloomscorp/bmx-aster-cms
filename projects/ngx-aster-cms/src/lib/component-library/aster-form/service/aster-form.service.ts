@@ -3,12 +3,10 @@ import {AsterForm} from "../interface/aster-form";
 import {AsterFormPreview} from "../interface/aster-form-preview";
 import {AsterFormInput} from "../interface/aster-form-input";
 import {AsterFormCompatible} from "../interface/aster-form-compatible";
-import {LooseObject} from "../../../interface/loose-object";
 import {AsterFormInputType} from "../model/aster-form-input-type";
 import {AsterFormInputService} from "./aster-form-input-service";
-import {AsterFormSubmitAdapter} from "../interface/aster-form-submit-adapter";
-import {AsterFormSubmit} from "../interface/aster-form-submit";
 import {AsterFormSubmitService} from "./aster-form-submit.service";
+import {FormPayload} from "bmx-transmission/lib/raintree/interface/form-payload";
 
 @Injectable({
 	providedIn: 'root'
@@ -20,9 +18,9 @@ export class AsterFormService {
 	) {
 	}
 
-	public static defaultMapper<T extends AsterFormCompatible>(model: T, inputs: AsterFormInput<T, any>[]): LooseObject {
+	public static defaultMapper<T extends AsterFormCompatible>(model: T, inputs: AsterFormInput<T, any>[]): FormPayload {
 
-		const response: LooseObject = {} as AsterFormCompatible;
+		const response: FormPayload = {} as AsterFormCompatible;
 
 		inputs.forEach((input: AsterFormInput<T, any>): void => {
 

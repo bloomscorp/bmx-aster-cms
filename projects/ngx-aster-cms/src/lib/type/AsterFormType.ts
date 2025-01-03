@@ -1,1 +1,1 @@
-type AsterFormType = 'POST' | 'PATCH';
+export type AsterFormType = 'POST' | 'PATCH';
