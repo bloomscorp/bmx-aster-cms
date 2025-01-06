@@ -55,8 +55,8 @@ export * from './lib/raintree/transmission/transmission-helper.service';
 export * from './lib/raintree/interface/raintree-payload';
 
 /* transmission - product */
-export * from './lib/raintree/transmission/product/product-preview-transmission.service';
-export * from './lib/raintree/transmission/product/product-transmission.service';
+export * from './lib/raintree/transmission/product/aster-product-preview-transmission.service';
+export * from './lib/raintree/transmission/product/aster-product-transmission.service';
 
 /* form */
 export * from './lib/component-library/aster-form/aster-form/aster-form.component';

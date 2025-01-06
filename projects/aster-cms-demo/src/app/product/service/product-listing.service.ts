@@ -8,8 +8,8 @@ import {
 import {ProductPreview} from "../interface/product-preview";
 import {TableData} from '../../../../../ngx-aster-cms/src/public-api';
 import {
-	ProductPreviewTransmissionService
-} from "../../../../../ngx-aster-cms/src/lib/raintree/transmission/product/product-preview-transmission.service";
+	AsterProductPreviewTransmissionService
+} from "../../../../../ngx-aster-cms/src/lib/raintree/transmission/product/aster-product-preview-transmission.service";
 import {ProductPreviewData} from "../model/product-preview-data";
 
 @Injectable({
@@ -18,7 +18,7 @@ import {ProductPreviewData} from "../model/product-preview-data";
 export class ProductListingService extends AsterProductListingService<ProductPreview> {
 
     constructor(
-        private _api: ProductPreviewTransmissionService<ProductPreview>
+        private _api: AsterProductPreviewTransmissionService<ProductPreview>
     ) {
         super();
     }

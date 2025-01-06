@@ -8,7 +8,7 @@ import { FormPayload } from 'bmx-transmission/lib/raintree/interface/form-payloa
 @Injectable({
 	providedIn: 'root',
 })
-export class ProductTransmissionService<E> extends CRUDTransmissionService<E> {
+export class AsterProductTransmissionService<E> extends CRUDTransmissionService<E> {
 
     constructor(
 		private transmission: BmxTransmissionService,
@@ -38,10 +38,4 @@ export class ProductTransmissionService<E> extends CRUDTransmissionService<E> {
             true
 		);
 	}
-
-	delete(): void {}
-
-	read(): void {}
-
-	update(): void {}
 }

@@ -10,7 +10,7 @@ import {JWTService} from "../../../authentication/jwt.service";
 @Injectable({
 	providedIn: 'root'
 })
-export class ProductPreviewTransmissionService<P> extends CRUDTransmissionService<P> {
+export class AsterProductPreviewTransmissionService<P> extends CRUDTransmissionService<P> {
 
 	constructor(
 		public transmission: BmxTransmissionService,
@@ -23,7 +23,7 @@ export class ProductPreviewTransmissionService<P> extends CRUDTransmissionServic
 		);
 	}
 
-	public fetchAll(
+	public override readAll(
 		onPreExecute: () => void,
 		onPostExecute: (response: P[]) => void,
 		onSuccess: (response: P[]) => void,
@@ -39,17 +39,5 @@ export class ProductPreviewTransmissionService<P> extends CRUDTransmissionServic
 			this._helper.prepareEndpoint(AsterRequestMapper.GET_PRODUCT_PREVIEW),
 			Constant.PRODUCT_PREVIEW_LIST
 		);
-	}
-
-	public override create(): void {
-	}
-
-	delete(): void {
-	}
-
-	read(): void {
-	}
-
-	update(): void {
 	}
 }

@@ -89,7 +89,27 @@ export class AsterFormComponent implements OnInit {
 					this.data.submit.api
 				);
 				break;
-			case "PATCH": break;
+			case "PATCH": 
+            this._api.patch(
+                    response,
+                    (): void => {
+                        this.data.submit.transmission.preExecute.callback();
+                    },
+                    (response: RaintreeResponse) => {
+                        this.data.submit.transmission.postExecute.callback(response);
+                    },
+                    (response: RaintreeResponse) => {
+                        this.data.submit.transmission.success.callback(response);
+                    },
+                    () => {
+                        this.data.submit.transmission.failure.callback();
+                    },
+                    () => {
+                        this.data.submit.transmission.complete.callback();
+                    },
+                    this.data.submit.api
+                );
+                break;
 		}
 	}
 }

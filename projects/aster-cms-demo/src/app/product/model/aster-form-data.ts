@@ -167,7 +167,14 @@ export class AsterFormData {
 			],
 			submit: {
 				label: 'Add Product',
-				api: '',
+				api: '/product/add',
+                transmission: {
+                    preExecute: {
+                        callback: () => {
+                            console.log('preExecute');
+                        }
+                    }
+                }
 			},
 		});
 	}
