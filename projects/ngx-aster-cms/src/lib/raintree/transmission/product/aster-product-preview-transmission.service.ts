@@ -23,7 +23,7 @@ export class AsterProductPreviewTransmissionService<P> extends CRUDTransmissionS
 		);
 	}
 
-	public override readAll(
+	public fetchAll(
 		onPreExecute: () => void,
 		onPostExecute: (response: P[]) => void,
 		onSuccess: (response: P[]) => void,
@@ -37,7 +37,8 @@ export class AsterProductPreviewTransmissionService<P> extends CRUDTransmissionS
 			onFailure,
 			onComplete,
 			this._helper.prepareEndpoint(AsterRequestMapper.GET_PRODUCT_PREVIEW),
-			Constant.PRODUCT_PREVIEW_LIST
+			Constant.PRODUCT_PREVIEW_LIST,
+            false
 		);
 	}
 }

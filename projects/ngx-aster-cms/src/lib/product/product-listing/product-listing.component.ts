@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {HeaderSectionComponent} from "../../component-library/header/header-section/header-section.component";
-import {MatIcon} from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
 import {ProductListingScreenData} from "../interface/screen/product-listing-screen-data";
 import {AsterProductListingService} from "../service/aster-product-listing-service";
@@ -11,7 +10,6 @@ import {AsterTableComponent} from "../../component-library/aster-table/aster-tab
 	standalone: true,
 	imports: [
 		HeaderSectionComponent,
-		MatIcon,
 		RouterLink,
 		AsterTableComponent
 	],

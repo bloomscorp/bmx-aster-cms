@@ -16,7 +16,7 @@ export class AsterConfigurationService {
 	}
 
 	public get protocol(): string {
-		return this.secureConnect ? 'http://' : 'https://';
+		return this.secureConnect ? 'https://' : 'http://';
 	}
 
 	public get domain(): string {

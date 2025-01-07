@@ -16,17 +16,18 @@ export abstract class CRUDTransmissionService<E> {
 		onFailure: (error: string) => void,
 		onComplete: () => void,
 		url: string,
-		key: string
+		key: string,
+        jwt: boolean = true
 	): void {
 		this._transmission.executeGetPayload<P, E[]>(
 			url,
-			this._jwt.injectToken(url),
+			jwt ? this._jwt.injectToken(url): undefined,
 			onPreExecute,
 			onPostExecute,
 			onSuccess,
 			onFailure,
 			onComplete,
-			`data.${key}`
+			`${key}`
 		);
 	}
 
@@ -37,11 +38,12 @@ export abstract class CRUDTransmissionService<E> {
 		onFailure: (error: string) => void,
 		onComplete: () => void,
 		url: string,
-		key: string
+		key: string,
+        jwt: boolean = true
 	): void {
 		this._transmission.executeGetPayload<P, E>(
 			url,
-			this._jwt.injectToken(url),
+			jwt ? this._jwt.injectToken(url): undefined,
 			onPreExecute,
 			onPostExecute,
 			onSuccess,
