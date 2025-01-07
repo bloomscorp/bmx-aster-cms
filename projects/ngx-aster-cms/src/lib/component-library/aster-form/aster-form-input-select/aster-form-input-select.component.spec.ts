@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AsterFormInputSelectComponent } from './aster-form-input-select.component';
+import {AsterFormInputSelectComponent} from './aster-form-input-select.component';
 
 describe('AsterFormInputSelectComponent', () => {
   let component: AsterFormInputSelectComponent;

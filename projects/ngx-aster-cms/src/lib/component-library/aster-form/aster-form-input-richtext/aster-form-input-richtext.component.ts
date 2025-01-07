@@ -3,7 +3,7 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {AsterFormInput} from '../interface/aster-form-input';
 import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
 @Component({
     selector: 'aster-form-input-richtext',

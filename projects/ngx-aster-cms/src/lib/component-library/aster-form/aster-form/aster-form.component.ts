@@ -15,8 +15,8 @@ import {
 	AsterFormInputMultipleImageComponent
 } from '../aster-form-input-multiple-image/aster-form-input-multiple-image.component';
 import {AsterFormService} from "../service/aster-form.service";
-import { AsterFormInputChipComponent } from "../aster-form-input-chip/aster-form-input-chip.component";
-import { RaintreeResponse } from 'bmx-transmission/lib/raintree/interface/raintree-response';
+import {AsterFormInputChipComponent} from "../aster-form-input-chip/aster-form-input-chip.component";
+import {RaintreeResponse} from 'bmx-transmission/lib/raintree/interface/raintree-response';
 import {AsterFormTransmissionService} from "../../../raintree/transmission/aster-form/aster-form-transmission.service";
 import {FormPayload} from "bmx-transmission/lib/raintree/interface/form-payload";
 
@@ -88,7 +88,7 @@ export class AsterFormComponent implements OnInit {
 					this.data.submit.api
 				);
 				break;
-			case "PATCH": 
+			case "PATCH":
             this._api.patch(
                     response,
                     (): void => {

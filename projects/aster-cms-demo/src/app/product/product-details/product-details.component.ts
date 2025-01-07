@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, type OnInit } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ChangeDetectionStrategy, Component, type OnInit} from '@angular/core';
 import {ProductDetailsService} from '../service/product-details.service';
 
 @Component({

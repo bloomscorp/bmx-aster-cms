@@ -3,7 +3,6 @@ import {AsterFormSubmitAdapter} from "../interface/aster-form-submit-adapter";
 import {AsterFormSubmit} from "../interface/aster-form-submit";
 import {AsterFormTransmission} from "../interface/aster-form-transmission";
 import {AsterFormTransmissionCallback} from "../interface/aster-form-transmission-callback";
-import {AsterFormTransmissionAdapter} from "../interface/aster-form-transmission-adapter";
 
 @Injectable({
 	providedIn: 'root'

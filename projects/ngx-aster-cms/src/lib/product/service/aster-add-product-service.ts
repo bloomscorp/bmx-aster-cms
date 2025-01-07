@@ -1,6 +1,6 @@
 import {AsterForm} from "../../component-library/aster-form/interface/aster-form";
 import {AsterFormCompatible} from "../../component-library/aster-form/interface/aster-form-compatible";
-import { AddProductScreenData } from "../interface/screen/add-product-screen-data";
+import {AddProductScreenData} from "../interface/screen/add-product-screen-data";
 
 export abstract class AsterAddProductService<P extends AsterFormCompatible> {
 

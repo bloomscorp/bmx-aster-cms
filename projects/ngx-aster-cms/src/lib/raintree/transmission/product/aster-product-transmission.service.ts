@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {CRUDTransmissionService} from '../crud-transmission-service';
 import {BmxTransmissionService} from 'bmx-transmission';
 import {JWTService} from '../../../authentication/jwt.service';
-import { RaintreeResponse } from 'bmx-transmission/lib/raintree/interface/raintree-response';
-import { FormPayload } from 'bmx-transmission/lib/raintree/interface/form-payload';
+import {RaintreeResponse} from 'bmx-transmission/lib/raintree/interface/raintree-response';
+import {FormPayload} from 'bmx-transmission/lib/raintree/interface/form-payload';
 
 @Injectable({
 	providedIn: 'root',

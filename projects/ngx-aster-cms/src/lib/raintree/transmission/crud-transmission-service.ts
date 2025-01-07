@@ -1,7 +1,7 @@
-import { BmxTransmissionService } from 'bmx-transmission';
-import { RaintreeResponse } from 'bmx-transmission/lib/raintree/interface/raintree-response';
-import { JWTService } from '../../authentication/jwt.service';
-import { FormPayload } from 'bmx-transmission/lib/raintree/interface/form-payload';
+import {BmxTransmissionService} from 'bmx-transmission';
+import {RaintreeResponse} from 'bmx-transmission/lib/raintree/interface/raintree-response';
+import {JWTService} from '../../authentication/jwt.service';
+import {FormPayload} from 'bmx-transmission/lib/raintree/interface/form-payload';
 
 export abstract class CRUDTransmissionService<E> {
 	protected constructor(

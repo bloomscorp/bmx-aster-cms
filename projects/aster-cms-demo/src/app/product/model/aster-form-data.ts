@@ -1,11 +1,23 @@
-import { Product } from '../interface/product';
-import { AsterForm } from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form';
-import { AsterFormInput } from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-input';
-import { AsterFormInputService } from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/service/aster-form-input-service';
-import { AsterFormSelectOption } from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-select-option';
-import { AsterFormImageItem } from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-image-item';
-import { AsterFormService } from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/service/aster-form.service';
-import { AsterFormChipValue } from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-chip-value';
+import {Product} from '../interface/product';
+import {AsterForm} from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form';
+import {
+	AsterFormInput
+} from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-input';
+import {
+	AsterFormInputService
+} from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/service/aster-form-input-service';
+import {
+	AsterFormSelectOption
+} from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-select-option';
+import {
+	AsterFormImageItem
+} from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-image-item';
+import {
+	AsterFormService
+} from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/service/aster-form.service';
+import {
+	AsterFormChipValue
+} from '../../../../../ngx-aster-cms/src/lib/component-library/aster-form/interface/aster-form-chip-value';
 
 export class AsterFormData {
 	private static _product: Product = {

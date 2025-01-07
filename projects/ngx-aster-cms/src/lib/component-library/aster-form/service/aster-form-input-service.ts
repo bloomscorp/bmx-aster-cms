@@ -11,8 +11,8 @@ import {AsterFormRichtextInput} from '../interface/aster-form-richtext-input';
 import {AsterFormImageInput} from '../interface/aster-form-image-input';
 import {AsterFormImageItem} from '../interface/aster-form-image-item';
 import {AsterFormMultiImageInput} from '../interface/aster-form-multi-image-input';
-import { AsterFormChipInput } from "../interface/aster-form-chip-input";
-import { AsterFormChipValue } from "../interface/aster-form-chip-value";
+import {AsterFormChipInput} from "../interface/aster-form-chip-input";
+import {AsterFormChipValue} from "../interface/aster-form-chip-value";
 
 export class AsterFormInputService {
 

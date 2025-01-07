@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { ToastService } from 'bmx-toast';
-import { BmxTransmissionService } from 'bmx-transmission';
-import { GenericDataValidatorService } from '../../generic-data-validator.service';
-import { RaintreeResponse } from 'bmx-transmission/lib/raintree/interface/raintree-response';
-import { RequestMapperService } from '../../request-mapper.service';
-import { Product } from '../../product/interface/product';
-import { JWTService } from '../../authentication/jwt.service';
+import {Injectable} from '@angular/core';
+import {ToastService} from 'bmx-toast';
+import {BmxTransmissionService} from 'bmx-transmission';
+import {GenericDataValidatorService} from '../../generic-data-validator.service';
+import {RaintreeResponse} from 'bmx-transmission/lib/raintree/interface/raintree-response';
+import {RequestMapperService} from '../../request-mapper.service';
+import {Product} from '../../product/interface/product';
+import {JWTService} from '../../authentication/jwt.service';
 
 @Injectable({
   providedIn: 'root'

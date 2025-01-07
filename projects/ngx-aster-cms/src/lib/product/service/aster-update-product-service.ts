@@ -1,10 +1,10 @@
-import { AsterFormCompatible } from '../../component-library/aster-form/interface/aster-form-compatible';
-import { AsterForm } from '../../component-library/aster-form/interface/aster-form';
-import { UpdateProductScreenData } from '../interface/screen/update-product-screen-data';
+import {AsterFormCompatible} from '../../component-library/aster-form/interface/aster-form-compatible';
+import {AsterForm} from '../../component-library/aster-form/interface/aster-form';
+import {UpdateProductScreenData} from '../interface/screen/update-product-screen-data';
 
 
 export abstract class AsterUpdateProductService<P extends AsterFormCompatible> {
-	
+
     private _data: AsterForm<P> = {} as AsterForm<P>;
 	public screen: UpdateProductScreenData = {
 		header: {

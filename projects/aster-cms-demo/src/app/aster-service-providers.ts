@@ -8,7 +8,7 @@ import {OrderListingService} from "./order/service/order-listing.service";
 import {AsterAddProductService} from "../../../ngx-aster-cms/src/lib/product/service/aster-add-product-service";
 import {AddProductService} from "./product/service/add-product.service";
 import {AsterUpdateProductService} from "../../../ngx-aster-cms/src/lib/product/service/aster-update-product-service";
-import { UpdateProductService } from "./product/service/update-product.service";
+import {UpdateProductService} from "./product/service/update-product.service";
 
 export const APP_CONFIG: AsterConfig = {
 	production: environment.production,
