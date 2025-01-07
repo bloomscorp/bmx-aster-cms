@@ -11,12 +11,11 @@ import { SanitizeUrlPipe } from '../../pipes/sanitize-url.pipe';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-	selector: 'aster-form-input-multiple-image',
-	standalone: true,
-	imports: [CommonModule, SanitizeUrlPipe, MatIconModule],
-	templateUrl: './aster-form-input-multiple-image.component.html',
-	styleUrls: ['./aster-form-input-multiple-image.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'aster-form-input-multiple-image',
+    imports: [CommonModule, SanitizeUrlPipe, MatIconModule],
+    templateUrl: './aster-form-input-multiple-image.component.html',
+    styleUrls: ['./aster-form-input-multiple-image.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AsterFormInputMultipleImageComponent<T> implements OnInit {
 	@Input() data: AsterFormInput<T, AsterFormImageItem> = {} as AsterFormInput<

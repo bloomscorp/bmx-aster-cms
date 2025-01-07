@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'aster-form-input-richtext',
-    standalone: true,
     imports: [
         CommonModule,
         CKEditorModule,
@@ -15,7 +14,7 @@ import { FormsModule } from '@angular/forms';
     ],
     templateUrl: './aster-form-input-richtext.component.html',
     styleUrls: ['./aster-form-input-richtext.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AsterFormInputRichtextComponent<T> {
 

@@ -6,15 +6,14 @@ import {AsterProductListingService} from "../service/aster-product-listing-servi
 import {AsterTableComponent} from "../../component-library/aster-table/aster-table/aster-table.component";
 
 @Component({
-	selector: 'aster-cms-product-listing',
-	standalone: true,
-	imports: [
-		HeaderSectionComponent,
-		RouterLink,
-		AsterTableComponent
-	],
-	templateUrl: './product-listing.component.html',
-	styleUrl: './product-listing.component.scss'
+    selector: 'aster-cms-product-listing',
+    imports: [
+        HeaderSectionComponent,
+        RouterLink,
+        AsterTableComponent
+    ],
+    templateUrl: './product-listing.component.html',
+    styleUrl: './product-listing.component.scss'
 })
 export class ProductListingComponent<P> implements OnInit {
 

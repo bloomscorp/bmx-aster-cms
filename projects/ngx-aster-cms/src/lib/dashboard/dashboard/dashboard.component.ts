@@ -7,16 +7,15 @@ import {AsterDashboardMapperService} from "../service/aster-dashboard-mapper.ser
 import {DashboardService} from "../service/dashboard.service";
 
 @Component({
-	selector: 'aster-cms-dashboard',
-	providers: [DashboardService],
-	standalone: true,
-	imports: [
-		NavigationComponent,
-		DashboardCardComponent,
-		HeaderSectionComponent
-	],
-	templateUrl: './dashboard.component.html',
-	styleUrl: './dashboard.component.scss'
+    selector: 'aster-cms-dashboard',
+    providers: [DashboardService],
+    imports: [
+        NavigationComponent,
+        DashboardCardComponent,
+        HeaderSectionComponent
+    ],
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit {
 

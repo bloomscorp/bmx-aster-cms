@@ -21,27 +21,26 @@ import {AsterFormTransmissionService} from "../../../raintree/transmission/aster
 import {FormPayload} from "bmx-transmission/lib/raintree/interface/form-payload";
 
 @Component({
-	selector: 'aster-form',
-	standalone: true,
-	imports: [
-    NgForOf,
-    NgSwitch,
-    NgSwitchCase,
-    AsterFormInputTextComponent,
-    AsterFormInputNumericComponent,
-    AsterFormInputSelectComponent,
-    AsterFormInputMultiSelectComponent,
-    AsterFormInputTextareaComponent,
-    AsterFormInputRichtextComponent,
-    AsterFormInputImageComponent,
-    AsterFormInputMultipleImageComponent,
-    AsterFormInputChipComponent
-],
-	templateUrl: './aster-form.component.html',
-	styleUrls: [
-		'./aster-form.component.scss',
-		'../../../ax-styles.scss'
-	]
+    selector: 'aster-form',
+    imports: [
+        NgForOf,
+        NgSwitch,
+        NgSwitchCase,
+        AsterFormInputTextComponent,
+        AsterFormInputNumericComponent,
+        AsterFormInputSelectComponent,
+        AsterFormInputMultiSelectComponent,
+        AsterFormInputTextareaComponent,
+        AsterFormInputRichtextComponent,
+        AsterFormInputImageComponent,
+        AsterFormInputMultipleImageComponent,
+        AsterFormInputChipComponent
+    ],
+    templateUrl: './aster-form.component.html',
+    styleUrls: [
+        './aster-form.component.scss',
+        '../../../ax-styles.scss'
+    ]
 })
 export class AsterFormComponent implements OnInit {
 

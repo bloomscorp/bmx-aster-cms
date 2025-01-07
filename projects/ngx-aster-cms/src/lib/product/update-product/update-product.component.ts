@@ -7,12 +7,11 @@ import { AsterUpdateProductService } from '../service/aster-update-product-servi
 import { AsterFormCompatible } from '../../component-library/aster-form/interface/aster-form-compatible';
 
 @Component({
-	selector: 'aster-cms-update-product',
-	standalone: true,
-	imports: [CommonModule, HeaderSectionComponent, AsterFormComponent],
-	templateUrl: './update-product.component.html',
-	styleUrl: './update-product.component.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'aster-cms-update-product',
+    imports: [CommonModule, HeaderSectionComponent, AsterFormComponent],
+    templateUrl: './update-product.component.html',
+    styleUrl: './update-product.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UpdateProductComponent<P extends AsterFormCompatible>
 	implements OnInit

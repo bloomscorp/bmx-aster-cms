@@ -6,15 +6,14 @@ import {RouterLink} from "@angular/router";
 import {MatIcon} from "@angular/material/icon";
 
 @Component({
-	selector: 'aster-cms-tenant-listing',
-	standalone: true,
-	imports: [
-		HeaderSectionComponent,
-		RouterLink,
-		MatIcon
-	],
-	templateUrl: './tenant-listing.component.html',
-	styleUrl: './tenant-listing.component.scss'
+    selector: 'aster-cms-tenant-listing',
+    imports: [
+        HeaderSectionComponent,
+        RouterLink,
+        MatIcon
+    ],
+    templateUrl: './tenant-listing.component.html',
+    styleUrl: './tenant-listing.component.scss'
 })
 export class TenantListingComponent {
 

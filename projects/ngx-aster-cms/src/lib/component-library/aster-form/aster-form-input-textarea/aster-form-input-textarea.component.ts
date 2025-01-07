@@ -4,15 +4,14 @@ import {AsterFormInput} from '../interface/aster-form-input';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-	selector: 'aster-form-input-textarea',
-	standalone: true,
-	imports: [
-		CommonModule,
+    selector: 'aster-form-input-textarea',
+    imports: [
+        CommonModule,
         FormsModule
-	],
-	templateUrl: './aster-form-input-textarea.component.html',
-	styleUrls: ['./aster-form-input-textarea.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush,
+    ],
+    templateUrl: './aster-form-input-textarea.component.html',
+    styleUrls: ['./aster-form-input-textarea.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AsterFormInputTextareaComponent<T> {
 

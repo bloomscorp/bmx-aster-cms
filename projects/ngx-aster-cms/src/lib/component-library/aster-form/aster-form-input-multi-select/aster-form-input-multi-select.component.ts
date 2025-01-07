@@ -7,17 +7,16 @@ import {FormsModule} from '@angular/forms';
 
 @Component({
     selector: 'aster-form-input-multi-select',
-    standalone: true,
     imports: [
         CommonModule,
         NgLabelTemplateDirective,
-		NgOptionTemplateDirective,
-		NgSelectComponent,
+        NgOptionTemplateDirective,
+        NgSelectComponent,
         FormsModule
     ],
     templateUrl: './aster-form-input-multi-select.component.html',
     styleUrls: ['./aster-form-input-multi-select.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AsterFormInputMultiSelectComponent<T> {
 

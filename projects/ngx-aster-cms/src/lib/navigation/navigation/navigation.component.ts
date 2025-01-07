@@ -6,16 +6,15 @@ import {MatIconModule} from "@angular/material/icon";
 import {AsterNavigationMapperService} from "../service/aster-navigation-mapper.service";
 
 @Component({
-	selector: 'aster-cms-navigation',
-	standalone: true,
-	imports: [
-		NgOptimizedImage,
-		RouterLinkActive,
-		RouterLink,
-		MatIconModule
-	],
-	templateUrl: './navigation.component.html',
-	styleUrl: './navigation.component.scss'
+    selector: 'aster-cms-navigation',
+    imports: [
+        NgOptimizedImage,
+        RouterLinkActive,
+        RouterLink,
+        MatIconModule
+    ],
+    templateUrl: './navigation.component.html',
+    styleUrl: './navigation.component.scss'
 })
 export class NavigationComponent implements OnInit {
 

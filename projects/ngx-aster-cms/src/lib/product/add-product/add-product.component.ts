@@ -16,19 +16,18 @@ import { AsterFormCompatible } from '../../component-library/aster-form/interfac
 import { AddProductScreenData } from '../interface/screen/add-product-screen-data';
 
 @Component({
-	selector: 'aster-cms-add-product',
-	standalone: true,
-	imports: [
-		CommonModule,
-		// NgLabelTemplateDirective,
-		// NgOptionTemplateDirective,
-		// NgSelectComponent,
-		HeaderSectionComponent,
-		AsterFormComponent,
-	],
-	templateUrl: './add-product.component.html',
-	styleUrl: './add-product.component.scss',
-	changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'aster-cms-add-product',
+    imports: [
+        CommonModule,
+        // NgLabelTemplateDirective,
+        // NgOptionTemplateDirective,
+        // NgSelectComponent,
+        HeaderSectionComponent,
+        AsterFormComponent,
+    ],
+    templateUrl: './add-product.component.html',
+    styleUrl: './add-product.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddProductComponent<P extends AsterFormCompatible>
 	implements OnInit

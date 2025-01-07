@@ -5,14 +5,13 @@ import {AsterOrderListingService} from "../service/aster-order-listing-service";
 import {AsterTableComponent} from "../../component-library/aster-table/aster-table/aster-table.component";
 
 @Component({
-	selector: 'aster-cms-order-listing',
-	standalone: true,
-	imports: [
-		AsterTableComponent,
-		HeaderSectionComponent
-	],
-	templateUrl: './order-listing.component.html',
-	styleUrl: './order-listing.component.scss'
+    selector: 'aster-cms-order-listing',
+    imports: [
+        AsterTableComponent,
+        HeaderSectionComponent
+    ],
+    templateUrl: './order-listing.component.html',
+    styleUrl: './order-listing.component.scss'
 })
 export class OrderListingComponent<O> implements OnInit {
 

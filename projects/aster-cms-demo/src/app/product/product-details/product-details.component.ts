@@ -3,14 +3,13 @@ import { ChangeDetectionStrategy, Component, type OnInit } from '@angular/core';
 import {ProductDetailsService} from '../service/product-details.service';
 
 @Component({
-	selector: 'acd-product-details',
-	standalone: true,
-	imports: [
-		CommonModule,
-	],
-	templateUrl: './product-details.component.html',
-	styleUrls: ['./product-details.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'acd-product-details',
+    imports: [
+        CommonModule,
+    ],
+    templateUrl: './product-details.component.html',
+    styleUrls: ['./product-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductDetailsComponent implements OnInit {
 
