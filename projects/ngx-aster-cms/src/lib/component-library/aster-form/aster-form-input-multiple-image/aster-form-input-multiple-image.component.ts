@@ -2,7 +2,7 @@ import {CommonModule} from '@angular/common';
 import {ChangeDetectionStrategy, Component, Input, type OnInit,} from '@angular/core';
 import {AsterFormImageItem} from '../interface/aster-form-image-item';
 import {AsterFormInput} from '../interface/aster-form-input';
-import {SanitizeUrlPipe} from '../../pipes/sanitize-url.pipe';
+import {SanitizeUrlPipe} from '../../pipe/sanitize-url.pipe';
 import {MatIconModule} from '@angular/material/icon';
 
 @Component({
