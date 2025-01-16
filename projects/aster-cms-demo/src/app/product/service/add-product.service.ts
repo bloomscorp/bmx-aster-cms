@@ -7,7 +7,7 @@ import {AsterFormData} from "../model/aster-form-data";
 @Injectable({
 	providedIn: 'root'
 })
-export class AddProductService extends AsterAddProductService<Product>{
+export class AddProductService extends AsterAddProductService<Product> {
 
 	constructor(
     ) {
