@@ -8,6 +8,7 @@ export abstract class AsterProductListingService<P> {
 			title: 'Manage Products',
 			subtitle: 'View and manage your products here'
 		},
+		//TODO: why is add product link dynamic?
         addProductLink: '/product/add'
 	};
 

@@ -1,4 +1,4 @@
-import { AsterFormChipValue } from './aster-form-chip-value';
+import {AsterFormChipValue} from './aster-form-chip-value';
 
 export interface AsterFormChipInput<T> {
 	id?: string;

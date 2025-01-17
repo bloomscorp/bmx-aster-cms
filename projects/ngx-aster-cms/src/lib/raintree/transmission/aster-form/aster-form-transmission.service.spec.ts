@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { AsterFormTransmissionService } from './aster-form-transmission.service';
+import {AsterFormTransmissionService} from './aster-form-transmission.service';
 
 describe('AsterFormTransmissionService', () => {
   let service: AsterFormTransmissionService;

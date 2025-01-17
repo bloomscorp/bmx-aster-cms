@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NavigationComponent} from "../../navigation/navigation/navigation.component";
 import {DashboardCardComponent} from "../dashboard-card/dashboard-card.component";
 import {AsterDashboardItem} from "../interface/aster-dashboard-item";
 import {HeaderSectionComponent} from "../../component-library/header/header-section/header-section.component";
@@ -7,16 +6,14 @@ import {AsterDashboardMapperService} from "../service/aster-dashboard-mapper.ser
 import {DashboardService} from "../service/dashboard.service";
 
 @Component({
-	selector: 'aster-cms-dashboard',
-	providers: [DashboardService],
-	standalone: true,
+    selector: 'aster-cms-dashboard',
+    providers: [DashboardService],
 	imports: [
-		NavigationComponent,
 		DashboardCardComponent,
 		HeaderSectionComponent
 	],
-	templateUrl: './dashboard.component.html',
-	styleUrl: './dashboard.component.scss'
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit {
 

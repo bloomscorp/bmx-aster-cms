@@ -7,18 +7,17 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
 
 @Component({
-	selector: 'acd-root',
-	standalone: true,
-	imports: [
-		RouterOutlet,
-		NavigationComponent,
-		NgClass,
-		MatSidenavModule,
-		MatButtonModule,
-		MatIcon
-	],
-	templateUrl: './app.component.html',
-	styleUrl: './app.component.scss',
+    selector: 'acd-root',
+    imports: [
+        RouterOutlet,
+        NavigationComponent,
+        NgClass,
+        MatSidenavModule,
+        MatButtonModule,
+        MatIcon
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
 

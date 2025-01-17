@@ -3,14 +3,13 @@ import {HeaderSectionComponent} from "../../component-library/header/header-sect
 import {TenantAddressListComponent} from "../tenant-address-list/tenant-address-list.component";
 
 @Component({
-	selector: 'aster-cms-tenant-details',
-	standalone: true,
-	imports: [
-		HeaderSectionComponent,
-		TenantAddressListComponent,
-	],
-	templateUrl: './tenant-details.component.html',
-	styleUrl: './tenant-details.component.scss'
+    selector: 'aster-cms-tenant-details',
+    imports: [
+        HeaderSectionComponent,
+        TenantAddressListComponent,
+    ],
+    templateUrl: './tenant-details.component.html',
+    styleUrl: './tenant-details.component.scss'
 })
 export class TenantDetailsComponent {
 

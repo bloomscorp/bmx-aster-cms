@@ -1,23 +1,17 @@
-import { CommonModule } from '@angular/common';
-import {
-	ChangeDetectionStrategy,
-	Component,
-	Input,
-	type OnInit,
-} from '@angular/core';
-import { AsterFormInput } from '../interface/aster-form-input';
-import { SanitizeUrlPipe } from '../../pipes/sanitize-url.pipe';
-import { AsterFormImageItem } from '../interface/aster-form-image-item';
-import { FormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
+import {CommonModule} from '@angular/common';
+import {ChangeDetectionStrategy, Component, Input, type OnInit,} from '@angular/core';
+import {AsterFormInput} from '../interface/aster-form-input';
+import {SanitizeUrlPipe} from '../../pipe/sanitize-url.pipe';
+import {AsterFormImageItem} from '../interface/aster-form-image-item';
+import {FormsModule} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
-	selector: 'aster-form-input-image',
-	standalone: true,
-	imports: [CommonModule, SanitizeUrlPipe,FormsModule, MatIconModule],
-	templateUrl: './aster-form-input-image.component.html',
-	styleUrls: ['./aster-form-input-image.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'aster-form-input-image',
+    imports: [CommonModule, SanitizeUrlPipe, FormsModule, MatIconModule],
+    templateUrl: './aster-form-input-image.component.html',
+    styleUrls: ['./aster-form-input-image.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AsterFormInputImageComponent<T> implements OnInit {
 	@Input() data: AsterFormInput<T, AsterFormImageItem> = {} as AsterFormInput<

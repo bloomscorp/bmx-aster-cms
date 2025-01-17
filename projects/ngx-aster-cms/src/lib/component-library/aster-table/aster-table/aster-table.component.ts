@@ -9,20 +9,19 @@ import {MatIconButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
 
 @Component({
-	selector: 'aster-cms-aster-table',
-	standalone: true,
-	imports: [
-		NgClass,
-		CdkCopyToClipboard,
-		MatTooltip,
-		MatIcon,
-		MatIconButton,
-		NgIf,
-		NgForOf,
-		RouterLink
-	],
-	templateUrl: './aster-table.component.html',
-	styleUrl: './aster-table.component.scss'
+    selector: 'aster-cms-aster-table',
+    imports: [
+        NgClass,
+        CdkCopyToClipboard,
+        MatTooltip,
+        MatIcon,
+        MatIconButton,
+        NgIf,
+        NgForOf,
+        RouterLink
+    ],
+    templateUrl: './aster-table.component.html',
+    styleUrl: './aster-table.component.scss'
 })
 export class AsterTableComponent {
 

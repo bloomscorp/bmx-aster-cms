@@ -15,33 +15,32 @@ import {
 	AsterFormInputMultipleImageComponent
 } from '../aster-form-input-multiple-image/aster-form-input-multiple-image.component';
 import {AsterFormService} from "../service/aster-form.service";
-import { AsterFormInputChipComponent } from "../aster-form-input-chip/aster-form-input-chip.component";
-import { RaintreeResponse } from 'bmx-transmission/lib/raintree/interface/raintree-response';
+import {AsterFormInputChipComponent} from "../aster-form-input-chip/aster-form-input-chip.component";
+import {RaintreeResponse} from 'bmx-transmission/lib/raintree/interface/raintree-response';
 import {AsterFormTransmissionService} from "../../../raintree/transmission/aster-form/aster-form-transmission.service";
 import {FormPayload} from "bmx-transmission/lib/raintree/interface/form-payload";
 
 @Component({
-	selector: 'aster-form',
-	standalone: true,
-	imports: [
-    NgForOf,
-    NgSwitch,
-    NgSwitchCase,
-    AsterFormInputTextComponent,
-    AsterFormInputNumericComponent,
-    AsterFormInputSelectComponent,
-    AsterFormInputMultiSelectComponent,
-    AsterFormInputTextareaComponent,
-    AsterFormInputRichtextComponent,
-    AsterFormInputImageComponent,
-    AsterFormInputMultipleImageComponent,
-    AsterFormInputChipComponent
-],
-	templateUrl: './aster-form.component.html',
-	styleUrls: [
-		'./aster-form.component.scss',
-		'../../../ax-styles.scss'
-	]
+    selector: 'aster-form',
+    imports: [
+        NgForOf,
+        NgSwitch,
+        NgSwitchCase,
+        AsterFormInputTextComponent,
+        AsterFormInputNumericComponent,
+        AsterFormInputSelectComponent,
+        AsterFormInputMultiSelectComponent,
+        AsterFormInputTextareaComponent,
+        AsterFormInputRichtextComponent,
+        AsterFormInputImageComponent,
+        AsterFormInputMultipleImageComponent,
+        AsterFormInputChipComponent
+    ],
+    templateUrl: './aster-form.component.html',
+    styleUrls: [
+        './aster-form.component.scss',
+        '../../../ax-styles.scss'
+    ]
 })
 export class AsterFormComponent implements OnInit {
 
@@ -91,7 +90,7 @@ export class AsterFormComponent implements OnInit {
                     this.data.submit.isAuthenticated
 				);
 				break;
-			case "PATCH": 
+			case "PATCH":
             this._api.patch(
                     response,
                     (): void => {

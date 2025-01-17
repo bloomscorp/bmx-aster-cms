@@ -3,13 +3,12 @@ import {AsterFormInput} from "../interface/aster-form-input";
 import {FormsModule} from "@angular/forms";
 
 @Component({
-	selector: 'aster-form-input-text',
-	standalone: true,
-	imports: [
-		FormsModule
-	],
-	templateUrl: './aster-form-input-text.component.html',
-	styleUrl: './aster-form-input-text.component.scss'
+    selector: 'aster-form-input-text',
+    imports: [
+        FormsModule
+    ],
+    templateUrl: './aster-form-input-text.component.html',
+    styleUrl: './aster-form-input-text.component.scss'
 })
 export class AsterFormInputTextComponent<T> {
 

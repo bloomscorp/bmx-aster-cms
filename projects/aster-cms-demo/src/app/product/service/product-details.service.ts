@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
-import {AsterProductDetailsService} from '../../../../../ngx-aster-cms/src/lib/product/service/aster-product-details-service';
+import {
+	AsterProductDetailsService
+} from '../../../../../ngx-aster-cms/src/lib/product/service/aster-product-details-service';
 import {Product} from '../interface/product';
 import {ProductDetailsData} from '../model/product-details-data';
 

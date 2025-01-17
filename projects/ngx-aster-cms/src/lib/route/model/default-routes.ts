@@ -29,7 +29,7 @@ export class DefaultRoutes {
 
 	public static readonly MANAGE_PRODUCTS: Route = {
 		path: AsterRequestMapper.MANAGE_PRODUCTS,
-		loadComponent: () => import('../../product/product-listing/product-listing.component').then(m => m.ProductListingComponent),
+		loadComponent: () => import('../../product/manage-product/manage-product.component').then(c => c.ManageProductComponent),
 		pathMatch: 'full'
 	};
 

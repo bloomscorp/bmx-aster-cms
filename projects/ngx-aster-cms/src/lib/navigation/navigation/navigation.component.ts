@@ -1,21 +1,17 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
 import {AsterNavigationItem} from "../interface/aster-navigation-item";
-import {RouterLink, RouterLinkActive} from "@angular/router";
+import {RouterLink} from "@angular/router";
 import {MatIconModule} from "@angular/material/icon";
 import {AsterNavigationMapperService} from "../service/aster-navigation-mapper.service";
 
 @Component({
-	selector: 'aster-cms-navigation',
-	standalone: true,
+    selector: 'aster-cms-navigation',
 	imports: [
-		NgOptimizedImage,
-		RouterLinkActive,
 		RouterLink,
 		MatIconModule
 	],
-	templateUrl: './navigation.component.html',
-	styleUrl: './navigation.component.scss'
+    templateUrl: './navigation.component.html',
+    styleUrl: './navigation.component.scss'
 })
 export class NavigationComponent implements OnInit {
 

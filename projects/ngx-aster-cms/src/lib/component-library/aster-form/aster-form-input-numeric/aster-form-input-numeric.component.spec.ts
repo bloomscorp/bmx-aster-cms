@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AsterFormInputNumericComponent } from './aster-form-input-numeric.component';
+import {AsterFormInputNumericComponent} from './aster-form-input-numeric.component';
 
 describe('AsterFormInputNumericComponent', () => {
   let component: AsterFormInputNumericComponent;
