@@ -105,6 +105,7 @@ export class AsterFormSubmitService {
 			api: adapter.api,
 			label: adapter.label ? adapter.label : 'Submit',
 			type: adapter.type ? adapter.type : 'POST',
+            isAuthenticated: adapter.isAuthenticated ? adapter.isAuthenticated : false,
 			transmission: AsterFormSubmitService.prepareTransmission(adapter)
 		};
 	}

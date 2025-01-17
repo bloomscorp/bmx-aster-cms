@@ -5,5 +5,6 @@ export interface AsterFormSubmit {
 	api: string;
 	label: string;
 	type: AsterFormType;
+    isAuthenticated: boolean;
 	transmission: AsterFormTransmission;
 }

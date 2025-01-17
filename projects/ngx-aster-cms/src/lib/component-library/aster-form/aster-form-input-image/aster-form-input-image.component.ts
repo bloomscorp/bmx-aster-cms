@@ -26,7 +26,7 @@ export class AsterFormInputImageComponent<T> implements OnInit {
 	>;
 
 	public imageURL: string = '';
-    public hideDeleteButton: boolean = false;
+    public hideDeleteButton: boolean = true;
 
 	constructor() {}
 
@@ -38,6 +38,10 @@ export class AsterFormInputImageComponent<T> implements OnInit {
 		} else {
 			this.imageURL = this.data.defaultValue.imageUrl;
 		}
+
+        if (this.data.defaultValue.deleted || !this.imageURL) {
+            this.hideDeleteButton = true;
+        }
 	}
 
     public uploadData(event: Event) {

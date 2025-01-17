@@ -74,3 +74,5 @@ export * from './lib/component-library/aster-form/interface/aster-form-select-op
 export * from './lib/component-library/aster-form/interface/aster-form-image-item';
 export * from './lib/component-library/aster-form/service/aster-form-input-service';
 export * from './lib/component-library/aster-form/service/aster-form.service';
+
+export * from './lib/component-library/aster-form/interface/aster-form-compatible';

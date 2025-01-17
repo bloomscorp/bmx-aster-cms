@@ -9,21 +9,32 @@ import {AsterFormSubmitService} from "./aster-form-submit.service";
 import {FormPayload} from "bmx-transmission/lib/raintree/interface/form-payload";
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class AsterFormService {
+	constructor(private _formSubmit: AsterFormSubmitService) {}
 
-	constructor(
-		private _formSubmit: AsterFormSubmitService
-	) {
+	public static setNestedValue(obj: any, key: string, value: any) {
+		const keys = key.split('.');
+		let current = obj;
+
+		for (let i = 0; i < keys.length - 1; i++) {
+			const part = keys[i];
+			if (!current[part] || typeof current[part] !== 'object') {
+				current[part] = {};
+			}
+			current = current[part];
+		}
+		current[keys[keys.length - 1]] = value;
 	}
 
-	public static defaultMapper<T extends AsterFormCompatible>(model: T, inputs: AsterFormInput<T, any>[]): FormPayload {
-
+	public static defaultMapper<T extends AsterFormCompatible>(
+		model: T,
+		inputs: AsterFormInput<T, any>[]
+	): FormPayload {
 		const response: FormPayload = {} as AsterFormCompatible;
 
 		inputs.forEach((input: AsterFormInput<T, any>): void => {
-
 			switch (input.type) {
 				case AsterFormInputType.TEXT:
 				case AsterFormInputType.NUMBER:
@@ -31,29 +42,38 @@ export class AsterFormService {
 				case AsterFormInputType.TEXTAREA:
 				case AsterFormInputType.RICH_TEXT:
 				case AsterFormInputType.IMAGE:
-					response[input.key] = input.getValue!();
+					// response[input.key] = input.getValue!();
+                    AsterFormService.setNestedValue(response, input.key, input.getValue!());
 					break;
 				case AsterFormInputType.MULTISELECT:
 				case AsterFormInputType.MULTI_IMAGE:
-					response[input.key] = input.getValues!();
+					// response[input.key] = input.getValues!();
+                    AsterFormService.setNestedValue(response, input.key, input.getValues!());
 					break;
-                case AsterFormInputType.CHIP:
-                    response[input.key] = input.getValues!();
-                    break;
-				default: response[input.key] = null;
+				case AsterFormInputType.CHIP:
+					// response[input.key] = input.getValues!();
+                    AsterFormService.setNestedValue(response, input.key, input.getValues!());
+					break;
+				default:
+					// response[input.key] = null;
+                    AsterFormService.setNestedValue(response, input.key, null);
 			}
 		});
 
 		return response;
 	}
 
-	public static prepare<T extends AsterFormCompatible>(preview: AsterFormPreview<T>): AsterForm<T> {
+	public static prepare<T extends AsterFormCompatible>(
+		preview: AsterFormPreview<T>
+	): AsterForm<T> {
 		return {
 			model: preview.model,
 			inputs: preview.inputs,
 			submit: AsterFormSubmitService.prepareFormSubmit(preview.submit),
-			mapper: preview.mapper ? preview.mapper : AsterFormService.defaultMapper
-		}
+			mapper: preview.mapper
+				? preview.mapper
+				: AsterFormService.defaultMapper,
+		};
 	}
 
 	public prepareGetValues<T>(inputs: AsterFormInput<T, any>[]): void {
@@ -62,10 +82,16 @@ export class AsterFormService {
 				case AsterFormInputType.TEXT:
 				case AsterFormInputType.TEXTAREA:
 				case AsterFormInputType.RICH_TEXT:
-					input.getValue = AsterFormInputService.prepareGetValue(input, '');
+					input.getValue = AsterFormInputService.prepareGetValue(
+						input,
+						''
+					);
 					break;
 				case AsterFormInputType.NUMBER:
-					input.getValue = AsterFormInputService.prepareGetValue(input, 0);
+					input.getValue = AsterFormInputService.prepareGetValue(
+						input,
+						0
+					);
 					break;
 				case AsterFormInputType.SELECT:
 					input.getValue = AsterFormInputService.prepareGetValue(
@@ -93,12 +119,12 @@ export class AsterFormService {
 						input.multiImageDefaultValue
 					);
 					break;
-                case AsterFormInputType.CHIP:
-                    input.getValues = AsterFormInputService.prepareGetValues(
-                        input,
+				case AsterFormInputType.CHIP:
+					input.getValues = AsterFormInputService.prepareGetValues(
+						input,
 						'chipDefaultValue',
-                        input.chipDefaultValue
-                    );
+						input.chipDefaultValue
+					);
 			}
 		});
 	}

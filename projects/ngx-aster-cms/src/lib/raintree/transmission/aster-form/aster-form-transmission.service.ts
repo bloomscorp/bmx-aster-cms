@@ -25,12 +25,13 @@ export class AsterFormTransmissionService extends CRUDTransmissionService<any> {
 		onFailure: () => void,
 		onComplete: () => void,
 		url: string,
-		multiLevelProcessing: boolean = true
+		multiLevelProcessing: boolean = true,
+        requireAuth: boolean = true
 	): void {
 		this.transmission.executeFormPostPayload<F>(
 			url,
 			payload,
-			this.jwt.injectToken(url, false),
+			requireAuth ? this.jwt.injectToken(url, false): undefined,
 			onPreExecute,
 			onPostExecute,
 			onSuccess,
@@ -48,12 +49,13 @@ export class AsterFormTransmissionService extends CRUDTransmissionService<any> {
 		onFailure: () => void,
 		onComplete: () => void,
 		url: string,
-		multiLevelProcessing: boolean = true
+		multiLevelProcessing: boolean = true,
+        requireAuth: boolean = true
     ): void {
 		this.transmission.executeFormPatchPayload<F>(
 			url,
 			payload,
-			this.jwt.injectToken(url, false),
+            requireAuth ? this.jwt.injectToken(url, false): undefined,
 			onPreExecute,
 			onPostExecute,
 			onSuccess,
