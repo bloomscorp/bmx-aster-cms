@@ -1,4 +1,5 @@
 export interface AsterFormImageItem {
+    id: number;
 	imageUrl: string;
 	order: number;
 	imageFile?: File | null;

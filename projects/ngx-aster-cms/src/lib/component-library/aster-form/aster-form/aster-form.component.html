@@ -12,9 +12,11 @@
 												 class="md:col-span-3"></aster-form-input-numeric>
 						<aster-form-input-select *ngSwitchCase="INPUT_TYPES.SELECT"
 												 [data]="input"
+                                                 [defaultValue]="input.defaultValue"
 												 class="md:col-span-3"></aster-form-input-select>
                         <aster-form-input-multi-select *ngSwitchCase="INPUT_TYPES.MULTISELECT"
                                                  [data]="input"
+                                                 [multiSelectDefaultValue]="input.multiSelectDefaultValue"
                                                  class="md:col-span-3"></aster-form-input-multi-select>
                         <aster-form-input-textarea *ngSwitchCase="INPUT_TYPES.TEXTAREA"
                                                  [data]="input"
@@ -24,12 +26,15 @@
                                                  class="md:col-span-6"></aster-form-input-richtext>
                         <aster-form-input-image *ngSwitchCase="INPUT_TYPES.IMAGE"
                                                  [data]="input"
+                                                 [defaultValue]="input.defaultValue"
                                                  class="md:col-span-3"></aster-form-input-image>
                         <aster-form-input-multiple-image *ngSwitchCase="INPUT_TYPES.MULTI_IMAGE"
                                                  [data]="input"
+                                                 [multiImageDefaultValue]="input.multiImageDefaultValue"
                                                  class="md:col-span-6"></aster-form-input-multiple-image>
                         <aster-form-input-chip *ngSwitchCase="INPUT_TYPES.CHIP"
                                                  [data]="input"
+                                                 [chipDefaultValue]="input.chipDefaultValue"
                                                  class="md:col-span-3"></aster-form-input-chip>
 					</ng-container>
 				</ng-container>

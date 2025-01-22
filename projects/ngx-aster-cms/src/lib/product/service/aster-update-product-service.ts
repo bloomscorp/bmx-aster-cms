@@ -1,11 +1,12 @@
 import {AsterFormCompatible} from '../../component-library/aster-form/interface/aster-form-compatible';
 import {AsterForm} from '../../component-library/aster-form/interface/aster-form';
 import {UpdateProductScreenData} from '../interface/screen/update-product-screen-data';
+import { signal, WritableSignal } from '@angular/core';
 
 
 export abstract class AsterUpdateProductService<P extends AsterFormCompatible> {
 
-    private _data: AsterForm<P> = {} as AsterForm<P>;
+    private _data: WritableSignal<AsterForm<P>> = signal({} as AsterForm<P>);
 	public screen: UpdateProductScreenData = {
 		header: {
 			title: 'Update Your Products',
@@ -16,11 +17,11 @@ export abstract class AsterUpdateProductService<P extends AsterFormCompatible> {
     constructor() {}
 
 	public get data(): AsterForm<P> {
-		return this._data;
+		return this._data();
 	}
 
 	public set data(data: AsterForm<P>) {
-		this._data = data;
+		this._data.set(data);
 	}
 
 	public abstract prepareData(): AsterForm<P>;

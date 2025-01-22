@@ -7,8 +7,8 @@
             [multiple]="true"
             [(ngModel)]="data.multiSelectDefaultValue"
             [appendTo]="data.appendTo ? data.appendTo : 'body'" 
-            bindLabel="name" 
-            bindValue="value"
+            bindLabel="name"
+            [compareWith]="compareFn"
 			class="ax-multi-select-input-field">
 	</ng-select>
 </div>

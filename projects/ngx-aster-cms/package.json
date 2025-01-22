@@ -1,13 +1,13 @@
 {
 	"name": "@bloomscorp/ngx-aster-cms",
-	"version": "0.0.61",
+	"version": "0.0.76",
 	"peerDependencies": {
 		"@angular/common": "^18.2.1",
 		"@angular/core": "^18.2.1",
 		"@angular/material": "^18.2.1",
 		"@auth0/angular-jwt": "^5.2.0",
 		"bmx-pastebox": "^1.0.17",
-		"bmx-transmission": "^0.0.12",
+		"bmx-transmission": "^0.0.13",
         "@ckeditor/ckeditor5-angular": "^9.0.0",
 		"@ckeditor/ckeditor5-build-classic": "^43.2.0",
 		"@ng-select/ng-select": "^13.9.0",

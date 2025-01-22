@@ -49,7 +49,7 @@ export abstract class CRUDTransmissionService<E> {
 			onSuccess,
 			onFailure,
 			onComplete,
-			`data.${key}`
+			`${key}`
 		);
 	}
 

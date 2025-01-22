@@ -6,7 +6,7 @@
             <div class="h-full w-full text-center flex flex-col items-center justify-center">
                 <div class="flex flex-auto max-h-48 mx-auto mt-4">
                     <img class="has-mask h-36 object-center"
-                        [src]="this.imageURL | sanitizeUrl">
+                        [src]="imageURL | sanitizeUrl">
                         @if (!hideDeleteButton) {
                             <mat-icon class="cursor-pointer text-red-600" (click)="removeImage($event)">backspace</mat-icon>
                         }

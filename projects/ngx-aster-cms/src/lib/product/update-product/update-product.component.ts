@@ -23,7 +23,7 @@ export class UpdateProductComponent<P extends AsterFormCompatible>
 	ngOnInit(): void {
         this.screen = this._.screen;
         //TODO: after finish fetch product prepare data will be called
-        this._.fetchProduct();
+        // this._.fetchProduct();
         this._.data = this._.prepareData();
     }
 }

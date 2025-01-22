@@ -32,7 +32,8 @@ export class AsterFormService {
 		model: T,
 		inputs: AsterFormInput<T, any>[]
 	): FormPayload {
-		const response: FormPayload = {} as AsterFormCompatible;
+		let response: FormPayload = {} as AsterFormCompatible;
+        response = {...model};
 
 		inputs.forEach((input: AsterFormInput<T, any>): void => {
 			switch (input.type) {

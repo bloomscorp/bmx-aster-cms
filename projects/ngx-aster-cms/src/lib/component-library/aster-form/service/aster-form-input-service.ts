@@ -33,6 +33,7 @@ export class AsterFormInputService {
 
 	public static prepareImageDefaultValue(empty: boolean = true): AsterFormImageItem {
 		return {
+            id: 0,
             imageUrl: empty ? '' : 'https://s3-ap-south-1.amazonaws.com/bloomscorp-cdn/aster/assets/images/upload-image.svg',
             order: 1,
             imageFile: null,

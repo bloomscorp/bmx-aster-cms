@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, effect, Input, OnInit, signal, WritableSignal} from '@angular/core';
 import {AsterFormInput} from "../interface/aster-form-input";
 import {AsterFormSelectOption} from "../interface/aster-form-select-option";
 import {NgForOf} from "@angular/common";
@@ -14,6 +14,24 @@ import {NgForOf} from "@angular/common";
 export class AsterFormInputSelectComponent<T> implements OnInit {
 
 	@Input() data: AsterFormInput<T, AsterFormSelectOption> = {} as AsterFormInput<T, AsterFormSelectOption>;
+
+    private _defaultValue: WritableSignal<AsterFormSelectOption> = signal({} as AsterFormSelectOption);
+
+    @Input() set defaultValue(defaultValue: AsterFormSelectOption) {
+        this._defaultValue.set(defaultValue);
+    }
+
+    get defaultValue(): AsterFormSelectOption {
+        return this._defaultValue();
+    }
+
+    constructor() {
+        effect(() => {
+            if (this._defaultValue()) {
+                this.data.defaultValue = this._defaultValue();
+            }
+        })
+    }
     
     ngOnInit(): void {
     }

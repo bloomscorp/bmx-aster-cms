@@ -19,6 +19,7 @@ import {AsterFormInputChipComponent} from "../aster-form-input-chip/aster-form-i
 import {RaintreeResponse} from 'bmx-transmission/lib/raintree/interface/raintree-response';
 import {AsterFormTransmissionService} from "../../../raintree/transmission/aster-form/aster-form-transmission.service";
 import {FormPayload} from "bmx-transmission/lib/raintree/interface/form-payload";
+import { TransmissionHelperService } from '../../../raintree/transmission/transmission-helper.service';
 
 @Component({
     selector: 'aster-form',
@@ -49,6 +50,7 @@ export class AsterFormComponent implements OnInit {
 
 	constructor(
         public _: AsterFormService,
+        public _helper: TransmissionHelperService,
         public _api: AsterFormTransmissionService
     ) {
 	}
@@ -66,11 +68,14 @@ export class AsterFormComponent implements OnInit {
 			this.data.inputs
 		);
 
+        console.log('aaa', response);
+
 		switch (this.data.submit.type) {
 			case "POST":
 				this._api.post(
 					response,
 					(): void => {
+                        console.log('trigger');
 						this.data.submit.transmission.preExecute.callback();
 					},
 					(response: RaintreeResponse) => {
@@ -85,7 +90,7 @@ export class AsterFormComponent implements OnInit {
 					() => {
 						this.data.submit.transmission.complete.callback();
 					},
-					this.data.submit.api,
+					this._helper.prepareEndpoint(this.data.submit.api),
                     true,
                     this.data.submit.isAuthenticated
 				);
@@ -108,7 +113,7 @@ export class AsterFormComponent implements OnInit {
                     () => {
                         this.data.submit.transmission.complete.callback();
                     },
-                    this.data.submit.api,
+                    this._helper.prepareEndpoint(this.data.submit.api),
                     true,
                     this.data.submit.isAuthenticated
                 );
