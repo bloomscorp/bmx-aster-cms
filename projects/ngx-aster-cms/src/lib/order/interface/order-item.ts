@@ -1,13 +1,16 @@
-import {TenantPreviewItem} from "../../tenant/interface/tenant-preview-item";
-import {ProductPreview} from "../../product/interface/product-preview";
-
 export interface OrderItem {
-	id: number;
-	quantity: number;
-	price: number;
-	status: string;
-	amount: number;
-	orderDate: Date;
-	tenant: TenantPreviewItem;
-	productList: ProductPreview[];
+    quantity: number;
+    amount: number;
+    unit: string;
+    productDetails: { [key: string]: any };
+    shippingCode: string;
+    trackingUrl: string;
+    status: string;
+    dispatchedOn: number;
+    estimatedDeliveryFrom: number;
+    estimatedDeliveryTo: number;
+    paymentStatus: string;
+    createdAt: number;
+    updatedAt: number;
+    id: number;
 }

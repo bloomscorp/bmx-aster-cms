@@ -20,11 +20,11 @@
 			<div *ngFor="let key of data.keys; index as j;"
 				 [ngClass]="data.columnData.columns[j].sm ? 'ax-table-cell-sm' : 'ax-table-cell-md'"
 				 class="ax-table-cell flex flex-row justify-between items-center">
-				<span class="ax-table-cell-text">{{ row[key] }}</span>
+				<span class="ax-table-cell-text">{{ getNestedValue(row, key) }}</span>
 				<div class="ax-table-cell-actions flex flex-row justify-end">
 					<button *ngIf="data.columnData.columns[j].defaultActions?.copy"
 							mat-icon-button
-							[cdkCopyToClipboard]="row[key]"
+							[cdkCopyToClipboard]="getNestedValue(row, key)"
 							[matTooltip]="'copy'"
 							[matTooltipPosition]="'above'"
 							class="ax-mat-icon-button-sm ax-table-cell-action"
@@ -34,7 +34,7 @@
 					<ng-container *ngIf="data.columnData.columns[j].actions">
 						<button *ngFor="let action of data.columnData.columns[j].actions; index as k;"
 								mat-icon-button
-								(click)="action.run(row[key], i, (data.columnData.numbered ? j + 1 : j))"
+								(click)="action.run(getNestedValue(row, key), i, (data.columnData.numbered ? j + 1 : j))"
 								[matTooltip]="action.tooltip"
 								[matTooltipPosition]="'above'"
 								class="ax-mat-icon-button-sm mx-1 ax-table-cell-action"

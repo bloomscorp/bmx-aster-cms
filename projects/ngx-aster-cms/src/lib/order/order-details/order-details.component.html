@@ -1,27 +1,31 @@
 <section class="w-full pr-6">
 <!--		overview-->
 	<div class="p-4">
-		<div>Order #1234</div>
+		<div>Order #{{_.orderDetails.id}}</div>
 		<a href="#" class="text-gray-500 text-sm underline cursor-pointer">View Invoice</a>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 text-xs mt-8">
 			<div>
 				<h4 class="mb-2 font-semibold">Delivery Address</h4>
 				<div>
-					4517 Washington Ave, Manchester, Kentucky 39495, USA
+					{{_.orderDetails.shippingAddress.addressLine1}}<br/>
+                    {{_.orderDetails.shippingAddress.addressLine2}}<br/>
+                    {{_.orderDetails.shippingAddress.city}}, {{_.orderDetails.shippingAddress.state}} {{_.orderDetails.shippingAddress.postalCode}}, {{_.orderDetails.shippingAddress.country}}
 				</div>
 			</div>
 			<div>
 				<h4 class="mb-2 font-semibold">Billing Address</h4>
 				<div>
-					4517 Washington Ave, Manchester, Kentucky 39495, USA
+					{{_.orderDetails.deliveryAddress.addressLine1}}<br/>
+                    {{_.orderDetails.deliveryAddress.addressLine2}}<br/>
+                    {{_.orderDetails.deliveryAddress.city}}, {{_.orderDetails.deliveryAddress.state}} {{_.orderDetails.deliveryAddress.postalCode}}, {{_.orderDetails.deliveryAddress.country}}
 				</div>
 			</div>
 			<div>
 				<h4 class="mb-2 font-semibold">Contact Help</h4>
 				<div class="flex items-start">
 					<div>
-						+91 123 456 7890<br/>
-						alphaatgmailcom
+						{{_.orderDetails.tenant.phone}}<br/>
+						{{_.orderDetails.tenant.email}}
 					</div>
 					<mat-icon class="cursor-pointer scale-75">open_in_new</mat-icon>
 				</div>
@@ -37,30 +41,18 @@
 <!--	order-item section-->
 	<div class="mt-6 pt-8 p-4 grid grid-cols-1 md:grid-cols-[60%_40%] gap-6 border-t-[1px]">
 		<div>
-			<div class="flex gap-3 items-start text-xs mb-6">
-				<div class="">
-					<img class="w-16" src="https://th.bing.com/th/id/OIG2.9O4YqGf98tiYzjKDvg7L" alt="">
-				</div>
-				<div>
-					<div class="font-semibold">
-						Transparent Pink Geometric Full Rim Eyeglasses
-					</div>
-					<div class="text-gray-400">MODEL: SH-0008-TS-EG-XV905-TPPNK</div>
-					<div class="mt-2 font-semibold">Price: ₹ 0.00 <span class="ml-4">QTY: 1</span></div>
-				</div>
-			</div>
-			<div class="flex gap-3 items-start text-xs">
-				<div class="">
-					<img class="w-16" src="https://th.bing.com/th/id/OIG2.9O4YqGf98tiYzjKDvg7L" alt="">
-				</div>
-				<div>
-					<div class="font-semibold">
-						Transparent Pink Geometric Full Rim Eyeglasses
-					</div>
-					<div class="text-gray-400">MODEL: SH-0008-TS-EG-XV905-TPPNK</div>
-					<div class="mt-2 font-semibold">Price: ₹ 0.00 <span class="ml-4">QTY: 1</span></div>
-				</div>
-			</div>
+            @for (orderItem of _.orderDetails.orderItemList; track orderItem) {
+                <div class="flex gap-3 items-start text-xs mb-6">
+                    <div class="">
+                        <img class="w-16" [src]="orderItem.productDetails['heroImage']" alt="">
+                    </div>
+                    <div>
+                        <div class="font-semibold">{{orderItem.productDetails['name']}}</div>
+                        <div class="text-gray-400">MODEL: {{orderItem.productDetails['sku']}}</div>
+                        <div class="mt-2 font-semibold">Price: ₹ {{orderItem.productDetails['price']}} <span class="ml-4">QTY: {{orderItem.quantity}}</span></div>
+                    </div>
+                </div>
+            }
 		</div>
 		<div class="flex justify-between text-[13px]">
 			<div class="leading-7">

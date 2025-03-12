@@ -1,10 +1,11 @@
 import { TenantPreviewItem } from "../../tenant/interface/tenant-preview-item";
-import { OrderItem } from "./order-item";
 import { OrderAddress } from "./order-address";
+import { OrderItem } from "./order-item";
 
-export interface OrderPreview {
+export interface OrderDetails {
     id: number;
     total: number;
+    paymentStatus: string;
     transaction: { [key: string]: any };
     shippingAddress: OrderAddress;
     deliveryAddress: OrderAddress;

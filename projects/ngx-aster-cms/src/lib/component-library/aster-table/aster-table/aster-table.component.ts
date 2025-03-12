@@ -30,6 +30,20 @@ export class AsterTableComponent {
 		this._checkTableData();
 	}
 
+    public getNestedValue(obj: any, key: string) {
+		const keys = key.split('.');
+		let current = obj;
+
+		for (let i = 0; i < keys.length - 1; i++) {
+			const part = keys[i];
+			if (!current[part] || typeof current[part] !== 'object') {
+				current[part] = {};
+			}
+			current = current[part];
+		}
+		return current[keys[keys.length - 1]];
+	}
+
 	public data: TableData<any> = {} as TableData<any>;
 	public page: number = 1;
 

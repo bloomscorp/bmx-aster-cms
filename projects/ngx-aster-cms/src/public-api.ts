@@ -31,6 +31,9 @@ export * from './lib/navigation/service/aster-navigation-mapper.service';
 export * from './lib/navigation/interface/aster-navigation-item';
 export * from './lib/navigation/model/aster-navigation-items';
 
+export * from './lib/component-library/header/header-section/header-section.component';
+export * from './lib/route/model/aster-request-mapper';
+
 /* dashboard */
 export * from './lib/dashboard/dashboard/dashboard.component';
 export * from './lib/dashboard/dashboard-card/dashboard-card.component';
@@ -74,5 +77,12 @@ export * from './lib/component-library/aster-form/interface/aster-form-select-op
 export * from './lib/component-library/aster-form/interface/aster-form-image-item';
 export * from './lib/component-library/aster-form/service/aster-form-input-service';
 export * from './lib/component-library/aster-form/service/aster-form.service';
-
 export * from './lib/component-library/aster-form/interface/aster-form-compatible';
+
+/* order */
+export * from './lib/order/service/aster-order-service';
+export * from './lib/order/service/aster-order-listing-service';
+export * from './lib/order/service/aster-order-details-service';
+export * from './lib/order/interface/screen/order-listing-screen-data';
+export * from './lib/order/interface/order-preview';
+export * from './lib/order/interface/order-item';
