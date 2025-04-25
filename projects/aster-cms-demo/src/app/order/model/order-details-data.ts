@@ -35,7 +35,8 @@ export class OrderDetailsData {
         tenant: TenantPreviewItemList.tenantPreviewItems[0],
         orderItemList: OrderItemData.orderItems,
         transaction: {},
-        deleted: false
+        deleted: false,
+		paymentStatus: 'PENDING'
     }
 
     public static get orderDetails(): OrderDetails {

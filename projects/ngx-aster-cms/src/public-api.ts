@@ -12,6 +12,7 @@ export * from './lib/authentication/jwt.service';
 /* configuration */
 export * from './lib/configuration/aster-config';
 export * from './lib/configuration/aster-configuration.service';
+export * from './lib/route/service/aster-route.service';
 
 /* support */
 export * from './lib/support/local-storage.service';
@@ -46,11 +47,14 @@ export * from './lib/dashboard/model/aster-dashboard-items';
 export * from './lib/product/service/aster-product-service';
 export * from './lib/product/service/aster-product-listing-service';
 export * from './lib/product/service/aster-product-details-service';
+export * from './lib/product/service/aster-manage-product-service';
 export * from './lib/product/service/aster-add-product-service';
 export * from './lib/product/service/aster-update-product-service';
 export * from './lib/product/interface/screen/add-product-screen-data';
 export * from './lib/product/interface/screen/product-listing-screen-data';
 export * from './lib/product/interface/screen/update-product-screen-data';
+export * from './lib/product/interface/screen/manage-product-screen-data';
+export * from './lib/product/interface/product-segment';
 
 /* transmission */
 export * from './lib/raintree/transmission/crud-transmission-service';

@@ -1,6 +1,14 @@
 import {ProductSegment} from "../interface/product-segment";
+import {ManageProductScreenData} from "../interface/screen/manage-product-screen-data";
 
 export abstract class AsterManageProductService {
+
+	public screen: ManageProductScreenData = {
+		header: {
+			title: 'Manage Products',
+			subtitle: 'Select a product segment'
+		},
+	};
 
 	private _segments: ProductSegment[] = [];
 

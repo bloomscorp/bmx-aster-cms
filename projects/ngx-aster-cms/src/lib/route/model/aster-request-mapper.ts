@@ -8,6 +8,7 @@ export class AsterRequestMapper {
 	public static readonly MANAGE_USERS: string = 'manage-users';
 	public static readonly USER_DETAILS: string = 'user/:userId';
 	public static readonly MANAGE_PRODUCTS: string = 'manage-products';
+	public static readonly PRODUCT_LIST: string = 'product-list';
 	public static readonly PRODUCT_DETAILS: string = 'product/:productGroup/:productId';
     public static readonly PRODUCT_ADD: string = 'product/add';
     public static readonly PRODUCT_UPDATE: string = 'product/update/:productId';

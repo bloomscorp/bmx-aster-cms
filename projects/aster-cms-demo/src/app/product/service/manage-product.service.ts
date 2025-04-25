@@ -14,9 +14,15 @@ export class ManageProductService extends AsterManageProductService {
 
 	public override prepareSegments(): void {
 		this.segments = [{
-			name: 'S1'
+			name: 'Spectacles',
+			icon: 'shopping_bag',
+			count: 0,
+			link: '/product/spectacles'
 		}, {
-			name: 'S2'
+			name: 'Spectacles',
+			icon: 'shopping_bag',
+			count: 0,
+			link: '/product/sunglass'
 		}];
 	}
 }

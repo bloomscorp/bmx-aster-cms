@@ -1,6 +1,10 @@
 <section>
-	<span>select a product segment</span>
-	<div>
-		<aster-cms-product-segment-card></aster-cms-product-segment-card>
+	<aster-cms-header-section [section]="screen.header.title"
+							  [subSection]="screen.header.subtitle"></aster-cms-header-section>
+
+	<div class="aster-dashboard-container gap-0">
+		@for (segmentItem of _.segments; track segmentItem) {
+			<aster-cms-product-segment-card [segmentItem]="segmentItem"></aster-cms-product-segment-card>
+		}
 	</div>
 </section>

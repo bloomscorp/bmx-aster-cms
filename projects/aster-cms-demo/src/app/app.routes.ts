@@ -2,6 +2,7 @@ import {Routes} from '@angular/router';
 import {DefaultRoutes} from "../../../ngx-aster-cms/src/lib/route/model/default-routes";
 import {AsterRequestMapper} from "../../../ngx-aster-cms/src/lib/route/model/aster-request-mapper";
 import {dashboardResolver} from "./common/resolvers/dashboard.resolver";
+import {AsterRouteService} from "../../../ngx-aster-cms/src/lib/route/service/aster-route.service";
 
 export const routes: Routes = [
     DefaultRoutes.BASE,
@@ -15,6 +16,10 @@ export const routes: Routes = [
     DefaultRoutes.MANAGE_USERS,
     DefaultRoutes.USER_DETAILS,
     DefaultRoutes.MANAGE_PRODUCTS,
+	AsterRouteService.replaceRouteUrl(
+		DefaultRoutes.LIST_PRODUCTS,
+		'product/sunglass'
+	),
     DefaultRoutes.ADD_PRODUCT,
     DefaultRoutes.UPDATE_PRODUCT,
     {
